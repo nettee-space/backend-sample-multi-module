@@ -1,7 +1,7 @@
-val SUFFIX = "${extra["CORE_MODULE_SUFFIX"]}"
+val PREFIX = "${extra["CORE_MODULE_PREFIX"]}"
 
 include(
-        "${SUFFIX}",
-        "${SUFFIX}:exception-handler",
-        "${SUFFIX}:jpa"
+        "${PREFIX}",
+        "${PREFIX}:exception-handler",
+        "${PREFIX}:jpa"
 )

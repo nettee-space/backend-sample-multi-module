@@ -1,5 +1,5 @@
-val SUFFIX = "${extra["COMMON_MODULE_SUFFIX"]}"
+val PREFIX = "${extra["COMMON_MODULE_PREFIX"]}"
 
 include(
-        "${SUFFIX}"
+        "${PREFIX}"
 )
