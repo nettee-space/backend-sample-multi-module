@@ -8,7 +8,7 @@ plugins {
 }
 
 allprojects {
-    group = "org.example"
+    group = "me.nettee"
     version = "1.0-SNAPSHOT"
 }
 
