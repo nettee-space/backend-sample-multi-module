@@ -1,4 +1,4 @@
-rootProject.name = "${extra["ROOT_PROJECT_NAME"]}"
+rootProject.name = "backend-sample-multi-module"
 
-apply(from ="core/settings.gradle.kts")
-apply(from ="common/settings.gradle.kts")
+apply(from ="core/core.settings.gradle.kts")
+apply(from ="common/common.settings.gradle.kts")

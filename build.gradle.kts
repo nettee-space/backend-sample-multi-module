@@ -31,4 +31,8 @@ subprojects {
     tasks.withType<Jar>{
         enabled = true
     }
+
+    tasks.test {
+        useJUnitPlatform()
+    }
 }

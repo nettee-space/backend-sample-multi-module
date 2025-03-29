@@ -1,0 +1,12 @@
+  name: Sub-Issue
+  description: Describe sub issues.
+  title: "[SUB-ISSUE] "
+  body:
+    - type: textarea
+      id: content
+      attributes:
+        label: 이슈 내용
+        description: 어떤 작업이 필요한지 설명해 주세요.
+        placeholder: Tell us what you want!
+      validations:
+        required: false
