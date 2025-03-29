@@ -7,6 +7,8 @@ val core = rootDir.resolve("core")
 
 include(
     ":jpa-core",
+    ":exception-handler-core"
 )
 
 project(":jpa-core").projectDir = core["jpa-core"]!!
+project(":exception-handler-core").projectDir = core["exception-handler-core"]!!
