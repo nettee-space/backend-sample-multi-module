@@ -2,7 +2,7 @@
 
 ## Issues
 
-Resolves #0
+- Resolves #0
 <!-- 이 PR이 완전히 처리한 이슈의 번호를 작성합니다. PR 병합 시 이슈가 자동으로 close 됩니다. -->
 <!-- 다른 레포지터리의 이슈: `Resolves nettee-space/another-repository#0` -->
 
