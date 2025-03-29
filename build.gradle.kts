@@ -20,6 +20,11 @@ subprojects {
         plugin("io.spring.dependency-management")
     }
 
+    dependencies {
+        compileOnly("org.projectlombok:lombok")
+        annotationProcessor("org.projectlombok:lombok")
+    }
+
     repositories {
         mavenCentral()
     }
