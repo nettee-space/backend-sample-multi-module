@@ -35,6 +35,10 @@ subprojects {
     }
 
     dependencies {
+        if(project.name != "common") {
+            api(project(":common"))
+        }
+
         compileOnly("org.projectlombok:lombok")
         annotationProcessor("org.projectlombok:lombok")
     }
