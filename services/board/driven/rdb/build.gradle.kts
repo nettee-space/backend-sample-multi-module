@@ -11,6 +11,7 @@ dependencies {
     // querydsl
     implementation("com.querydsl:querydsl-jpa:${bom["querydsl.version"]}:jakarta")
     annotationProcessor("com.querydsl:querydsl-apt:${bom["querydsl.version"]}:jakarta")
+    annotationProcessor("jakarta.persistence:jakarta.persistence-api")
 
     // mapstruct
     implementation("org.mapstruct:mapstruct:1.6.3")

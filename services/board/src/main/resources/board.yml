@@ -1,0 +1,5 @@
+spring:
+  config:
+    import:
+      - properties/db/board.database.yml
+      - board-web.yml

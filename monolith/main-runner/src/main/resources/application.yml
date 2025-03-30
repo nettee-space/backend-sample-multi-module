@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: main
+
+  config:
+    import:
+      - board.yml
+
+server:
+  port: 5000
+
