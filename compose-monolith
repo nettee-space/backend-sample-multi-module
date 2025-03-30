@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# User Guide
+# - 권한 부여
+#   chmod +x compose-monolith
+# - 실행 예시
+#   ./compose-monolith up -d
+
+# docker-compose-monolith.yml 파일이 현재 디렉토리에 있는지 확인
+if [ -f "$(pwd)/docker-compose-monolith.yml" ]; then
+  compose_file="docker-compose-monolith.yml"
+elif [ -f "$(pwd)/docker-compose-monolith.yaml" ]; then
+  compose_file="docker-compose-monolith.yaml"
+else
+  echo "Error: 이 명령은 프로젝트 루트에서만 실행할 수 있습니다."
+  echo "docker-compose-monolith.yml 또는 docker-compose-monolith.yaml 파일이 존재해야 합니다."
+  exit 1
+fi
+
+# 전달받은 모든 인자를 그대로 docker compose 명령에 전달
+docker compose -f "$compose_file" "$@"
