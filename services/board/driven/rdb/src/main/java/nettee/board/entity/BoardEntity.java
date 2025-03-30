@@ -2,7 +2,6 @@ package nettee.board.entity;
 
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
-import java.util.Objects;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,41 +16,16 @@ import org.hibernate.annotations.DynamicUpdate;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity(name = "board")
 public class BoardEntity extends LongBaseTimeEntity {
-    private String title;
-    private String content;
+    public String title;
+    public String content;
 
     @Convert(converter = BoardEntityStatusConverter.class)
-    private BoardEntityStatus status;
+    public BoardEntityStatus status;
 
     @Builder
     public BoardEntity(String title, String content, BoardEntityStatus status) {
         this.title = title;
         this.content = content;
-        this.status = status;
-    }
-
-    @Builder(
-            builderClassName = "UpdateBoardBuilder",
-            builderMethodName = "prepareUpdate",
-            buildMethodName = "update"
-    )
-    public void updateBoard(String title, String content, BoardEntityStatus status) {
-        Objects.requireNonNull(title, "title cannot be null");
-        Objects.requireNonNull(content, "content cannot be null");
-        Objects.requireNonNull(status, "status cannot be null");
-
-        this.title = title;
-        this.content = content;
-        this.status = status;
-    }
-    
-    @Builder(
-            builderClassName = "UpdateStatusBoardBuilder",
-            builderMethodName = "prepareUpdateStatus",
-            buildMethodName = "updateStatus"
-    )
-    public void updateStatus(BoardEntityStatus status) {
-        Objects.requireNonNull(status, "status cannot be null");
         this.status = status;
     }
 }
