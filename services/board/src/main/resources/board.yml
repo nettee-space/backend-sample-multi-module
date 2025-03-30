@@ -1,5 +1,5 @@
 spring:
   config:
     import:
-      - board.database.yml
+      - properties/db/board.database.yml
       - board-web.yml
