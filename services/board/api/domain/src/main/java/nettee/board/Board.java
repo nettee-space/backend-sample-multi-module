@@ -1,10 +1,10 @@
-package me.nettee;
+package nettee.board;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import me.nettee.type.BoardStatus;
+import nettee.board.type.BoardStatus;
 
 import java.time.Instant;
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package me.nettee.response;
+package nettee.exception.response;
 
 import lombok.Builder;
 
