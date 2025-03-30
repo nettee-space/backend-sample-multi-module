@@ -29,8 +29,8 @@ body:
         
         - [ ] [SUB-ISSUE] 
         - [ ] [SUB-ISSUE] 
-        - [ ]
-        - [ ]
+        - [ ] 
+        - [ ] 
     validations:
       required: true
   - type: textarea
