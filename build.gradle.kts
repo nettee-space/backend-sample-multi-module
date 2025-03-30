@@ -41,6 +41,8 @@ subprojects {
 
         compileOnly("org.projectlombok:lombok")
         annotationProcessor("org.projectlombok:lombok")
+        testCompileOnly("org.projectlombok:lombok")
+        testAnnotationProcessor("org.projectlombok:lombok")
 
         compileOnly("org.springframework:spring-web")
         compileOnly("org.springframework:spring-context")
