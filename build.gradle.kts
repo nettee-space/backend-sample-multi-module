@@ -12,6 +12,10 @@ plugins {
 allprojects {
     group = "me.nettee"
     version = "1.0-SNAPSHOT"
+
+    repositories {
+        mavenCentral()
+    }
 }
 
 subprojects {
@@ -24,13 +28,15 @@ subprojects {
         plugin("org.jetbrains.kotlin.plugin.spring")
     }
 
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+    }
+
     dependencies {
         compileOnly("org.projectlombok:lombok")
         annotationProcessor("org.projectlombok:lombok")
-    }
-
-    repositories {
-        mavenCentral()
     }
 
     tasks.withType<BootJar>{
