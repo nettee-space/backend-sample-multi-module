@@ -1,11 +1,11 @@
-package me.nettee.handler;
+package nettee.exception.handler;
 
-import me.nettee.CustomException;
-import me.nettee.ErrorCode;
+import nettee.common.CustomException;
+import nettee.common.ErrorCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import me.nettee.response.ApiErrorResponse;
+import nettee.exception.response.ApiErrorResponse;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {

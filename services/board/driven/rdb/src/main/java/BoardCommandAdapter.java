@@ -1,11 +1,11 @@
 import lombok.RequiredArgsConstructor;
-import me.nettee.Board;
+import nettee.board.Board;
 import nettee.board.persistence.mapper.BoardEntityMapper;
 import nettee.board.port.BoardCommandRepositoryPort;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import static me.nettee.BoardCommandErrorCode.DEFAULT;
+import static nettee.board.BoardCommandErrorCode.DEFAULT;
 
 @Repository
 @RequiredArgsConstructor

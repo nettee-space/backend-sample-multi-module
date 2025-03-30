@@ -1,4 +1,4 @@
-package me.nettee.support;
+package nettee.jpa.support;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
@@ -12,7 +12,7 @@ import java.time.Instant;
 @Getter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public abstract class LongBaseTimeEntity extends LongBaseEntity {
+public abstract class UuidBaseTimeEntity extends UuidBaseEntity {
     @CreatedDate
     private Instant createdAt;
 

@@ -6,7 +6,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import me.nettee.support.LongBaseTimeEntity;
+import nettee.jpa.support.LongBaseTimeEntity;
 import nettee.board.entity.type.BoardEntityStatus;
 import nettee.board.entity.type.BoardEntityStatusConverter;
 import org.hibernate.annotations.DynamicUpdate;

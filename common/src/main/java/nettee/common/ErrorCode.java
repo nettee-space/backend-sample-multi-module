@@ -1,4 +1,4 @@
-package me.nettee;
+package nettee.common;
 
 import org.springframework.http.HttpStatus;
 

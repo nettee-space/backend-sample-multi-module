@@ -1,4 +1,6 @@
-package me.nettee;
+package nettee.board;
+
+import nettee.common.CustomException;
 
 import java.util.Map;
 import java.util.function.Supplier;

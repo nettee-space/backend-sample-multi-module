@@ -1,6 +1,6 @@
 package nettee.board.port;
 
-import me.nettee.Board;
+import nettee.board.Board;
 
 public interface BoardCommandRepositoryPort {
     Board save(Board board);

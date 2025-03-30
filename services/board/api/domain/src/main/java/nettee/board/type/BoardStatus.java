@@ -1,4 +1,4 @@
-package me.nettee.type;
+package nettee.board.type;
 
 import java.util.EnumSet;
 import java.util.Set;

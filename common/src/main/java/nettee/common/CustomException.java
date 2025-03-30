@@ -1,4 +1,4 @@
-package me.nettee;
+package nettee.common;
 
 import java.util.Collections;
 import java.util.Map;
