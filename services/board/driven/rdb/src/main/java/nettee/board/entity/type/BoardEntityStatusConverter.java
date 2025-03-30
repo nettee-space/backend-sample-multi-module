@@ -8,7 +8,7 @@ public class BoardEntityStatusConverter implements AttributeConverter<BoardEntit
 
     @Override
     public Integer convertToDatabaseColumn(BoardEntityStatus status) {
-        return status.getValue();
+        return status.getCode();
     }
 
     @Override
