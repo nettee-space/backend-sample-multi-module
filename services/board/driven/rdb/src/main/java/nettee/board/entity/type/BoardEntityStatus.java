@@ -3,8 +3,6 @@ package nettee.board.entity.type;
 import me.nettee.type.BoardStatus;
 import static me.nettee.BoardQueryErrorCode.DEFAULT;
 
-import me.nettee.type.BoardStatus;
-
 public enum BoardEntityStatus {
     REMOVED(0),
     PENDING(10),
