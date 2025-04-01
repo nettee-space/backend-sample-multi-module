@@ -3,6 +3,8 @@
   2. ⠀⠀ [**Hexagonal**](https://github.com/nettee-space/backend-sample-hexagonal-simple-crud)  
   3. ▶ ⠀**Multi-Module Project** (Here)
 
+<br />
+
 # Introduction.
 
 이 샘플 프로젝트는 DDD 철학에 걸맞는 헥사고날 아키텍처 기반으로 멀티 모듈로 구현되었습니다.  
@@ -80,6 +82,8 @@ flowchart TB
 
 </details>
 
+<br />
+
 # Prerequisites
 
 - **JDK 21**  
@@ -87,8 +91,12 @@ flowchart TB
 - **Docker**  
   - 도커 버전이 최신 버전이 아니라면, <ins>도커 컴포즈</ins> 또한 필요할 수 있습니다.
   - 윈도우 10 사용자 중 일부는 도커가 동작하지 않을 수 있습니다. (세부 버전이 오래된 버전일 때)
+
+<br />
   
 # How to Run in a Local Environment
+
+<br />
 
 ```
 1. git clone git@github.com:nettee-space/backend-sample-multi-module.git
@@ -97,6 +105,55 @@ flowchart TB
 3. Please include 'local' profile to your active profiles.
 4. Run MainApplication!
 ```
+
+<br />
+
+# Additional Notes
+
+<details>
+  <summary>의존성 제공은 compileOnly를 선호합니다. (컨슈머 모듈이 의존성 활성화를 결정)</summary>
+
+  <br />
+  
+  > - 의존 모듈: 다른 모듈에 사용되는 모듈
+  > - 컨슈머 모듈: 의존 모듈을 사용하는 모듈
+
+  <br />
+  
+  **Compile Only 전략**
+
+  의존 모듈은 자신의 코드에 필요한 의존성을 `compileOnly`로 제공하는 것을 선호합니다.
+
+  ```kotlin
+  dependencies {
+      compileOnly("org.example:target-artifcat:version-name")
+  }
+  ```
+  
+  - **활성화**: 컨슈머 모듈에 별도로 `implementation` 등으로 추가합니다.  
+  - **비활성화**: 아무것도 추가하지 않고 무시할 수 있습니다.  
+  - 이 방식은 의존성을 기입을 추가로 요구하지만, 컨슈머 모듈이 의존성 선택에 자유도를 갖습니다.
+
+  <br />
+
+  **API 전략**
+  
+  의존 모듈은 <ins>필수로 함께 사용되는 기능</ins>을 `api`로 제공합니다.
+  
+  - 모듈 사용을 쉽게 만들지만, 컨슈머 모듈에 기본적으로 의존성이 전이됩니다.
+  - 다음 방식으로 의존성 선택에 별도로 자유도를 확보할 수 있습니다.  
+    ```kotlin
+    implementation(project("targetModuleName")) {
+        // 단, 이러한 제외가 많아지면 가독성을 해치고 실수가 많아 관리에 까다롭습니다.
+        exclude(group = "org.example", module = "unwanted-artifact")
+    }
+    ```
+
+  ---
+
+</details>
+
+<br />
 
 # Branch Rule 
 
