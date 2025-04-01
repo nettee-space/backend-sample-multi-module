@@ -36,6 +36,50 @@ root
             └── web-mvc [:board:webmvc-adapter]
 ```
 
+## Inter-Module Dependencies
+
+```mermaid
+%%{init: {'look': 'handDrawn'}}%%
+flowchart TB
+    monolith/main-runner --> service-module
+    
+    subgraph service-module
+        direction LR
+
+        board -. includes .-> board-rdb-adapter -. includes .-> board-application
+        board -. optional .-> board-application
+        board -. includes .-> board-web-adapter -. includes .-> board-application
+        
+        board-application -. includes .-> api-module
+
+        subgraph api-module
+            direction LR
+            board-api -. includes .-> board-domain & board-readmodel & board-exception
+        end
+    end
+
+    service-module -.-> core-modules
+    core-modules -.-> common
+```
+
+<details>
+  <summary>설명 보기</summary>
+
+  - 모든 서브프로젝트에 `:common` 모듈을 의존시킵니다.
+  - `:board:api` 모듈은 다음 목록을 통합합니다. 그 외 추가 기능을 제공하지 않습니다.
+    - `:board:api:domain`: 도메인 모델을 제공합니다.
+    - `:board:api:exception`: 도메인 관련 예외를 제공합니다.
+    - `:board:api:readmodel`: 도메인 관련 조회 모델을 제공합니다.
+  - `:board:application` 모듈은 헥사고날 아키텍처의 각 방향 포트 인터페이스를 제공합니다.
+    - `:board:api` 모듈을 통합합니다.
+  - `:board:rdb-adapter` 및 `:board:webmvc-adapter`는 각 포트 인터페이스를 구현하거나 사용하는 어댑터를 제공합니다.
+    - `:board:application` 모듈을 통합합니다.
+  - 위 보드 관련 구현 소스 및 리소스를 모두 통합하여 `:board` 모듈을 완성합니다.
+  - `:board` 모듈을 `:main-runner` 모듈이 통합하고 실행합니다.
+  - 각 코어 모듈은 알맞은 모듈에서 취사선택하여 사용합니다.
+
+</details>
+
 # Prerequisites
 
 - **JDK 21**  
