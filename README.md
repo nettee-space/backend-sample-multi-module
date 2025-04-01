@@ -84,7 +84,9 @@ flowchart TB
 
 <br />
 
-# Prerequisites
+# Installation and Execution
+
+## Prerequisites
 
 - **JDK 21**  
   You can use OpenJDK e.g. Amazon Corretto 21
@@ -94,7 +96,7 @@ flowchart TB
 
 <br />
   
-# How to Run in a Local Environment
+## How to Run in a Local Environment
 
 <br />
 
@@ -109,6 +111,8 @@ flowchart TB
 <br />
 
 # Additional Notes
+
+## Multi-Module Project Related
 
 <details>
   <summary>의존성 제공은 compileOnly를 선호합니다. (컨슈머 모듈이 의존성 활성화를 결정)</summary>
@@ -155,7 +159,12 @@ flowchart TB
 
 <br />
 
-# Branch Rule 
+# Initial Collaboration Information
+
+협업을 소개하는 별도 문서를 준비하지 않았습니다.
+깃허브 협업은 다음을 참고하세요.
+
+## Branch Rule 
 
 개발자들은 다음과 같은 Branch Rule을 꼭 숙지하고 준수해 주시기 바랍니다. (간소화된 브랜치 운영)
 
@@ -199,12 +208,12 @@ flowchart TB
     
     </details>
 
-# Commit Message
+## Commit Message
 
 커밋 메시지의 제1 규칙은 '알아볼 수 있는 메시지 전달'입니다.  
 보편적인 앵귤러 커밋 메시지 컨벤션을 따르면서, 각 포맷의 바운더리와 표현 수준은 팀에 맞게 차근차근 조정해 가면 좋겠습니다.
 
-## Basic Commit Message Format
+### Basic Commit Message Format
 
 커밋 메시지의 첫 단어는 작업의 목적을 명확히 하기 위해 커밋 타입으로 시작합니다.  
 
