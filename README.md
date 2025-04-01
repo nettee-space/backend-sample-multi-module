@@ -1,6 +1,6 @@
 - [**Sample Code Registry**](https://github.com/nettee-space/backend-sample-code-registry)  
   1. ⠀⠀ [**Layerd**](https://github.com/nettee-space/backend-sample-layered-simple-crud)  
-  2. ⠀  [**Hexagonal**](https://github.com/nettee-space/backend-sample-hexagonal-simple-crud)  
+  2. ⠀⠀ [**Hexagonal**](https://github.com/nettee-space/backend-sample-hexagonal-simple-crud)  
   3. ▶ ⠀**Multi-Module Project** (Here)
 
 # Introduction.
