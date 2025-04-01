@@ -5,29 +5,35 @@
 
 # Introduction.
 
-이 샘플 프로젝트는 DDD 철학에 걸맞는 헥사고날 아키텍처 기반으로 멀티 모듈로 구현되었습니다.
+이 샘플 프로젝트는 DDD 철학에 걸맞는 헥사고날 아키텍처 기반으로 멀티 모듈로 구현되었습니다.  
+
+\*폴더 및 모듈 네이밍과 구조는 수정되고 있습니다.
 
 ```
-me.nettee
-├─.github
-│  └─ISSUE_TEMPLATE
-├─common
-├─core
-│  ├─exception-handler-core
-│  └─jpa-core
-├─monolith
-│  └─main-runner
-└─services
-    └─board
-        ├─api
-        │  ├─domain
-        │  ├─exception
-        │  └─readmodel
-        ├─application
-        ├─driven
-        │  └─rdb
-        ├─driving
-           └─web-mvc
+root
+├── .github
+│   ├─ ISSUE_TEMPLATE
+│   │   ├─ 01. task-list.yml
+│   │   ├─ 02. sub-issue.yml
+│   │   └─ config.yml
+│   └─ ISSUE_TEMPLATE
+├── common [:common]
+├── core
+│   ├── nettee-exception-handler-webmvc [:exception-handler-webmvc] 🏗
+│   └── nettee-jpa-core [:jpa-core] 🏗
+├── monolith
+│   └── main-runner [:main-runner]
+└── services
+    └── board [:board]
+        ├── api [:board:api]
+        │  ├── domain [:board:api:domain]
+        │  ├── exception [:board:api:exception]
+        │  └── readmodel [:board:api:readmodel]
+        ├── application  [:board:application]
+        ├── driven
+        │  └── rdb [:board:rdb-adapter]
+        └── driving
+            └── web-mvc [:board:webmvc-adapter]
 ```
 # Prerequisites
 
