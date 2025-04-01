@@ -35,12 +35,17 @@ root
         └── driving
             └── web-mvc [:board:webmvc-adapter]
 ```
+
 # Prerequisites
 
-- JDK 21  
+- **JDK 21**  
   You can use OpenJDK e.g. Amazon Corretto 21
+- **Docker**  
+  - 도커 버전이 최신 버전이 아니라면, <ins>도커 컴포즈</ins> 또한 필요할 수 있습니다.
+  - 윈도우 10 사용자 중 일부는 도커가 동작하지 않을 수 있습니다. (세부 버전이 오래된 버전일 때)
   
 # How to run in a local environment
+
 ```
 1. git clone git@github.com:nettee-space/backend-sample-multi-module.git
 2. docker compose -f docker-compose-monolith.yml up -d
