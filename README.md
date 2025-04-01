@@ -50,8 +50,8 @@ root
 1. git clone git@github.com:nettee-space/backend-sample-multi-module.git
 2. ./compose-monolith up -d
   (권한 필요 시 chmod +x compose-monolith)
-3. Please set your profile to 'Local'
-4. MainApplication Run!
+3. Please include 'local' profile to your active profiles.
+4. Run MainApplication!
 ```
 
 # Branch Rule 
