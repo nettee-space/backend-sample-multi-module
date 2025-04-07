@@ -28,12 +28,12 @@ root
 └── services
     └── board [:board]
         ├── api [:board:api]
-        │  ├── domain [:board:api:domain]
-        │  ├── exception [:board:api:exception]
-        │  └── readmodel [:board:api:readmodel]
+        │   ├── domain [:board:api:domain]
+        │   ├── exception [:board:api:exception]
+        │   └── readmodel [:board:api:readmodel]
         ├── application  [:board:application]
         ├── driven
-        │  └── rdb [:board:rdb-adapter]
+        │   └── rdb [:board:rdb-adapter]
         └── driving
             └── web-mvc [:board:webmvc-adapter]
 ```
