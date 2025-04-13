@@ -1,8 +1,5 @@
-package properties.allowed;
+package nettee.properties.allowed;
 
-import org.springframework.boot.context.properties.ConfigurationPropertiesBinding;
-
-@ConfigurationPropertiesBinding
 public record CorsAllowedProperties(
         String[] headers,
         String[] methods,
