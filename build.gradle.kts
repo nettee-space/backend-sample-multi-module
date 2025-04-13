@@ -46,6 +46,11 @@ subprojects {
 
         compileOnly("org.springframework:spring-web")
         compileOnly("org.springframework:spring-context")
+
+        testImplementation("io.kotest:kotest-runner-junit5:5.9.1")
+        testImplementation("io.mockk:mockk:1.13.12")
+        testImplementation(kotlin("script-runtime"))
+        testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.3")
     }
 
     tasks.withType<BootJar>{
@@ -58,5 +63,13 @@ subprojects {
 
     tasks.test {
         useJUnitPlatform()
+    }
+
+    kotlin{
+        sourceSets {
+            test {
+                kotlin.srcDirs(listOf("src/test/kotlin"))
+            }
+        }
     }
 }
