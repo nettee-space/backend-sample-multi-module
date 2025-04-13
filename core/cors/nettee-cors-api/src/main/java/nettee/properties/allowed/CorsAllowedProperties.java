@@ -11,5 +11,8 @@ public record CorsAllowedProperties(
         if(credentials == null){
             credentials = true;
         }
+        if(privateNetwork == null){
+            privateNetwork = true;
+        }
     }
 }
