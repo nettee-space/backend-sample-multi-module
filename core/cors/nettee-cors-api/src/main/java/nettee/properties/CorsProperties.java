@@ -6,9 +6,4 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public record CorsProperties (
         MappedCorsProperties[] endpoints
 ) {
-    public CorsProperties {
-        for (var endpoint : endpoints) {
-            System.out.println(endpoint);
-        }
-    }
 }
