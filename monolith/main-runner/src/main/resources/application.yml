@@ -4,8 +4,8 @@ spring:
 
   config:
     import:
+      - properties.web/main.cors.yml
       - board.yml
-      - cors-webmvc.yml
 
 server:
   port: 5000

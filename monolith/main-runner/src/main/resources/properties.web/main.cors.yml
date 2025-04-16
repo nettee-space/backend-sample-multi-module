@@ -10,14 +10,3 @@ app.cors.endpoints:
     exposed:
       headers: "*"
     max-age: 3_600
-  - path: "/a"
-    allowed:
-      headers: "*"
-      methods: "*"
-      origins:
-        - http://localhost:3000
-        - https://localhost:3000
-      credentials: true
-    exposed:
-      headers: "*"
-    max-age: 3_600
