@@ -4,6 +4,7 @@ spring:
 
   config:
     import:
+      - properties.web/main.cors.yml
       - board.yml
 
 server:
