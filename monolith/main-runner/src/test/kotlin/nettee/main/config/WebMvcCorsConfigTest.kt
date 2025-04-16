@@ -30,6 +30,7 @@ class WebMvcCorsConfigTest(
                     .header("Origin", "http://localhost:3000")
                     .header("Access-Control-Request-Method", "GET")
                     .header("Access-Control-Request-Headers", "Content-Type")
+                    .header("Access-Control-Allow-Private-Network", "True")
             )
 
             "2XX 응답 상태 반환" {
@@ -46,6 +47,10 @@ class WebMvcCorsConfigTest(
 
             "Access-Control-Allow-Headers 에 Content-Type 포함" {
                 result.andExpect(header().string("Access-Control-Allow-Headers", "Content-Type"))
+            }
+
+            "Access-Control-Allow-Credentials true 포함" {
+                result.andExpect(header().string("Access-Control-Allow-Credentials", "true"))
             }
 
             "Access-Control-Expose-Headers 반환 확인" {
