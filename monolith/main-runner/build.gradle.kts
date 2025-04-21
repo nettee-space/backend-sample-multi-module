@@ -6,6 +6,7 @@ dependencies {
     // core
     implementation(project(":exception-handler-core"))
     implementation(project(":jpa-core"))
+    implementation(project(":cors-webmvc"))
     // service
     implementation(project(":board"))
     // webmvc
@@ -16,7 +17,8 @@ dependencies {
     implementation("org.flywaydb:flyway-database-postgresql")
     // test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation("com.fasterxml.jackson.core:jackson-databind")
+    testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 }
 
 tasks.withType<Test> {
