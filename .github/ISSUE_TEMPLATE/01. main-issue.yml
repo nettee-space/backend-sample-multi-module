@@ -1,6 +1,6 @@
-name: Task List
+name: Main Issue
 description: Describe the task list.
-title: "[TASK LIST] "
+title: "[MAIN] "
 #labels: []
 #projects: []
 #assignees:
