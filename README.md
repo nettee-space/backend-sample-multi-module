@@ -48,15 +48,15 @@ flowchart TB
     subgraph service-module
         direction LR
 
-        board -. includes .-> board-rdb-adapter -. includes .-> board-application
+        board -. includes .-> rdb-adapter -. includes .-> board-application
         board -. optional .-> board-application
-        board -. includes .-> board-web-adapter -. includes .-> board-application
+        board -. includes .-> web-adapter -. includes .-> board-application
         
         board-application -. includes .-> api-module
 
         subgraph api-module
             direction LR
-            board-api -. includes .-> board-domain & board-readmodel & board-exception
+            board-api -. includes .-> domain & readmodel & exception
         end
     end
 
