@@ -1,6 +1,7 @@
 package nettee.persistence.id;
 
 import nettee.properties.SnowflakeProperties;
+import nettee.validator.SnowflakeConstructingValidator;
 
 import static nettee.constants.SnowflakeConstants.NETTEE_EPOCH;
 import static nettee.constants.SnowflakeConstants.SnowflakeDefault.*;
@@ -18,16 +19,8 @@ public class Snowflake {
     }
     
     public Snowflake(long datacenterId, long workerId, long epoch) {
-        if (workerId > MAX_WORKER_ID || workerId < 0) {
-            throw new IllegalArgumentException(String.format(
-                    "worker Id can't be greater than %d or less than 0", MAX_WORKER_ID
-            ));
-        }
-        if (datacenterId > MAX_DATACENTER_ID || datacenterId < 0) {
-            throw new IllegalArgumentException(String.format(
-                    "datacenter Id can't be greater than %d or less than 0", MAX_DATACENTER_ID
-            ));
-        }
+        SnowflakeConstructingValidator.validateDatacenterId(datacenterId);
+        SnowflakeConstructingValidator.validateWorkerId(workerId);
         
         this.workerId = workerId;
         this.datacenterId = datacenterId;
