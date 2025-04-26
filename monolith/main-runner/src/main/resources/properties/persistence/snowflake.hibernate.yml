@@ -1,0 +1,3 @@
+nettee.persistence.snowflake:
+  datacenter-id: 0
+  worker-id: 0
