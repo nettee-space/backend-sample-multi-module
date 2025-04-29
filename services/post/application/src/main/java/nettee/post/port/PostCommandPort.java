@@ -1,9 +1,7 @@
 package nettee.post.port;
 
-
 import nettee.post.Post;
 import nettee.post.type.PostStatus;
-
 import java.util.Optional;
 
 public interface PostCommandPort {

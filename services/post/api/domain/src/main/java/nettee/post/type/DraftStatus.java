@@ -3,12 +3,11 @@ package nettee.post.type;
 import java.util.EnumSet;
 import java.util.Set;
 
-public enum DraftPostStatus {
+public enum DraftStatus {
     DRAFT,
     DONE,
     DELETED,
     PENDING;
-
 
     public static final Set<DraftPostStatus> GENERAL_QUERY_STATUS = EnumSet.of(DRAFT);
 

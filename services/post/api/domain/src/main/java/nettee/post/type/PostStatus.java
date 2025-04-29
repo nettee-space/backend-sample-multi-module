@@ -9,7 +9,6 @@ public enum PostStatus {
     DELETED,
     PENDING;
 
-
     public static final Set<PostStatus> GENERAL_QUERY_STATUS = EnumSet.of(ACTIVE, SUSPENDED);
 
     public static Set<PostStatus> getGeneralQueryStatus() {

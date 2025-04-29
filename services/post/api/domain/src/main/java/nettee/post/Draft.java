@@ -1,13 +1,13 @@
 package nettee.post;
 
-import nettee.post.type.DraftPostStatus;
+import nettee.post.type.DraftStatus;
 import java.time.Instant;
 
-public class DraftPost {
+public class Draft {
     private Long id;
     private String title;
     private String content;
-    private DraftPostStatus status;
+    private DraftStatus status;
     private Instant createdAt;
     private Instant updatedAt;
     private Long blogId;

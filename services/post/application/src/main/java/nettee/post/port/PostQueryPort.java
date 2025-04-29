@@ -3,7 +3,6 @@ package nettee.post.port;
 import nettee.post.Post;
 import nettee.post.type.PostStatus;
 import org.springframework.data.domain.Pageable;
-
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
