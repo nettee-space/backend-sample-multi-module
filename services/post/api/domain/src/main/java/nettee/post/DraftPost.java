@@ -1,8 +1,6 @@
 package nettee.post;
 
-
 import nettee.post.type.DraftPostStatus;
-
 import java.time.Instant;
 
 public class DraftPost {
