@@ -10,8 +10,8 @@ public class DraftPost {
     private String title;
     private String content;
     private DraftPostStatus status;
-    private Instant create_at;
-    private Instant update_at;
-    private Long blog_id;
-    private Long post_id;
+    private Instant createdAt;
+    private Instant updatedAt;
+    private Long blogId;
+    private Long postId;
 }
