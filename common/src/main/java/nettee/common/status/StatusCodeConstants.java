@@ -11,8 +11,9 @@ public final class StatusCodeConstants {
         public static final int CATEGORY_BIT_SIZE = 8;
         public static final int INSTANCE_DETAIL_BIT_SIZE = 8;
 
-        public static final int GENERAL_PURPOSE_SHIFT = 24;
-        public static final int SYSTEM_INFORMATION_SHIFT = 16;
-        public static final int CATEGORY_SHIFT = 8;
+        public static final int GENERAL_PURPOSE_SHIFT =
+                SYSTEM_INFORMATION_BIT_SIZE + CATEGORY_BIT_SIZE + INSTANCE_DETAIL_BIT_SIZE;
+        public static final int SYSTEM_INFORMATION_SHIFT = CATEGORY_BIT_SIZE + INSTANCE_DETAIL_BIT_SIZE;
+        public static final int CATEGORY_SHIFT = INSTANCE_DETAIL_BIT_SIZE;
     }
 }
