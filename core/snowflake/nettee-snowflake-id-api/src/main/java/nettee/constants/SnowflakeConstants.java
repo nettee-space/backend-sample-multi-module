@@ -1,7 +1,7 @@
 package nettee.constants;
 
 public final class SnowflakeConstants {
-    // 한국 시간(KST): 2025-04-23 16:20:00 기준점
+    // 한국 시간(KST): 2025-03-26 23:40:00 기준점
     public static final long NETTEE_EPOCH = 1_743_000_000_000L;
     public static final String PREFIX = "nettee.persistence.snowflake";
     
