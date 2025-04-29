@@ -1,6 +1,9 @@
 package nettee.board.driven.rdb.entity.type;
 
 import nettee.board.domain.type.BoardStatus;
+import nettee.common.marker.TypeSafeMarker;
+import nettee.common.marker.TypeSafeMarker.Missing;
+import nettee.common.marker.TypeSafeMarker.Present;
 
 import java.util.Arrays;
 import java.util.Set;
@@ -93,7 +96,10 @@ public enum BoardEntityStatus {
         };
     }
 
-    static class SemanticCodeParameters<HAS_CAN_READ, HAS_CLASSIFYING_BITS> {
+    static class SemanticCodeParameters<
+            HAS_CAN_READ extends TypeSafeMarker,
+            HAS_CLASSIFYING_BITS extends TypeSafeMarker> {
+
         boolean canRead;
         Integer classifyingBits;
         int detailBits;
@@ -118,11 +124,5 @@ public enum BoardEntityStatus {
             this.detailBits = detailBits;
             return this;
         }
-
     }
-
-    // NOTE move to other module after its place is determined
-    // Marker interfaces
-    interface Missing {}
-    interface Present {}
 }
