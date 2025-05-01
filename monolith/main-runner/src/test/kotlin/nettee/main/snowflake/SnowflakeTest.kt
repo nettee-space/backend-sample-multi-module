@@ -5,6 +5,7 @@ import io.kotest.extensions.spring.SpringExtension
 import io.kotest.matchers.collections.shouldHaveSize
 import io.kotest.matchers.longs.shouldBeGreaterThan
 import io.kotest.matchers.longs.shouldBeLessThanOrEqual
+import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
 import kotlinx.coroutines.*
 import nettee.main.sample.entity.Sample
@@ -33,8 +34,10 @@ class SnowflakeTest(
                 sample.id shouldBeGreaterThan 0L
             }
 
-            "Snowflake ID의 크기는 64bit 이내를 충족한다" {
-                sample.id shouldBeLessThanOrEqual Long.MAX_VALUE
+            "Snowflake ID의 크기는 부호 비트를 제외한 63bit 이내를 충족한다" {
+                // 62번째 비트가 꺼져 있는지(0) 확인하여, Snowflake ID가 63비트 이내(양수 범위)임을 보장한다.
+                // 0 and 1  => 0 이고 1 and 1 -> 1
+                sample.id and (1L.shl(62)) shouldBe 0L
             }
         }
     }
