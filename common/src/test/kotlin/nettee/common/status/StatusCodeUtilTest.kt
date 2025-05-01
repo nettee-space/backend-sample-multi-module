@@ -1,11 +1,23 @@
 package nettee.common.status
 
 import io.kotest.core.spec.style.FreeSpec
-import io.kotest.matchers.shouldBe
+import io.kotest.matchers.*
 import nettee.common.status.StatusParameters.GeneralPurposeFeatures.*
 
 class StatusCodeUtilTest: FreeSpec({
     "[GP] 다른 섹션이 모두 0일 때" - {
+        "GP: NO OP" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0)
+                .categoryBits(0)
+                .instanceBits(0)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0
+        }
+
         val cases = listOf(
             // Single GP
             setOf(READ) to 0x40_00_00_00,
@@ -40,6 +52,56 @@ class StatusCodeUtilTest: FreeSpec({
 
                 code shouldBe expectedCode
             }
+        }
+    }
+
+    "[SYS INFO BITS] 다른 섹션이 모두 0일 때 입력한 비트가 알맞은 위치에 대입된다." - {
+        "SYS INFO: 0" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0)
+                .categoryBits(0)
+                .instanceBits(0)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0x00_00_00_00
+        }
+
+        "SYS INFO: 0x0F" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0x0F)
+                .categoryBits(0)
+                .instanceBits(0)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0x00_0F_00_00
+        }
+
+        "SYS INFO: 0x55" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0x55)
+                .categoryBits(0)
+                .instanceBits(0)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0x00_55_00_00
+        }
+
+        "SYS INFO: 0xFF" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0xFF)
+                .categoryBits(0)
+                .instanceBits(0)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0x00_FF_00_00
         }
     }
 })
