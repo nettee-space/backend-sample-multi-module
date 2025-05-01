@@ -15,7 +15,6 @@ public class CustomStatusParameters<
         C extends TypeSafeMarker,
         I extends TypeSafeMarker
 > {
-//    private final long gpMax;
     private final long sysInfoMax;
     private final long categoryMax;
     private final long instanceDetailMax;
@@ -28,7 +27,6 @@ public class CustomStatusParameters<
     private long instanceBits;
 
     CustomStatusParameters(CustomStatusParametersSupplier supplier) {
-//        this.gpMax = (1L << supplier.generalPurposeBitSize()) - 1;
         this.sysInfoMax = (1L << supplier.systemInfoBitSize()) - 1;
         this.categoryMax = (1L << supplier.categoryBitSize()) - 1;
         this.instanceDetailMax = (1L << supplier.instanceDetailBitSize()) - 1;
