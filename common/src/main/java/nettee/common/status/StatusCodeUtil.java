@@ -15,4 +15,9 @@ public final class StatusCodeUtil {
                 | (parameters.categoryBits() << CATEGORY_SHIFT)
                 | parameters.instanceBits();
     }
+
+    // TODO
+//    public static long getAsLong(CustomStatusParameters<Present, Present> parameters) {
+//        // ...
+//    }
 }
