@@ -34,8 +34,7 @@ public enum StatusCodeErrorCode implements ErrorCode {
     INSTANCE_DETAIL_BITS_OVERFLOW(
             "Instance detail 비트가 입력 허용 비트 범위를 벗어납니다.",
             HttpStatus.INTERNAL_SERVER_ERROR
-    ),
-    ;
+    );
 
     private final String message;
     private final HttpStatus httpStatus;
