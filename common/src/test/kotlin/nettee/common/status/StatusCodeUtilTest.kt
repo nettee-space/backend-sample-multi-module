@@ -104,4 +104,104 @@ class StatusCodeUtilTest: FreeSpec({
             code shouldBe 0x00_FF_00_00
         }
     }
+
+    "[CATEGORY] 다른 섹션이 모두 0일 때 입력한 비트가 알맞은 위치에 대입된다." - {
+        "CATEGORY: 0" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0)
+                .categoryBits(0)
+                .instanceBits(0)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0x00_00_00_00
+        }
+
+        "CATEGORY: 0x0F" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0)
+                .categoryBits(0x0F)
+                .instanceBits(0)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0x00_00_0F_00
+        }
+
+        "CATEGORY: 0x55" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0)
+                .categoryBits(0x55)
+                .instanceBits(0)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0x00_00_55_00
+        }
+
+        "CATEGORY: 0xFF" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0)
+                .categoryBits(0xFF)
+                .instanceBits(0)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0x00_00_FF_00
+        }
+    }
+
+    "[INSTANCE DETAIL] 다른 섹션이 모두 0일 때 입력한 비트가 알맞은 위치에 대입된다." - {
+        "INSTANCE DETAIL: 0" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0)
+                .categoryBits(0)
+                .instanceBits(0)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0x00_00_00_00
+        }
+
+        "INSTANCE DETAIL: 0x0F" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0)
+                .categoryBits(0)
+                .instanceBits(0x0F)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0x00_00_00_0F
+        }
+
+        "INSTANCE DETAIL: 0x55" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0)
+                .categoryBits(0)
+                .instanceBits(0x55)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0x00_00_00_55
+        }
+
+        "INSTANCE DETAIL: 0xFF" {
+            val parameters = StatusParameters.generate()
+                .generalPurposeFeatures()
+                .systemInfoBits(0)
+                .categoryBits(0)
+                .instanceBits(0xFF)
+
+            val code = StatusCodeUtil.getAsInt(parameters)
+
+            code shouldBe 0x00_00_00_FF
+        }
+    }
 })
