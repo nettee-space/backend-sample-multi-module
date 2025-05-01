@@ -6,12 +6,14 @@ val core = rootDir.resolve("core")
 
 
 include(
+    ":time-util",
     ":jpa-core",
     ":exception-handler-core",
     ":cors-api",
     ":cors-webmvc"
 )
 
+project(":time-util").projectDir = core["time-util"]!!
 project(":jpa-core").projectDir = core["jpa-core"]!!
 project(":exception-handler-core").projectDir = core["exception-handler-core"]!!
 project(":cors-webmvc").projectDir = core["nettee-cors-webmvc"]!!
