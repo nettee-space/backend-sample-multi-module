@@ -56,152 +56,71 @@ class StatusCodeUtilTest: FreeSpec({
     }
 
     "[SYS INFO BITS] 다른 섹션이 모두 0일 때 입력한 비트가 알맞은 위치에 대입된다." - {
-        "SYS INFO: 0" {
-            val parameters = StatusParameters.generate()
-                .generalPurposeFeatures()
-                .systemInfoBits(0)
-                .categoryBits(0)
-                .instanceBits(0)
+        val cases = listOf(
+            0x00 to 0x00_00_00_00,
+            0x0F to 0x00_0F_00_00,
+            0x55 to 0x00_55_00_00,
+            0xFF to 0x00_FF_00_00,
+        )
 
-            val code = StatusCodeUtil.getAsInt(parameters)
+        cases.forEach { (input, expectedCode) ->
+            "SYS INFO: $input" {
+                val parameters = StatusParameters.generate()
+                    .generalPurposeFeatures()
+                    .systemInfoBits(input)
+                    .categoryBits(0)
+                    .instanceBits(0)
 
-            code shouldBe 0x00_00_00_00
-        }
+                val code = StatusCodeUtil.getAsInt(parameters)
 
-        "SYS INFO: 0x0F" {
-            val parameters = StatusParameters.generate()
-                .generalPurposeFeatures()
-                .systemInfoBits(0x0F)
-                .categoryBits(0)
-                .instanceBits(0)
-
-            val code = StatusCodeUtil.getAsInt(parameters)
-
-            code shouldBe 0x00_0F_00_00
-        }
-
-        "SYS INFO: 0x55" {
-            val parameters = StatusParameters.generate()
-                .generalPurposeFeatures()
-                .systemInfoBits(0x55)
-                .categoryBits(0)
-                .instanceBits(0)
-
-            val code = StatusCodeUtil.getAsInt(parameters)
-
-            code shouldBe 0x00_55_00_00
-        }
-
-        "SYS INFO: 0xFF" {
-            val parameters = StatusParameters.generate()
-                .generalPurposeFeatures()
-                .systemInfoBits(0xFF)
-                .categoryBits(0)
-                .instanceBits(0)
-
-            val code = StatusCodeUtil.getAsInt(parameters)
-
-            code shouldBe 0x00_FF_00_00
+                code shouldBe expectedCode
+            }
         }
     }
 
     "[CATEGORY] 다른 섹션이 모두 0일 때 입력한 비트가 알맞은 위치에 대입된다." - {
-        "CATEGORY: 0" {
-            val parameters = StatusParameters.generate()
-                .generalPurposeFeatures()
-                .systemInfoBits(0)
-                .categoryBits(0)
-                .instanceBits(0)
+        val cases = listOf(
+            0x00 to 0x00_00_00_00,
+            0x0F to 0x00_00_0F_00,
+            0x55 to 0x00_00_55_00,
+            0xFF to 0x00_00_FF_00,
+        )
 
-            val code = StatusCodeUtil.getAsInt(parameters)
+        cases.forEach { (input, expectedCode) ->
+            "CATEGORY: $input" {
+                val parameters = StatusParameters.generate()
+                    .generalPurposeFeatures()
+                    .systemInfoBits(0)
+                    .categoryBits(input)
+                    .instanceBits(0)
 
-            code shouldBe 0x00_00_00_00
-        }
+                val code = StatusCodeUtil.getAsInt(parameters)
 
-        "CATEGORY: 0x0F" {
-            val parameters = StatusParameters.generate()
-                .generalPurposeFeatures()
-                .systemInfoBits(0)
-                .categoryBits(0x0F)
-                .instanceBits(0)
-
-            val code = StatusCodeUtil.getAsInt(parameters)
-
-            code shouldBe 0x00_00_0F_00
-        }
-
-        "CATEGORY: 0x55" {
-            val parameters = StatusParameters.generate()
-                .generalPurposeFeatures()
-                .systemInfoBits(0)
-                .categoryBits(0x55)
-                .instanceBits(0)
-
-            val code = StatusCodeUtil.getAsInt(parameters)
-
-            code shouldBe 0x00_00_55_00
-        }
-
-        "CATEGORY: 0xFF" {
-            val parameters = StatusParameters.generate()
-                .generalPurposeFeatures()
-                .systemInfoBits(0)
-                .categoryBits(0xFF)
-                .instanceBits(0)
-
-            val code = StatusCodeUtil.getAsInt(parameters)
-
-            code shouldBe 0x00_00_FF_00
+                code shouldBe expectedCode
+            }
         }
     }
 
     "[INSTANCE DETAIL] 다른 섹션이 모두 0일 때 입력한 비트가 알맞은 위치에 대입된다." - {
-        "INSTANCE DETAIL: 0" {
-            val parameters = StatusParameters.generate()
-                .generalPurposeFeatures()
-                .systemInfoBits(0)
-                .categoryBits(0)
-                .instanceBits(0)
+        val cases = listOf(
+            0x00 to 0x00_00_00_00,
+            0x0F to 0x00_00_00_0F,
+            0x55 to 0x00_00_00_55,
+            0xFF to 0x00_00_00_FF,
+        )
 
-            val code = StatusCodeUtil.getAsInt(parameters)
+        cases.forEach { (input, expectedCode) ->
+            "INSTANCE DETAIL: $input" {
+                val parameters = StatusParameters.generate()
+                    .generalPurposeFeatures()
+                    .systemInfoBits(0)
+                    .categoryBits(0)
+                    .instanceBits(input)
 
-            code shouldBe 0x00_00_00_00
-        }
+                val code = StatusCodeUtil.getAsInt(parameters)
 
-        "INSTANCE DETAIL: 0x0F" {
-            val parameters = StatusParameters.generate()
-                .generalPurposeFeatures()
-                .systemInfoBits(0)
-                .categoryBits(0)
-                .instanceBits(0x0F)
-
-            val code = StatusCodeUtil.getAsInt(parameters)
-
-            code shouldBe 0x00_00_00_0F
-        }
-
-        "INSTANCE DETAIL: 0x55" {
-            val parameters = StatusParameters.generate()
-                .generalPurposeFeatures()
-                .systemInfoBits(0)
-                .categoryBits(0)
-                .instanceBits(0x55)
-
-            val code = StatusCodeUtil.getAsInt(parameters)
-
-            code shouldBe 0x00_00_00_55
-        }
-
-        "INSTANCE DETAIL: 0xFF" {
-            val parameters = StatusParameters.generate()
-                .generalPurposeFeatures()
-                .systemInfoBits(0)
-                .categoryBits(0)
-                .instanceBits(0xFF)
-
-            val code = StatusCodeUtil.getAsInt(parameters)
-
-            code shouldBe 0x00_00_00_FF
+                code shouldBe expectedCode
+            }
         }
     }
 })
