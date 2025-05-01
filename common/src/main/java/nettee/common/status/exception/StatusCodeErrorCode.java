@@ -7,16 +7,16 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public enum StatusCodeErrorCode implements ErrorCode {
+    TOTAL_BITS_OVERFLOW(
+            "각 영역의 크기 합이 %d 비트 이하여야 합니다.".formatted(Long.BYTES * 8),
+            HttpStatus.INTERNAL_SERVER_ERROR
+    ),
     GP_BITS_OUT_OF_BOUND(
             "설정한 general purpose 비트가 허용 비트 범위를 벗어납니다.",
             HttpStatus.INTERNAL_SERVER_ERROR
     ),
     GP_BITS_NOT_DISTINCT(
             "Each input value must correspond to a distinct, non-overlapping bit.",
-            HttpStatus.INTERNAL_SERVER_ERROR
-    ),
-    TOTAL_BITS_OVERFLOW(
-            "각 영역의 크기 합이 %d 비트 이하여야 합니다.".formatted(Long.BYTES * 8),
             HttpStatus.INTERNAL_SERVER_ERROR
     ),
     ;
