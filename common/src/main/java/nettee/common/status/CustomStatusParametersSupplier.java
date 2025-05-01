@@ -13,7 +13,6 @@ import static nettee.common.status.exception.StatusCodeErrorCode.GP_CUSTOM_KEY_N
 import static nettee.common.status.exception.StatusCodeErrorCode.TOTAL_BITS_OVERFLOW;
 
 public final class CustomStatusParametersSupplier implements Supplier<CustomStatusParameters<Missing, Missing>> {
-//    private final int gpSize;
     private final int sysInfoSize;
     private final int categorySize;
     private final int instanceDetailSize;
@@ -35,16 +34,11 @@ public final class CustomStatusParametersSupplier implements Supplier<CustomStat
         // validate that the GP list fits within the GP size.
         featuresBits.validateSize(generalPurposeBitSize);
 
-//        this.gpSize = generalPurposeBitSize;
         this.sysInfoSize = systemInfoBitSize;
         this.categorySize = categoryBitSize;
         this.instanceDetailSize = instanceBitSize;
         this.featuresBits = featuresBits;
     }
-
-//    public int generalPurposeBitSize() {
-//        return gpSize;
-//    }
 
     public int systemInfoBitSize() {
         return sysInfoSize;
