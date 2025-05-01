@@ -11,6 +11,13 @@ import static nettee.common.status.exception.StatusCodeErrorCode.CATEGORY_BITS_O
 import static nettee.common.status.exception.StatusCodeErrorCode.INSTANCE_DETAIL_BITS_OVERFLOW;
 import static nettee.common.status.exception.StatusCodeErrorCode.SYS_INFO_OVERFLOW;
 
+/**
+ * {@code long} 타입 이내에서 GP bits, system information bits, category bits, instance detail bits 구간별 사이즈를 커스텀하여
+ * 사용할 수 있도록 일반화한 클래스입니다.
+ *
+ * @param <C> Category bits 입력을 필수로 합니다. (컴파일타임 체크)
+ * @param <I> Instance detail bits 입력을 필수로 합니다. (컴파일타임 체크)
+ */
 public class CustomStatusParameters<
         C extends TypeSafeMarker,
         I extends TypeSafeMarker

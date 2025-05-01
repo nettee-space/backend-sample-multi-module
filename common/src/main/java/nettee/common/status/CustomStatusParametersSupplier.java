@@ -62,8 +62,7 @@ public final class CustomStatusParametersSupplier implements Supplier<CustomStat
     }
 
     /**
-     * 일반 목적 기능(GP features)을 표현하는 독립된 비트 영역을 보존합니다.
-     *
+     * 일반 목적 기능(GP features)을 독립된 비트 영역으로 표현하기 위한 클래스입니다.
      */
     public static final class LongGeneralPurposeFeaturesValue {
         final private long read;
@@ -74,7 +73,6 @@ public final class CustomStatusParametersSupplier implements Supplier<CustomStat
         final private long max;
 
         /**
-         *
          * @param read '일반 조회 목적'을 표현할 비트를 입력합니다.
          * @param update '일반 수정 목적'을 표현할 비트를 입력합니다.
          * @param subItemRead '하위항목 일반 조회 목적'을 표현할 비트를 입력합니다.
