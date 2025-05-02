@@ -1,4 +1,4 @@
-package nettee.post.port;
+package nettee.draft.port;
 
 import nettee.post.Draft;
 import org.springframework.data.domain.Page;
