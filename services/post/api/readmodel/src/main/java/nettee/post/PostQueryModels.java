@@ -14,8 +14,12 @@ public final class PostQueryModels {
             String title,
             String content,
             PostStatus status,
+            Integer totalViews,
+            Integer totalLikes,
+            Integer totalShares,
             Instant createdAt,
             Instant updatedAt
+
     ) {
     }
 
