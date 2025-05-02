@@ -1,3 +1,7 @@
+plugins {
+    id("java-library")
+}
+
 dependencies {
     val bom = dependencyManagement.importedProperties
 

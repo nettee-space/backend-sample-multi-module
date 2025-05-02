@@ -5,8 +5,9 @@ import nettee.post.type.PostStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.time.Instant;
 import java.util.Set;
 
 public interface PostReadByStatusesUseCase {
-    Page<PostSummary> findByStatuses(Set<PostStatus> statuses, Pageable pageable);
+    Page<PostSummary> findByStatuses(Set<PostStatus> statuses, Instant lastCreatedAt, int size);
 }

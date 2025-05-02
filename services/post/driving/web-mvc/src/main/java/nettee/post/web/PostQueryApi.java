@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Instant;
 import java.util.Set;
 
 @RestController
@@ -32,8 +33,8 @@ public class PostQueryApi {
     }
 
     @GetMapping
-    public Page<PostSummary> getPostsByStatuses(@RequestParam(defaultValue = "ACTIVE, SUSPENDED") Set<PostStatus> statuses, Pageable pageable) {
-        return postReadByStatusesUseCase.findByStatuses(statuses, pageable);
+    public Page<PostSummary> getPostsByStatuses(@RequestParam(defaultValue = "ACTIVE, SUSPENDED") Set<PostStatus> statuses, Instant lastCreatedAt, int size) {
+        return postReadByStatusesUseCase.findByStatuses(statuses, lastCreatedAt, size);
     }
 
 }

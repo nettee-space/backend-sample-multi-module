@@ -9,9 +9,9 @@ public enum DraftStatus {
     DELETED,
     PENDING;
 
-    public static final Set<DraftPostStatus> GENERAL_QUERY_STATUS = EnumSet.of(DRAFT);
+    public static final Set<DraftStatus> GENERAL_QUERY_STATUS = EnumSet.of(DRAFT);
 
-    public static Set<DraftPostStatus> getGeneralQueryStatus() {
+    public static Set<DraftStatus> getGeneralQueryStatus() {
         return GENERAL_QUERY_STATUS;
     }
 }

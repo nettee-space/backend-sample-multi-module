@@ -11,6 +11,8 @@ import nettee.post.web.dto.PostCommandDto.PostUpdateTotalViewsCommand;
 import nettee.post.web.dto.PostQueryDto.PostDetailResponse;
 import org.mapstruct.Mapper;
 
+import java.util.Optional;
+
 @Mapper(componentModel = "spring")
 public interface PostDtoMapper {
     Post toDomain(PostCreateCommand command);
@@ -18,5 +20,5 @@ public interface PostDtoMapper {
     Post toDomain(Long id, PostUpdateTotalSharesCommand command);
     Post toDomain(Long id, PostUpdateTotalLikesCommand command);
     Post toDomain(Long id, PostUpdateTotalViewsCommand command);
-    PostDetailResponse toDtoDetail(PostDetail board);
+    PostDetailResponse toDtoDetail(Optional<PostDetail> board);
 }

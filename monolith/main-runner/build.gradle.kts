@@ -9,6 +9,7 @@ dependencies {
     implementation(project(":cors-webmvc"))
     // service
     implementation(project(":board"))
+    implementation(project(":post"))
     // webmvc
     implementation("org.springframework.boot:spring-boot-starter-web")
     // db
