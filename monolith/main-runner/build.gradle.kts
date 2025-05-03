@@ -16,6 +16,7 @@ dependencies {
     // flyway
     implementation("org.flywaydb:flyway-database-postgresql")
     // test
+    testImplementation("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("com.fasterxml.jackson.core:jackson-databind")
     testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin")

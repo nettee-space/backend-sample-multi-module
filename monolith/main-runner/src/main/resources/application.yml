@@ -4,7 +4,8 @@ spring:
 
   config:
     import:
-      - properties.web/main.cors.yml
+      - properties/web/main.cors.yml
+      - properties/persistence/main.snowflake.yml
       - board.yml
 
 server:
