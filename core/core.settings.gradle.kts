@@ -12,6 +12,7 @@ include(
     ":cors-webmvc",
     ":snowflake-id-api",
     ":snowflake-id-hibernate",
+    ":client-api",
     ":rest-client",
 )
 
@@ -21,4 +22,5 @@ project(":cors-webmvc").projectDir = core["nettee-cors-webmvc"]!!
 project(":cors-api").projectDir = core["nettee-cors-api"]!!
 project(":snowflake-id-api").projectDir = core["nettee-snowflake-id-api"]!!
 project(":snowflake-id-hibernate").projectDir = core["nettee-snowflake-id-hibernate"]!!
-project(":rest-client").projectDir = core["rest-client"]!!
+project(":client-api").projectDir = core["nettee-client-api"]!!
+project(":rest-client").projectDir = core["nettee-rest-client"]!!
