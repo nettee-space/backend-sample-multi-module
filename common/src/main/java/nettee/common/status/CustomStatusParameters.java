@@ -81,6 +81,18 @@ public class CustomStatusParameters<
         return instance;
     }
 
+    public int generalPurposeBitsShift() {
+        return supplier.systemInfoBitSize() + supplier.categoryBitSize() + supplier.instanceDetailBitSize();
+    }
+
+    public int systemInfoBitsShift() {
+        return supplier.categoryBitSize() + supplier.instanceDetailBitSize();
+    }
+
+    public int categoryBitsShift() {
+        return supplier.instanceDetailBitSize();
+    }
+
     public long generalPurposeBits() {
         return generalPurposeBits;
     }
