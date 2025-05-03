@@ -1,5 +1,5 @@
 spring:
   config:
     import:
-      - optional:properties/db/post.database.yml
-      - optional:post-web.yml
+      - properties/db/post.database.yml
+      - post-web.yml
