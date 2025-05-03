@@ -10,8 +10,8 @@ include(
     ":exception-handler-core",
     ":cors-api",
     ":cors-webmvc",
-    "snowflake-id-api",
-    "snowflake-id-hibernate",
+    ":snowflake-id-api",
+    ":snowflake-id-hibernate",
 )
 
 project(":jpa-core").projectDir = core["jpa-core"]!!
