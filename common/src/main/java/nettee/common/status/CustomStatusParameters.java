@@ -3,7 +3,6 @@ package nettee.common.status;
 import nettee.common.marker.TypeSafeMarker;
 import nettee.common.marker.TypeSafeMarker.Missing;
 import nettee.common.marker.TypeSafeMarker.Present;
-import nettee.common.status.CustomStatusParametersSupplier.LongGeneralPurposeFeaturesValue;
 
 import java.util.Collection;
 
@@ -22,10 +21,7 @@ public class CustomStatusParameters<
         C extends TypeSafeMarker,
         I extends TypeSafeMarker
 > {
-    private final long sysInfoMax;
-    private final long categoryMax;
-    private final long instanceDetailMax;
-    private final LongGeneralPurposeFeaturesValue featuresBits;
+    private final CustomStatusParametersSupplier supplier;
 
     private long generalPurposeBits;
     private long systemInfoBits;
@@ -34,10 +30,7 @@ public class CustomStatusParameters<
     private long instanceBits;
 
     CustomStatusParameters(CustomStatusParametersSupplier supplier) {
-        this.sysInfoMax = (1L << supplier.systemInfoBitSize()) - 1;
-        this.categoryMax = (1L << supplier.categoryBitSize()) - 1;
-        this.instanceDetailMax = (1L << supplier.instanceDetailBitSize()) - 1;
-        this.featuresBits = supplier.features();
+        this.supplier = supplier;
     }
 
     public static CustomStatusParameters<Missing, Missing> generateWith(CustomStatusParametersSupplier supplier) {
@@ -48,16 +41,17 @@ public class CustomStatusParameters<
             Collection<String> extendedFeatures,
             LongGeneralPurposeFeatures... features
     ) {
-        generalPurposeBits = featuresBits.getValueOf(extendedFeatures, features);
+        generalPurposeBits = supplier.features().getValueOf(extendedFeatures, features);
         return this;
     }
 
     public CustomStatusParameters<C, I> generalPurposeFeatures(LongGeneralPurposeFeatures... features) {
-        generalPurposeBits = featuresBits.getValueOf(features);
+        generalPurposeBits = supplier.features().getValueOf(features);
         return this;
     }
 
     public CustomStatusParameters<C, I> systemInfoBits(long systemInfoBits) {
+        long sysInfoMax = (1L << supplier.systemInfoBitSize()) - 1;
         if (systemInfoBits > sysInfoMax) {
             throw SYS_INFO_OVERFLOW.exception();
         }
@@ -66,6 +60,7 @@ public class CustomStatusParameters<
     }
 
     public CustomStatusParameters<Present, I> categoryBits(long categoryBits) {
+        long categoryMax = (1L << supplier.categoryBitSize()) - 1;
         if (categoryBits > categoryMax) {
             throw CATEGORY_BITS_OVERFLOW.exception();
         }
@@ -76,6 +71,7 @@ public class CustomStatusParameters<
     }
 
     public CustomStatusParameters<C, Present> instanceBits(long instanceBits) {
+        long instanceDetailMax = (1L << supplier.instanceDetailBitSize()) - 1;
         if (instanceBits > instanceDetailMax) {
             throw INSTANCE_DETAIL_BITS_OVERFLOW.exception();
         }
