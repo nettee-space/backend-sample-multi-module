@@ -4,7 +4,6 @@ import io.kotest.core.spec.style.FreeSpec
 import io.kotest.extensions.spring.SpringExtension
 import io.kotest.matchers.collections.shouldHaveSize
 import io.kotest.matchers.longs.shouldBeGreaterThan
-import io.kotest.matchers.longs.shouldBeLessThanOrEqual
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
 import kotlinx.coroutines.*
@@ -35,9 +34,9 @@ class SnowflakeTest(
             }
 
             "Snowflake ID의 크기는 부호 비트를 제외한 63bit 이내를 충족한다" {
-                // 62번째 비트가 꺼져 있는지(0) 확인하여, Snowflake ID가 63비트 이내(양수 범위)임을 보장한다.
+                // 63번째 비트가 꺼져 있는지(0) 확인하여, Snowflake ID가 63비트 이내(양수 범위)임을 보장한다.
                 // 0 and 1  => 0 이고 1 and 1 -> 1
-                sample.id and (1L.shl(62)) shouldBe 0L
+                sample.id and (1L.shl(63)) shouldBe 0L
             }
         }
     }
