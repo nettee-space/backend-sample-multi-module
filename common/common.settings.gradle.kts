@@ -1,3 +1,4 @@
 include(
-    "common"
+    "common",
+    "common:enum-util"
 )
