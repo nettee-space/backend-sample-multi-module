@@ -16,8 +16,14 @@ public final class StatusCodeUtil {
                 | parameters.instanceBits();
     }
 
-    // TODO
-//    public static long getAsLong(CustomStatusParameters<Present, Present> parameters) {
-//        // ...
-//    }
+    public static long getAsLong(CustomStatusParameters<Present, Present> parameters) {
+        int gpShift = parameters.generalPurposeBitsShift();
+        int sysShift = parameters.systemInfoBitsShift();
+        int cateShift = parameters.categoryBitsShift();
+
+        return (parameters.generalPurposeBits() << gpShift)
+                | (parameters.systemInfoBits() << sysShift)
+                | (parameters.categoryBits() << cateShift)
+                | parameters.instanceBits();
+    }
 }
