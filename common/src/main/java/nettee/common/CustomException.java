@@ -53,6 +53,31 @@ public class CustomException extends RuntimeException{
         this.payloadSupplier = payloadSupplier;
     }
 
+    // Default error code constructors
+    public CustomException() {
+        this(Holder.DEFAULT_ERROR_CODE);
+    }
+
+    public CustomException(Throwable cause) {
+        this(Holder.DEFAULT_ERROR_CODE, cause);
+    }
+
+    public CustomException(Runnable runnable) {
+        this(Holder.DEFAULT_ERROR_CODE, runnable);
+    }
+
+    public CustomException(Runnable runnable, Throwable cause) {
+        this(Holder.DEFAULT_ERROR_CODE, runnable, cause);
+    }
+
+    public CustomException(Supplier<Map<String, Object>> payloadSupplier) {
+        this(Holder.DEFAULT_ERROR_CODE, payloadSupplier);
+    }
+
+    public CustomException(Supplier<Map<String, Object>> payloadSupplier, Throwable cause) {
+        this(Holder.DEFAULT_ERROR_CODE, payloadSupplier, cause);
+    }
+
     public ErrorCode getErrorCode() {
         return errorCode;
     }
