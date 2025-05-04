@@ -78,6 +78,7 @@ public class CustomException extends RuntimeException{
         this(Holder.DEFAULT_ERROR_CODE, payloadSupplier, cause);
     }
 
+    @SuppressWarnings({})
     public ErrorCode getErrorCode() {
         return errorCode;
     }
