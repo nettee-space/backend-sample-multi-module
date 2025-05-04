@@ -3,6 +3,7 @@ package nettee;
 import nettee.common.CustomException;
 import netttee.propeties.ClientProperties;
 import netttee.request.NetteeRequest;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestClient;
@@ -34,6 +35,21 @@ public final class NetteeClient {
     public static <T> T get(NetteeRequest<T> request) {
         return execute(restClient.get(), request)
                 .body(request.responseType());
+    }
+    
+    /**
+     * 지정한 도메인의 경로에 대해 GET 요청을 전송하고, 결과 제너릭 형태로 반홥 받습니다.
+     *
+     * <p>예외가 발생할 경우 전달된 CustomException을 던지며, 전달되지 않은 경우 기본 예외를 발생시킵니다.</p>
+     *
+     * @param request NetteeRequest<T>
+     * @param <T>     응답 타입 제네릭
+     * @return 응답 객체 (ParameterizedTypeReference 타입)
+     * @throws CustomException 4xx 또는 5xx 응답이 발생한 경우
+     */
+    public static <T> T getList(NetteeRequest<T> request) {
+        return execute(restClient.get(), request)
+                .body(new ParameterizedTypeReference<>() {});
     }
     
     /**
@@ -100,10 +116,12 @@ public final class NetteeClient {
             baseUrl = clientProperties.url().get(domain);
         }
         
+        Object[] safeUriVariables = uriVariables != null ? uriVariables : new Object[0];
+        
         return UriComponentsBuilder
                 .fromUriString(baseUrl)
                 .pathSegment(path.split("/"))
-                .buildAndExpand(uriVariables)
+                .buildAndExpand(safeUriVariables)
                 .toUriString();
     }
 }
