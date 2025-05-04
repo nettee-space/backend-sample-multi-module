@@ -1,5 +1,7 @@
 package nettee.common;
 
+import org.springframework.http.HttpStatus;
+
 import java.util.Collections;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -61,5 +63,54 @@ public class CustomException extends RuntimeException{
 
     public Map<String, Object> getPayload() {
         return payloadSupplier.get();
+    }
+
+    private static final class Holder {
+        private static final ErrorCode DEFAULT_ERROR_CODE = new ErrorCode() {
+            @Override
+            public String name() {
+                return "Server Error";
+            }
+
+            @Override
+            public String message() {
+                return "An error occurred";
+            }
+
+            @Override
+            public HttpStatus httpStatus() {
+                return HttpStatus.INTERNAL_SERVER_ERROR;
+            }
+
+            @Override
+            public CustomException exception() {
+                return new CustomException(this);
+            }
+
+            @Override
+            public CustomException exception(Throwable cause) {
+                return new CustomException(this, cause);
+            }
+
+            @Override
+            public CustomException exception(Runnable runnable) {
+                return new CustomException(this, runnable);
+            }
+
+            @Override
+            public CustomException exception(Runnable runnable, Throwable cause) {
+                return new CustomException(this, runnable, cause);
+            }
+
+            @Override
+            public CustomException exception(Supplier<Map<String, Object>> appendPayload) {
+                return new CustomException(this, appendPayload);
+            }
+
+            @Override
+            public CustomException exception(Supplier<Map<String, Object>> appendPayload, Throwable cause) {
+                return new CustomException(this, appendPayload, cause);
+            }
+        };
     }
 }
