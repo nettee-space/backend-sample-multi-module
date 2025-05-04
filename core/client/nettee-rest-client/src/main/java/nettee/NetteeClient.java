@@ -87,6 +87,7 @@ public final class NetteeClient {
                     if (request.customException() != null) {
                         throw request.customException();
                     } else {
+                        // TODO CustomException DefaultErrorCod 추가
                         throw new RuntimeException("API 요청 실패: " + res.getStatusCode());
                     }
                 });
