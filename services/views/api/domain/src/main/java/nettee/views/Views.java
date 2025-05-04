@@ -12,15 +12,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Views {
 
-    private Long id;
-
     private Long postId;
 
-    private Long userId;
+    private Long viewCount;
 
-    private String ipAddress;
+//    private Long id;
 
-    private String userAgent;
-
-    private LocalDateTime viewedAt;
+//    private Long userId;
+//
+//    private String ipAddress;
+//
+//    private String userAgent;
+//
+//    private LocalDateTime viewedAt;
 }

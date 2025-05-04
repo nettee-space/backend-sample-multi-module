@@ -11,7 +11,7 @@ fun getDirectories(vararg names: String): (String) -> File {
     }
 }
 
-val board = getDirectories("services", "views")
+val views = getDirectories("services", "views")
 
 // SERVICE/BOARD
 include(
@@ -19,9 +19,11 @@ include(
     ":views:api",
     ":views:api:domain",
     ":views:application",
+    ":views:redis",
 )
 
-project(":views").projectDir = board("views")
-project(":views:api").projectDir = board("api")
-project(":views:api:domain").projectDir = board("domain")
-project(":views:application").projectDir = board("application")
+project(":views").projectDir = views("views")
+project(":views:api").projectDir = views("api")
+project(":views:api:domain").projectDir = views("domain")
+project(":views:application").projectDir = views("application")
+project(":views:redis").projectDir = views("redis")

@@ -1,4 +1,4 @@
-package nettee.views.port;
+package nettee.views.port.query;
 
 
 import java.util.List;
