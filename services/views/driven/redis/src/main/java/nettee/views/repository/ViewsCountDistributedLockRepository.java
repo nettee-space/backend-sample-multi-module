@@ -2,6 +2,7 @@ package nettee.views.repository;
 
 import java.time.Duration;
 import lombok.RequiredArgsConstructor;
+import nettee.views.Views;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -17,15 +18,25 @@ public class ViewsCountDistributedLockRepository {
     /**
      * Distributed lock 획득
      */
-    public boolean lock(Long postId, Long userId, Duration ttl) {
-        String key = generateKey(postId, userId);
-        return redisTemplate.opsForValue().setIfAbsent(key, "", ttl);
+    public boolean lock(Views views, Duration ttl) {
+        String key = generateKey(views);
+        return Boolean.TRUE.equals(redisTemplate.opsForValue().setIfAbsent(key, "", ttl));
     }
 
     /**
      * redis key 생성
      */
-    private String generateKey(Long postId, Long userId) {
+    private String generateKey(Views views) {
+        // null 체크 필요 가능성
+        Long postId = views.getPostId();
+        Long userId = views.getUserId();
+        String ipAddress = views.getIpAddress();
+        String userAgent = views.getUserAgent();
+
+        if (userId == null) {
+            String identifier = ipAddress + userAgent;
+            return KEY_FORMAT.formatted(postId, identifier);
+        }
         return KEY_FORMAT.formatted(postId, userId);
     }
 }

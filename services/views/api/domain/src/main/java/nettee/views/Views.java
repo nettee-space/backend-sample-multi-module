@@ -14,15 +14,9 @@ public class Views {
 
     private Long postId;
 
-    private Long viewCount;
+    private Long userId;
 
-//    private Long id;
+    private String ipAddress;
 
-//    private Long userId;
-//
-//    private String ipAddress;
-//
-//    private String userAgent;
-//
-//    private LocalDateTime viewedAt;
+    private String userAgent;
 }

@@ -2,6 +2,7 @@ package nettee.views.adapter;
 
 import java.time.Duration;
 import lombok.RequiredArgsConstructor;
+import nettee.views.Views;
 import nettee.views.entity.ViewsEntity;
 import nettee.views.port.ViewsCacheRepositoryPort;
 import nettee.views.repository.ViewsCountBackupRepository;
@@ -21,9 +22,11 @@ public class ViewsCacheAdapter implements ViewsCacheRepositoryPort {
     private static final Duration TTL = Duration.ofMinutes(10);
 
     @Override
-    public void increase(Long postId, Long userId) {
+    public void increase(Views views) {
+        Long postId = views.getPostId();
+
         // Distributed Lock 획득 실패 시, increase 하지 않음
-        if (!viewsCountDistributedLockRepository.lock(postId, userId, TTL)) {
+        if (!viewsCountDistributedLockRepository.lock(views, TTL)) {
             return;
         }
 
