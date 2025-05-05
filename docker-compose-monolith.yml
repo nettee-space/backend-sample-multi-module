@@ -16,5 +16,14 @@ services:
       - sticky_volume_demo_postgres14:/var/lib/postgresql/data
       - ./db/initdb.d:/docker-entrypoint-initdb.d:ro
 
+  demo_redis:
+    image: redis:7.4
+    ports:
+      - 6379:6379
+    restart: on-failure
+    volumes:
+      - sticky_volume_demo_redis:/data
+
 volumes:
   sticky_volume_demo_postgres14:
+  sticky_volume_demo_redis:
