@@ -1,4 +1,4 @@
-package nettee.views.port.query;
+package nettee.views.port;
 
 public interface ViewsQueryRepositoryPort {
     Long getViews(Long postId);

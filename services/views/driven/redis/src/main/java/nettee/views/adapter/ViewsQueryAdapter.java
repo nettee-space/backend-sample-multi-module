@@ -1,11 +1,11 @@
 package nettee.views.adapter;
 
 import lombok.RequiredArgsConstructor;
-import nettee.views.port.query.ViewsQueryRepositoryPort;
+import nettee.views.port.ViewsQueryRepositoryPort;
 import nettee.views.repository.ViewsCountRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-@Repository
+@Component
 @RequiredArgsConstructor
 public class ViewsQueryAdapter implements ViewsQueryRepositoryPort {
 

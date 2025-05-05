@@ -2,13 +2,14 @@ package nettee.views.adapter;
 
 import java.time.Duration;
 import lombok.RequiredArgsConstructor;
+import nettee.views.entity.ViewsEntity;
+import nettee.views.port.ViewsCacheRepositoryPort;
 import nettee.views.repository.ViewsCountBackupRepository;
 import nettee.views.repository.ViewsCountDistributedLockRepository;
 import nettee.views.repository.ViewsCountRepository;
-import nettee.views.port.command.ViewsCacheRepositoryPort;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-@Repository
+@Component
 @RequiredArgsConstructor
 public class ViewsCacheAdapter implements ViewsCacheRepositoryPort {
 
@@ -29,7 +30,13 @@ public class ViewsCacheAdapter implements ViewsCacheRepositoryPort {
         // BATCH_SIZE 시, RDB 저장
         Long viewCount = viewsCountRepository.increase(postId);
         if (viewCount % BACK_UP_BACH_SIZE == 0) {
-            viewsCountBackupRepository.updateViewCount(postId, viewCount);
+            int result = viewsCountBackupRepository.updateViewCount(postId, viewCount);
+
+            // DB에 값이 없을 경우, INSERT
+            // 게시글 생성 시 조회수 0으로 초기화 할 수도 있음
+            if (result == 0) {
+                viewsCountBackupRepository.save(new ViewsEntity(postId, viewCount));
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 package nettee.views.service;
 
 import lombok.RequiredArgsConstructor;
-import nettee.views.port.query.ViewsQueryRepositoryPort;
+import nettee.views.port.ViewsQueryRepositoryPort;
 import nettee.views.usecase.ViewsReadUseCase;
 import org.springframework.stereotype.Service;
 

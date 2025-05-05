@@ -1,4 +1,4 @@
-package nettee.views.port.command;
+package nettee.views.port;
 
 
 // redis

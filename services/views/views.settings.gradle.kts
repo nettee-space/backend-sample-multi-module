@@ -20,6 +20,7 @@ include(
     ":views:api:domain",
     ":views:application",
     ":views:redis",
+    ":views:web",
 )
 
 project(":views").projectDir = views("views")
@@ -27,3 +28,4 @@ project(":views:api").projectDir = views("api")
 project(":views:api:domain").projectDir = views("domain")
 project(":views:application").projectDir = views("application")
 project(":views:redis").projectDir = views("redis")
+project(":views:web").projectDir = views("web")
