@@ -5,10 +5,12 @@ CREATE TABLE IF NOT EXISTS draft (
     status      VARCHAR(255),
     created_at  TIMESTAMP       DEFAULT NOW(),
     updated_at  TIMESTAMP,
-    blog_id      BIGSERIAL,
-    post_id      BIGSERIAL,
+    blog_id      BIGINT,
+    post_id      BIGINT,
 
-    CONSTRAINT pk_board PRIMARY KEY (id)
+    CONSTRAINT pk_draft PRIMARY KEY (id)
+    -- CONSTRAINT fk_draft_blog FOREIGN KEY (blog_id) REFERENCES blog(id) ON DELETE CASCADE
+    -- CONSTRAINT fk_draft_post FOREIGN KEY (post_id) REFERENCES post(id) ON DELETE CASCADE
 );
 
 --테이블 코멘트

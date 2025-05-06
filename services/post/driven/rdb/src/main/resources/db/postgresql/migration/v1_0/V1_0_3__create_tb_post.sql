@@ -8,11 +8,12 @@ CREATE TABLE IF NOT EXISTS post (
     total_shares INTEGER,
     created_at  TIMESTAMP       DEFAULT NOW(),
     updated_at  TIMESTAMP,
-    blog_id          BIGSERIAL,
+    blog_id          BIGINT,
 
 
-    CONSTRAINT pk_board PRIMARY KEY (id)
-);
+    CONSTRAINT pk_post PRIMARY KEY (id)
+    -- CONSTRAINT fk_post_blog FOREIGN KEY (blog_id) REFERENCES blog(id) ON DELETE CASCADE
+    );
 
 --테이블 코멘트
 COMMENT ON TABLE post IS '포스트';
