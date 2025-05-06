@@ -20,9 +20,6 @@ import java.util.Objects;
 public class DraftEntity extends LongBaseTimeEntity {
     public String title;
     public String content;
-    public Integer totalViews = 0;
-    public Integer totalLikes = 0;
-    public Integer totalShares = 0;
 
     @Convert(converter = DraftEntityStatusConverter.class)
     public DraftEntityStatus status;
@@ -43,15 +40,9 @@ public class DraftEntity extends LongBaseTimeEntity {
         Objects.requireNonNull(title, "Title cannot be null");
         Objects.requireNonNull(content, "Content cannot be null");
         Objects.requireNonNull(status, "status cannot be null");
-        Objects.requireNonNull(totalLikes, "totalLikes cannot be null");
-        Objects.requireNonNull(totalLikes, "totalLikes cannot be null");
-        Objects.requireNonNull(totalShares, "totalShares cannot be null");
 
         this.title = title;
         this.content = content;
-        this.totalLikes = totalLikes;
-        this.totalViews = totalViews;
-        this.totalShares = totalShares;
     }
 
     @Builder(

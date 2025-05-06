@@ -47,9 +47,6 @@ public class DraftCommandAdapter implements DraftCommandPort {
         existDraft.prepareDraftEntityUpdate()
                 .title(existDraft.getTitle())
                 .content(existDraft.getContent())
-                .totalLikes(existDraft.getTotalLikes())
-                .totalViews(existDraft.getTotalViews())
-                .totalShares(existDraft.getTotalShares())
                 .update();
 
         return draftEntityMapper.toDomain(draftJpaRepository.save(existDraft));
