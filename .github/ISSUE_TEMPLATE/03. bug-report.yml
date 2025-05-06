@@ -35,7 +35,7 @@ body:
   - type: input
     id: summary
     attributes:
-      label: 💬 Summary of the Bug
+      label: <br /> 💬 Summary of the Bug
       description: 버그를 한 문장 정도로 요약해 주세요.
       placeholder: ex. 로그인 후 화면이 멈춥니다.
     validations:
@@ -43,7 +43,7 @@ body:
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: 🔁 오류 재현 (Reproduction Steps)
+      label: <br /> 🔁 오류 재현 (Reproduction Steps)
       description: 버그를 재현하기 위한 구체적인 단계들을 순서대로 적어 주세요.
       placeholder: |
         1. 
@@ -55,7 +55,7 @@ body:
   - type: textarea
     id: logs
     attributes:
-      label: 📝 관련 로그 (Logs)
+      label: <br /> 📝 관련 로그 (Logs)
       description: 에러 메시지나 로그가 있다면 복사해서 붙여 주세요.
       placeholder: |
         Error: Cannot read property 'foo' of undefined
@@ -66,7 +66,7 @@ body:
   - type: textarea
     id: expected-behavior
     attributes:
-      label: 🎯 기대 동작 (Expected Behavior)
+      label: <br /> 🎯 기대 동작 (Expected Behavior)
       description: 정상적으로 동작했을 때 어떤 결과가 나와야 하는지 설명해 주세요.
       placeholder: ex. 로그인 후 대시보드 페이지가 보여야 합니다.
     validations:
@@ -74,7 +74,7 @@ body:
   - type: textarea
     id: actual-behavior
     attributes:
-      label: 🔍 실제 동작 (Actual Behavior)
+      label: <br /> 🔍 실제 동작 (Actual Behavior)
       description: 어떤 동작이 나타나는지 설명해 주세요.
       placeholder: ex. 로그인 후 버튼이 반응하지 않습니다.
     validations:
@@ -82,7 +82,7 @@ body:
   - type: textarea
     id: additional-note
     attributes:
-      label: 부연 설명 (Additional Notes)
+      label: <br /> 부연 설명 (Additional Notes)
       description: 관련 브랜치나 커밋, Active profile, 환경변수 등 기타 참고할 만한 정보가 있으면 적어 주세요.
       placeholder: Tell us any other details you think will help us fix this!
       value: |
