@@ -20,5 +20,4 @@ public interface PostDtoMapper {
     Post toDomain(Long id, PostUpdateTotalSharesCommand command);
     Post toDomain(Long id, PostUpdateTotalLikesCommand command);
     Post toDomain(Long id, PostUpdateTotalViewsCommand command);
-    PostDetailResponse toDtoDetail(Optional<PostDetail> board);
 }
