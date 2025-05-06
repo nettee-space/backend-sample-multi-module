@@ -15,20 +15,20 @@ val post = getDirectories("services", "post")
 
 include (
         ":post",
-        ":post:api",
-        ":post:api:domain",
-        ":post:api:exception",
-        ":post:api:readmodel",
-        ":post:application",
-        ":post:rdb-adapter",
-        ":post:webmvc-adapter",
+        ":post-api",
+        ":post-api-domain",
+        ":post-api-exception",
+        ":post-api-readmodel",
+        ":post-application",
+        ":post-rdb-adapter",
+        ":post-webmvc-adapter",
 )
 
 project(":post").projectDir = post("post")
-project(":post:api").projectDir = post("api")
-project(":post:api:domain").projectDir = post("domain")
-project(":post:api:exception").projectDir = post("exception")
-project(":post:api:readmodel").projectDir = post("readmodel")
-project(":post:application").projectDir = post("application")
-project(":post:rdb-adapter").projectDir = post("rdb")
-project(":post:webmvc-adapter").projectDir = post("web-mvc")
+project(":post-api").projectDir = post("api")
+project(":post-api-domain").projectDir = post("domain")
+project(":post-api-exception").projectDir = post("exception")
+project(":post-api-readmodel").projectDir = post("readmodel")
+project(":post-application").projectDir = post("application")
+project(":post-rdb-adapter").projectDir = post("rdb")
+project(":post-webmvc-adapter").projectDir = post("web-mvc")

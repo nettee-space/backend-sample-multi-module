@@ -5,8 +5,8 @@ plugins {
 dependencies {
     val bom = dependencyManagement.importedProperties
 
-    api(project(":post:api"))
-    api(project(":post:application"))
+    api(project(":post-api"))
+    api(project(":post-application"))
     api(project(":jpa-core"))
 
     // spring

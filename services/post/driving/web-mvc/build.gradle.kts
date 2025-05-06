@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    api(project(":post:api"))
-    api(project(":post:application"))
+    api(project(":post-api"))
+    api(project(":post-application"))
 
     // validation
     compileOnly("jakarta.validation:jakarta.validation-api")
