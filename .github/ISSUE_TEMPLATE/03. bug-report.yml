@@ -11,14 +11,23 @@ body:
     id: bug-type
     attributes:
       label: 🐞 Bug Types (Multiple)
-      description: 어떤 종류의 문제인가요? (다중 선택)
-      multiple: true
-      options:
+      description: |
+        어떤 종류의 문제인가요? (다중 선택)
+        
         - 🐞 오류 (에러, 예외 발생, 논리적 오류 등)
         - 🏗 컨벤션·리팩터링 (코드 스타일, 아키텍처 등)
         - ⚡️ 성능 (지연, 과도한 자원, 병목 현상 등)
         - ✏️ 오타·설명 오류 (문서, 문자열, 주석, 식별자 등)
         - 🔧 기타 (빌드, 환경변수 등)
+        
+        ❗️ 보안 취약점은 pkw19961027@gmail.com으로 메일 부탁드립니다.
+      multiple: true
+      options:
+        - 🐞 오류
+        - 🏗 컨벤션·리팩터링
+        - ⚡️ 성능
+        - ✏️ 오타·설명 오류
+        - 🔧 기타
         - "❗️ 보안 취약점은 pkw19961027@gmail.com으로 메일 부탁드립니다."
       default: 0
     validations:
@@ -36,7 +45,7 @@ body:
     attributes:
       label: 🔁 오류 재현 (Reproduction Steps)
       description: 버그를 재현하기 위한 구체적인 단계들을 순서대로 적어 주세요.
-      value: |
+      placeholder: |
         
         1. 
         2. 
@@ -79,17 +88,6 @@ body:
       description: Active profile, 환경변수 등 기타 참고할 만한 정보가 있으면 적어 주세요.
       placeholder: Tell us any other details you think will help us fix this!
       value: |
-        
-        ### 실행 환경 (Environment)
-        
-        - Active Profiles: (none)
-        
-        <details open><summary>Environment variables</summary>
-        
-        (none)
-        
-        </details>
-        
-        <br />
+        <!-- Active profiles, 테스트용 환경변수(공개 가능한 범위만) 등 필요한 정보를 입력해 주세요. -->
     validations:
       required: false
