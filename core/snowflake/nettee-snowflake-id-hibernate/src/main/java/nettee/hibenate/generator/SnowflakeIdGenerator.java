@@ -1,7 +1,7 @@
 package nettee.hibenate.generator;
 
-import nettee.persistence.id.Snowflake;
-import nettee.properties.SnowflakeProperties;
+import nettee.snowflake.persistence.id.Snowflake;
+import nettee.snowflake.properties.SnowflakeProperties;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.IdentifierGenerator;
 

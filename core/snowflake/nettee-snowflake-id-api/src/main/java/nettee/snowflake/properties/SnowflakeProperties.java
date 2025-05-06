@@ -1,11 +1,11 @@
-package nettee.properties;
+package nettee.snowflake.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.Objects;
 
-import static nettee.constants.SnowflakeConstants.NETTEE_EPOCH;
-import static nettee.constants.SnowflakeConstants.PREFIX;
+import static nettee.snowflake.constants.SnowflakeConstants.NETTEE_EPOCH;
+import static nettee.snowflake.constants.SnowflakeConstants.PREFIX;
 
 @ConfigurationProperties(PREFIX)
 public record SnowflakeProperties(

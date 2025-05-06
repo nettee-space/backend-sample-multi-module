@@ -9,7 +9,7 @@ import io.kotest.matchers.shouldNotBe
 import kotlinx.coroutines.*
 import nettee.main.sample.entity.Sample
 import nettee.main.sample.persistence.SampleRepository
-import nettee.properties.SnowflakeProperties
+import nettee.snowflake.properties.SnowflakeProperties
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.boot.test.context.TestConfiguration
