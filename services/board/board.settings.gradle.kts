@@ -16,20 +16,20 @@ val board = getDirectories("services", "board")
 // SERVICE/BOARD
 include(
     ":board",
-    ":board:api",
-    ":board:api:domain",
-    ":board:api:exception",
-    ":board:api:readmodel",
-    ":board:application",
-    ":board:rdb-adapter",
-    ":board:webmvc-adapter",
+    ":board:board-api",
+    ":board:board-api-domain",
+    ":board:board-api-exception",
+    ":board:board-api-readmodel",
+    ":board:board-application",
+    ":board:board-rdb-adapter",
+    ":board:board-webmvc-adapter",
 )
 
 project(":board").projectDir = board("board")
-project(":board:api").projectDir = board("api")
-project(":board:api:domain").projectDir = board("domain")
-project(":board:api:exception").projectDir = board("exception")
-project(":board:api:readmodel").projectDir = board("readmodel")
-project(":board:application").projectDir = board("application")
-project(":board:rdb-adapter").projectDir = board("rdb")
-project(":board:webmvc-adapter").projectDir = board("web-mvc")
+project(":board:board-api").projectDir = board("api")
+project(":board:board-api-domain").projectDir = board("domain")
+project(":board:board-api-exception").projectDir = board("exception")
+project(":board:board-api-readmodel").projectDir = board("readmodel")
+project(":board:board-application").projectDir = board("application")
+project(":board:board-rdb-adapter").projectDir = board("rdb")
+project(":board:board-webmvc-adapter").projectDir = board("web-mvc")

@@ -1,3 +1,3 @@
 dependencies {
-    api(project(":board:api"))
+    api(project(":board:board-api"))
 }
