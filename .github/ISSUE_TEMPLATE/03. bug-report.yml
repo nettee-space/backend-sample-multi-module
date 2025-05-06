@@ -46,12 +46,10 @@ body:
       label: 🔁 오류 재현 (Reproduction Steps)
       description: 버그를 재현하기 위한 구체적인 단계들을 순서대로 적어 주세요.
       placeholder: |
-        
         1. 
         2. 
         3. 
-        
-        <br />
+
     validations:
       required: false
   - type: textarea
@@ -85,9 +83,10 @@ body:
     id: additional-note
     attributes:
       label: 부연 설명 (Additional Notes)
-      description: Active profile, 환경변수 등 기타 참고할 만한 정보가 있으면 적어 주세요.
+      description: 관련 브랜치나 커밋, Active profile, 환경변수 등 기타 참고할 만한 정보가 있으면 적어 주세요.
       placeholder: Tell us any other details you think will help us fix this!
       value: |
+        <!-- main 브랜치를 대상으로 하지 않을 경우, 관련 브랜치나 커밋을 명시해 주세요. -->
         <!-- Active profiles, 테스트용 환경변수(공개 가능한 범위만) 등 필요한 정보를 입력해 주세요. -->
     validations:
       required: false
