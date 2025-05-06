@@ -1,4 +1,4 @@
-package netttee.propeties;
+package netttee.client.propeties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

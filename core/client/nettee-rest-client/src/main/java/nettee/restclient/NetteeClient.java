@@ -1,8 +1,8 @@
-package nettee;
+package nettee.restclient;
 
 import nettee.common.CustomException;
-import netttee.propeties.ClientProperties;
-import netttee.request.NetteeRequest;
+import netttee.client.propeties.ClientProperties;
+import netttee.client.request.NetteeRequest;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
