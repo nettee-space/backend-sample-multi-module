@@ -1,4 +1,4 @@
-package nettee.constants;
+package nettee.snowflake.constants;
 
 public final class SnowflakeConstants {
     // 한국 시간(KST): 2025-03-26 23:40:00 기준점

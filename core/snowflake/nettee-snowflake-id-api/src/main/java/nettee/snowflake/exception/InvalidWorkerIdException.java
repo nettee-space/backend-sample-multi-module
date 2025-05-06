@@ -1,6 +1,6 @@
-package nettee.exception;
+package nettee.snowflake.exception;
 
-import static nettee.constants.SnowflakeConstants.SnowflakeDefault.MAX_WORKER_ID;
+import static nettee.snowflake.constants.SnowflakeConstants.SnowflakeDefault.MAX_WORKER_ID;
 
 public class InvalidWorkerIdException extends RuntimeException{
     
