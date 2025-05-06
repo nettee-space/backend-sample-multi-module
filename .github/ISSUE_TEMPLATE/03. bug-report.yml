@@ -10,8 +10,8 @@ body:
   - type: dropdown
     id: bug-type
     attributes:
-      label: 🐞 Bug Type
-      description: 어떤 종류의 문제인가요?
+      label: 🐞 Bug Types (Multiple)
+      description: 어떤 종류의 문제인가요? (다중 선택)
       multiple: true
       options:
         - 🐞 오류 (에러, 예외 발생, 논리적 오류 등)
