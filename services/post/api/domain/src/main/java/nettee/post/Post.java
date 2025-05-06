@@ -8,6 +8,7 @@ import nettee.post.type.PostStatus;
 import java.time.Instant;
 import java.util.Objects;
 
+@Builder
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

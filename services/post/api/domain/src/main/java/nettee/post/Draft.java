@@ -10,6 +10,7 @@ import nettee.post.type.DraftStatus;
 import java.time.Instant;
 import java.util.Objects;
 
+@Builder
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

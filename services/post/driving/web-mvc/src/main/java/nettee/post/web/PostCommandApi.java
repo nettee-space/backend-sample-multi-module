@@ -2,6 +2,7 @@ package nettee.post.web;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import nettee.post.usecase.PostCreateUseCase;
 import nettee.post.usecase.PostDeleteUseCase;
 import nettee.post.usecase.PostUpdateUseCase;
