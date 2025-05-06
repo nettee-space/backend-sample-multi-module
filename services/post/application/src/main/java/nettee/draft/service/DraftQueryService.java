@@ -29,12 +29,12 @@ public class DraftQueryService implements DraftReadUseCase, DraftReadByStatusesU
     @Override
     public Page<DraftSummary> getAllDraft(int size) {
         Pageable pageable = PageRequest.of(0, size, Sort.by(Direction.DESC, "createAt"));
-        return draftQueryPort.findAll(pageable, size);
+        return draftQueryPort.findAll(pageable);
     }
     @Override
     public Page<DraftSummary> findByStatuses(Set<DraftStatus> statuses, int size) {
         Pageable pageable = PageRequest.of(0, size, Sort.by(Direction.DESC, "createAt"));
-        return draftQueryPort.findByStatuses(statuses, pageable, size);
+        return draftQueryPort.findByStatuses(statuses, pageable);
     }
 
 }

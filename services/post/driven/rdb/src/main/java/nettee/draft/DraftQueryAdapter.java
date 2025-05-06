@@ -1,8 +1,8 @@
-package nettee.draft.persistence.mapper;
+package nettee.draft;
 
-import nettee.draft.DraftQueryModels;
 import nettee.draft.entity.DraftEntity;
 import nettee.draft.entity.type.DraftEntityStatus;
+import nettee.draft.persistence.mapper.DraftEntityMapper;
 import nettee.draft.port.DraftQueryPort;
 import nettee.post.type.DraftStatus;
 import org.springframework.data.domain.Page;
@@ -15,7 +15,6 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
-
 import static nettee.draft.entity.QDraftEntity.draftEntity;
 
 @Repository
@@ -41,7 +40,7 @@ public class DraftQueryAdapter extends QuerydslRepositorySupport implements Draf
     }
 
     @Override
-    public Page<DraftQueryModels.DraftSummary> findAll(Pageable pageable, int size) {
+    public Page<DraftQueryModels.DraftSummary> findAll(Pageable pageable) {
         var query = getQuerydsl().createQuery()
                 .select(draftEntity)
                 .from(draftEntity)
@@ -73,7 +72,7 @@ public class DraftQueryAdapter extends QuerydslRepositorySupport implements Draf
     }
 
     @Override
-    public Page<DraftQueryModels.DraftSummary> findByStatuses(Set<DraftStatus> statuses, Pageable pageable, int size) {
+    public Page<DraftQueryModels.DraftSummary> findByStatuses(Set<DraftStatus> statuses, Pageable pageable) {
         var draftEntityStatuses = statusMap.computeIfAbsent(
                 statuses,
                 (ignore) -> statuses.stream()
