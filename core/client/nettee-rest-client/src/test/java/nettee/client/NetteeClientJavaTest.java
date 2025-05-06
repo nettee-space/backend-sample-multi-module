@@ -1,10 +1,10 @@
 package nettee.client;
 
-import nettee.NetteeClient;
-import nettee.config.RestClientConfig;
+import nettee.restclient.NetteeClient;
+import nettee.restclient.config.RestClientConfig;
 import nettee.student.entity.Student;
 import nettee.student.persistence.StudentRepository;
-import netttee.request.NetteeRequest;
+import netttee.client.request.NetteeRequest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

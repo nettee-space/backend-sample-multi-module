@@ -1,7 +1,7 @@
-package nettee.config;
+package nettee.restclient.config;
 
-import nettee.NetteeClient;
-import netttee.propeties.ClientProperties;
+import nettee.restclient.NetteeClient;
+import netttee.client.propeties.ClientProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

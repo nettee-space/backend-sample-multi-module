@@ -2,15 +2,14 @@ package nettee.client
 
 import io.kotest.core.spec.style.FreeSpec
 import io.kotest.matchers.shouldBe
-import nettee.NetteeClient
-import nettee.config.RestClientConfig
+import nettee.restclient.NetteeClient
+import nettee.restclient.config.RestClientConfig
 import nettee.student.entity.Student
 import nettee.student.persistence.StudentRepository
-import netttee.request.NetteeRequest
+import netttee.client.request.NetteeRequest
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.annotation.Import
-import org.springframework.core.ParameterizedTypeReference
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @Import(RestClientConfig::class)

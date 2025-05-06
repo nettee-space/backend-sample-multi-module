@@ -1,4 +1,4 @@
-package netttee.request;
+package netttee.client.request;
 
 import lombok.Builder;
 import nettee.common.CustomException;
