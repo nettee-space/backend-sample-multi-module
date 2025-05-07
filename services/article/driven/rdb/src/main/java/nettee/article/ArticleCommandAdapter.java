@@ -1,0 +1,65 @@
+package nettee.article;
+
+import lombok.RequiredArgsConstructor;
+import nettee.article.ArticleQueryModels.ArticleDetail;
+import nettee.article.entity.type.ArticleEntityStatus;
+import nettee.article.persistence.mapper.ArticleEntityMapper;
+import nettee.article.port.ArticleCommandPort;
+import nettee.article.type.ArticleStatus;
+import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Repository;
+import java.util.Optional;
+
+import static nettee.article.ArticleCommandErrorCode.DEFAULT;
+import static nettee.article.ArticleCommandErrorCode.ARTICLE_NOT_FOUND;
+
+@Repository
+@RequiredArgsConstructor
+public class ArticleCommandAdapter implements ArticleCommandPort {
+    private final ArticleJpaRepository articleJpaRepository;
+    private final ArticleEntityMapper articleEntityMapper;
+
+    @Override
+    public Optional<ArticleDetail> findById(Long id) {
+        var article = articleJpaRepository.findById(id)
+                .orElseThrow(ARTICLE_NOT_FOUND::exception);
+        return articleEntityMapper.toOptionalArticleDetail(article);
+    }
+
+    @Override
+    public Article create(Article article) {
+        var articleEntity = articleEntityMapper.toEntity(article);
+        try{
+            var newArticle = articleJpaRepository.save(articleEntity);
+            articleJpaRepository.flush();
+            return articleEntityMapper.toDomain(newArticle);
+        } catch (DataAccessException e) {
+            throw DEFAULT.exception(e);
+        }
+    }
+
+    @Override
+    public Article update(Article article) {
+        var existArticle = articleJpaRepository.findById(article.getId())
+                            .orElseThrow(ARTICLE_NOT_FOUND::exception);
+        existArticle.prepareArticleEntityUpdate()
+                .title(existArticle.getTitle())
+                .content(existArticle.getContent())
+                .totalLikes(existArticle.getTotalLikes())
+                .totalViews(existArticle.getTotalViews())
+                .totalShares(existArticle.getTotalShares())
+                .update();
+
+        return articleEntityMapper.toDomain(articleJpaRepository.save(existArticle));
+    }
+
+    @Override
+    public void updateStatus(Long id, ArticleStatus articleStatus) {
+        var article = articleJpaRepository.findById(id)
+                    .orElseThrow(ARTICLE_NOT_FOUND::exception);
+        article.prepareArticleEntityStatusUpdate()
+                .status(ArticleEntityStatus.valueOf(articleStatus))
+                .updateStatus();
+        articleJpaRepository.save(article);
+    }
+}
