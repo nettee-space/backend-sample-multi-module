@@ -1,5 +1,9 @@
+val boardDomain: String by project
+val boardException: String by project
+val boardReadModel: String by project
+
 dependencies {
-    api(project(":board:board-api-domain"))
-    api(project(":board:board-api-exception"))
-    api(project(":board:board-api-readmodel"))
+    api(project(boardDomain))
+    api(project(boardException))
+    api(project(boardReadModel))
 }
