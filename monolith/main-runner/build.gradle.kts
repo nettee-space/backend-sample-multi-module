@@ -7,6 +7,7 @@ dependencies {
     implementation(project(":exception-handler-core"))
     implementation(project(":jpa-core"))
     implementation(project(":cors-webmvc"))
+    implementation(project(":rest-client"))
     // service
     implementation(project(":board"))
     // webmvc
