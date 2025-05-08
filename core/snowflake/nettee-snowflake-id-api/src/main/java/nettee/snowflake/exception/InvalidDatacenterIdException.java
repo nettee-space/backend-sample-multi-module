@@ -1,6 +1,6 @@
-package nettee.exception;
+package nettee.snowflake.exception;
 
-import static nettee.constants.SnowflakeConstants.SnowflakeDefault.MAX_DATACENTER_ID;
+import static nettee.snowflake.constants.SnowflakeConstants.SnowflakeDefault.MAX_DATACENTER_ID;
 
 public class InvalidDatacenterIdException extends RuntimeException {
     
