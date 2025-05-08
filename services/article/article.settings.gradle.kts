@@ -1,3 +1,12 @@
+val article: String by settings
+val articleApi: String by settings
+val articleDomain: String by settings
+val articleException: String by settings
+val articleReadModel: String by settings
+val articleApplication: String by settings
+val articleRdbAdapter: String by settings
+val articleWebMvcAdapter: String by settings
+
 fun getDirectories(vararg names: String): (String) -> File {
     var dir = rootDir
     for (name in names) {
@@ -11,24 +20,24 @@ fun getDirectories(vararg names: String): (String) -> File {
     }
 }
 
-val article = getDirectories("services", "article")
+val articleDirectory = getDirectories("services", "article")
 
 include (
-        ":article",
-        ":article:article-api",
-        ":article:article-api:article-domain",
-        ":article:article-api:article-exception",
-        ":article:article-api:article-readmodel",
-        ":article:article-application",
-        ":article:article-rdb-adapter",
-        ":article:article-webmvc-adapter",
+        article,
+        articleApi,
+        articleDomain,
+        articleException,
+        articleReadModel,
+        articleApplication,
+        articleRdbAdapter,
+        articleWebMvcAdapter,
 )
 
-project(":article").projectDir = article("article")
-project(":article:article-api").projectDir = article("api")
-project(":article:article-api:article-domain").projectDir = article("domain")
-project(":article:article-api:article-exception").projectDir = article("exception")
-project(":article:article-api:article-readmodel").projectDir = article("readmodel")
-project(":article:article-application").projectDir = article("application")
-project(":article:article-rdb-adapter").projectDir = article("rdb")
-project(":article:article-webmvc-adapter").projectDir = article("web-mvc")
+project(article).projectDir = articleDirectory("article")
+project(articleApi).projectDir = articleDirectory("api")
+project(articleDomain).projectDir = articleDirectory("domain")
+project(articleException).projectDir = articleDirectory("exception")
+project(articleReadModel).projectDir = articleDirectory("readmodel")
+project(articleApplication).projectDir = articleDirectory("application")
+project(articleRdbAdapter).projectDir = articleDirectory("rdb")
+project(articleWebMvcAdapter).projectDir = articleDirectory("web-mvc")

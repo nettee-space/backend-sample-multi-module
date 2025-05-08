@@ -1,3 +1,5 @@
+val articleDomain: String by project
+
 dependencies {
-    api(project(":article:article-api:article-domain"))
+    api(project(articleDomain))
 }

@@ -1,5 +1,9 @@
+val articleDomain: String by project
+val articleException: String by project
+val articleReadModel: String by project
+
 dependencies {
-    api(project(":article:article-api:article-domain"))
-    api(project(":article:article-api:article-exception"))
-    api(project(":article:article-api:article-readmodel"))
+    api(project(articleDomain))
+    api(project(articleException))
+    api(project(articleReadModel))
 }

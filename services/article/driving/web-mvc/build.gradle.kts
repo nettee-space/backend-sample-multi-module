@@ -1,10 +1,13 @@
+val articleApi: String by project
+val articleApplication: String by project
+
 plugins {
     id("java-library")
 }
 
 dependencies {
-    api(project(":article:article-api"))
-    api(project(":article:article-application"))
+    api(project(articleApi))
+    api(project(articleApplication))
 
     // validation
     compileOnly("jakarta.validation:jakarta.validation-api")

@@ -1,3 +1,6 @@
+val articleApi: String by project
+val articleApplication: String by project
+
 plugins {
     id("java-library")
 }
@@ -5,8 +8,8 @@ plugins {
 dependencies {
     val bom = dependencyManagement.importedProperties
 
-    api(project(":article:article-api"))
-    api(project(":article:article-application"))
+    api(project(articleApi))
+    api(project(articleApplication))
     api(project(":jpa-core"))
 
     // spring

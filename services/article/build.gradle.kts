@@ -1,6 +1,11 @@
+val articleApi: String by project
+val articleApplication: String by project
+val articleWebMvcAdapter: String by project
+val articleRdbAdapter: String by project
+
 dependencies {
-    api(project(":article:article-api"))
-    api(project(":article:article-application"))
-    api(project(":article:article-webmvc-adapter"))
-    api(project(":article:article-rdb-adapter"))
+    api(project(articleApi))
+    api(project(articleApplication))
+    api(project(articleWebMvcAdapter))
+    api(project(articleRdbAdapter))
 }
