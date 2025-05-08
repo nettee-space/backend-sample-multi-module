@@ -4,6 +4,7 @@ import lombok.Builder;
 import nettee.common.CustomException;
 
 import java.util.Objects;
+import java.util.function.Supplier;
 
 /**
  * HTTP 공통 요청 레코드
@@ -20,7 +21,7 @@ public record NetteeRequest<T>(
         String domain,
         String path,
         Class<T> responseType,
-        CustomException customException,
+        Supplier<? extends CustomException> customException,
         Object... uriVariables
 ) {
     public NetteeRequest {
