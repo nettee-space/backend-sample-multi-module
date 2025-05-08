@@ -101,7 +101,7 @@ public final class NetteeClient {
                 .retrieve()
                 .onStatus(HttpStatusCode::isError, (req, res) -> {
                     if (request.customException() != null) {
-                        throw request.customException();
+                        throw request.customException().get();
                     } else {
                         // TODO CustomException DefaultErrorCod 추가
                         throw new RuntimeException("API 요청 실패: " + res.getStatusCode());
