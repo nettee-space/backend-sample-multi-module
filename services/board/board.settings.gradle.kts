@@ -23,6 +23,7 @@ include(
     ":board:board-application",
     ":board:board-rdb-adapter",
     ":board:board-webmvc-adapter",
+    ":board:board-board-nettee-client",
 )
 
 project(":board").projectDir = board("board")
@@ -33,3 +34,4 @@ project(":board:board-api-readmodel").projectDir = board("readmodel")
 project(":board:board-application").projectDir = board("application")
 project(":board:board-rdb-adapter").projectDir = board("rdb")
 project(":board:board-webmvc-adapter").projectDir = board("web-mvc")
+project(":board:board-board-nettee-client").projectDir = board("board-nettee-client")
