@@ -1,3 +1,12 @@
+val board: String by settings
+val boardApi: String by settings
+val boardDomain: String by settings
+val boardException: String by settings
+val boardReadModel: String by settings
+val boardApplication: String by settings
+val boardRdbAdapter: String by settings
+val boardWebMvcAdapter: String by settings
+
 fun getDirectories(vararg names: String): (String) -> File {
     var dir = rootDir
     for (name in names) {
@@ -11,25 +20,25 @@ fun getDirectories(vararg names: String): (String) -> File {
     }
 }
 
-val board = getDirectories("services", "board")
+val boardDirectory = getDirectories("services", "board")
 
 // SERVICE/BOARD
 include(
-    ":board",
-    ":board:board-api",
-    ":board:board-api-domain",
-    ":board:board-api-exception",
-    ":board:board-api-readmodel",
-    ":board:board-application",
-    ":board:board-rdb-adapter",
-    ":board:board-webmvc-adapter",
+    board,
+    boardApi,
+    boardDomain,
+    boardException,
+    boardReadModel,
+    boardApplication,
+    boardRdbAdapter,
+    boardWebMvcAdapter,
 )
 
-project(":board").projectDir = board("board")
-project(":board:board-api").projectDir = board("api")
-project(":board:board-api-domain").projectDir = board("domain")
-project(":board:board-api-exception").projectDir = board("exception")
-project(":board:board-api-readmodel").projectDir = board("readmodel")
-project(":board:board-application").projectDir = board("application")
-project(":board:board-rdb-adapter").projectDir = board("rdb")
-project(":board:board-webmvc-adapter").projectDir = board("web-mvc")
+project(board).projectDir = boardDirectory("board")
+project(boardApi).projectDir = boardDirectory("api")
+project(boardDomain).projectDir = boardDirectory("domain")
+project(boardException).projectDir = boardDirectory("exception")
+project(boardReadModel).projectDir = boardDirectory("readmodel")
+project(boardApplication).projectDir = boardDirectory("application")
+project(boardRdbAdapter).projectDir = boardDirectory("rdb")
+project(boardWebMvcAdapter).projectDir = boardDirectory("web-mvc")
