@@ -4,7 +4,7 @@ import nettee.restclient.NetteeClient;
 import nettee.restclient.config.RestClientConfig;
 import nettee.student.entity.Student;
 import nettee.student.persistence.StudentRepository;
-import netttee.client.request.NetteeRequest;
+import nettee.client.request.NetteeRequest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -26,6 +26,9 @@ public class NetteeClientJavaTest {
     @Autowired
     private StudentRepository repository;
     
+    @Autowired
+    private NetteeClient netteeClient;
+    
     @Nested
     @DisplayName("[HTTP GET 요청] 학생 조회")
     @Order(1)
@@ -34,7 +37,7 @@ public class NetteeClientJavaTest {
         @Test
         @DisplayName("학생 목록 조회 요청 할 때")
         void shouldReturnStudentList() {
-            var result = NetteeClient.getList(NetteeRequest.<List<Student>>builder()
+            var result = netteeClient.getList(NetteeRequest.<List<Student>>builder()
                     .domain("student")
                     .path("/api/v1/student")
                     .build());
@@ -45,7 +48,7 @@ public class NetteeClientJavaTest {
         @Test
         @DisplayName("학생 단건 조회 요청 할 때")
         void shouldReturnSingleStudent() {
-            var result = NetteeClient.get(NetteeRequest.<Student>builder()
+            var result = netteeClient.get(NetteeRequest.<Student>builder()
                     .domain("student")
                     .path("/api/v1/student/{id}")
                     .responseType(Student.class)
@@ -64,7 +67,7 @@ public class NetteeClientJavaTest {
         @Test
         @DisplayName("학생 생성 요청 할 때")
         void shouldAddStudent() {
-            var result = NetteeClient.post(NetteeRequest.<Student>builder()
+            var result = netteeClient.post(NetteeRequest.<Student>builder()
                     .domain("student")
                     .path("/api/v1/student")
                     .responseType(Student.class)
