@@ -1,10 +1,10 @@
-package nettee.validator;
+package nettee.snowflake.validator;
 
-import nettee.exception.InvalidDatacenterIdException;
-import nettee.exception.InvalidWorkerIdException;
+import nettee.snowflake.exception.InvalidDatacenterIdException;
+import nettee.snowflake.exception.InvalidWorkerIdException;
 
-import static nettee.constants.SnowflakeConstants.SnowflakeDefault.MAX_DATACENTER_ID;
-import static nettee.constants.SnowflakeConstants.SnowflakeDefault.MAX_WORKER_ID;
+import static nettee.snowflake.constants.SnowflakeConstants.SnowflakeDefault.MAX_DATACENTER_ID;
+import static nettee.snowflake.constants.SnowflakeConstants.SnowflakeDefault.MAX_WORKER_ID;
 
 public class SnowflakeConstructingValidator {
     private SnowflakeConstructingValidator() {}

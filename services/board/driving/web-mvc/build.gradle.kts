@@ -1,6 +1,6 @@
 dependencies {
-    api(project(":board:api"))
-    api(project(":board:application"))
+    api(project(":board:board-api"))
+    api(project(":board:board-application"))
 
     // validation
     compileOnly("jakarta.validation:jakarta.validation-api")

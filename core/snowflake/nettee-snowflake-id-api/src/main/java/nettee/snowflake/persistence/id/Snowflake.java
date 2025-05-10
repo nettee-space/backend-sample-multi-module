@@ -1,10 +1,10 @@
-package nettee.persistence.id;
+package nettee.snowflake.persistence.id;
 
-import nettee.properties.SnowflakeProperties;
-import nettee.validator.SnowflakeConstructingValidator;
+import nettee.snowflake.properties.SnowflakeProperties;
+import nettee.snowflake.validator.SnowflakeConstructingValidator;
 
-import static nettee.constants.SnowflakeConstants.NETTEE_EPOCH;
-import static nettee.constants.SnowflakeConstants.SnowflakeDefault.*;
+import static nettee.snowflake.constants.SnowflakeConstants.NETTEE_EPOCH;
+import static nettee.snowflake.constants.SnowflakeConstants.SnowflakeDefault.*;
 
 public class Snowflake {
     private final long datacenterId;

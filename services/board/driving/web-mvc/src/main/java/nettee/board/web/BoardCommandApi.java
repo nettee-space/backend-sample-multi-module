@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("boards")
+@RequestMapping("/boards")
 @RequiredArgsConstructor
 public class BoardCommandApi {
     private final BoardCreateUseCase boardCreateUseCase;
