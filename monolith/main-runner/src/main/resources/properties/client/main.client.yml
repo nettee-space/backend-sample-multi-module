@@ -1,0 +1,5 @@
+app:
+  client:
+    base-url: "http://localhost:5000"
+    url:
+      board: "http://localhost:5000"
