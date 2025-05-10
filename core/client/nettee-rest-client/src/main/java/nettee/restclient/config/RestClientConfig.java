@@ -1,7 +1,8 @@
 package nettee.restclient.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import nettee.restclient.NetteeClient;
-import netttee.client.propeties.ClientProperties;
+import nettee.client.propeties.ClientProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,13 +14,15 @@ public class RestClientConfig {
     
     @Bean
     public RestClient restClient(ClientProperties clientProperties) {
-        var restClient =  RestClient.builder()
+        return RestClient.builder()
                 .baseUrl(clientProperties.baseUrl())
                 .build();
-        
-        // RestClient 등록 시, NetteeClient 수동 세팅
-        NetteeClient.init(restClient, clientProperties);
-        
-        return restClient;
+    }
+    
+    @Bean
+    public NetteeClient customClient(RestClient restClient,
+                                     ClientProperties clientProperties,
+                                     ObjectMapper objectMapper) {
+        return new NetteeClient(restClient, clientProperties, objectMapper);
     }
 }
