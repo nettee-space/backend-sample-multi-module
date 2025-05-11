@@ -1,6 +1,11 @@
+val boardApi: String by project
+val boardApplication: String by project
+val boardRdbAdapter: String by project
+val boardWebMvcAdapter: String by project
+
 dependencies {
-    api(project(":board:api"))
-    api(project(":board:application"))
-    api(project(":board:rdb-adapter"))
-    api(project(":board:webmvc-adapter"))
+    api(project(boardApi))
+    api(project(boardApplication))
+    api(project(boardRdbAdapter))
+    api(project(boardWebMvcAdapter))
 }
