@@ -8,3 +8,8 @@ spring:
     redis:
       host: 127.0.0.1
       port: 6379
+
+  flyway:
+    baseline-on-migrate: true
+    locations:
+      - db/postgresql/migration/v1_0
