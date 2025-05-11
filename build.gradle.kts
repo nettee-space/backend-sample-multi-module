@@ -10,9 +10,6 @@ plugins {
 }
 
 allprojects {
-    group = "me.nettee"
-    version = "1.0-SNAPSHOT"
-
     repositories {
         mavenCentral()
     }
@@ -34,7 +31,18 @@ subprojects {
         }
     }
 
+    configurations {
+        compileOnly {
+            extendsFrom(configurations.annotationProcessor.get())
+        }
+        configureEach {
+            exclude(group = "org.springframework.boot", module = "spring-boot-starter-logging")
+        }
+    }
+
     dependencies {
+        // FIXME determine the placement of logging library later
+        implementation("org.springframework.boot:spring-boot-starter-log4j2")
         if(project.name != "common") {
             api(project(":common"))
         }
