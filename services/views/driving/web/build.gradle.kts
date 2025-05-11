@@ -1,6 +1,9 @@
+val viewsApi: String by project
+val viewsApplication: String by project
+
 dependencies {
-    api(project(":views:api"))
-    api(project(":views:application"))
+    api(project(viewsApi))
+    api(project(viewsApplication))
 
     implementation("org.springframework.boot:spring-boot-starter-web")
 

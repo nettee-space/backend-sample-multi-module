@@ -1,3 +1,10 @@
+val views: String by settings
+val viewsApi: String by settings
+val viewsDomain: String by settings
+val viewsApplication: String by settings
+val viewsRedisAdapter: String by settings
+val viewsWebAdapter: String by settings
+
 fun getDirectories(vararg names: String): (String) -> File {
     var dir = rootDir
     for (name in names) {
@@ -11,21 +18,21 @@ fun getDirectories(vararg names: String): (String) -> File {
     }
 }
 
-val views = getDirectories("services", "views")
+val viewsDirectory = getDirectories("services", "views")
 
 // SERVICE/BOARD
 include(
-    ":views",
-    ":views:api",
-    ":views:api:domain",
-    ":views:application",
-    ":views:redis",
-    ":views:web",
+    views,
+    viewsApi,
+    viewsDomain,
+    viewsApplication,
+    viewsRedisAdapter,
+    viewsWebAdapter,
 )
 
-project(":views").projectDir = views("views")
-project(":views:api").projectDir = views("api")
-project(":views:api:domain").projectDir = views("domain")
-project(":views:application").projectDir = views("application")
-project(":views:redis").projectDir = views("redis")
-project(":views:web").projectDir = views("web")
+project(views).projectDir = viewsDirectory("views")
+project(viewsApi).projectDir = viewsDirectory("api")
+project(viewsDomain).projectDir = viewsDirectory("domain")
+project(viewsApplication).projectDir = viewsDirectory("application")
+project(viewsRedisAdapter).projectDir = viewsDirectory("redis")
+project(viewsWebAdapter).projectDir = viewsDirectory("web")
