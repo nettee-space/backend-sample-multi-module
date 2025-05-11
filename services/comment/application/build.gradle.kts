@@ -1,3 +1,3 @@
 dependencies {
-    api(project(":comment:api"))
+    api(project(":comment:comment-api"))
 }

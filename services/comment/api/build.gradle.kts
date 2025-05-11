@@ -1,5 +1,9 @@
+val commentDomain: String by project
+val commentException: String by project
+val commentReadModel: String by project
+
 dependencies {
-    api(project(":comment:api:domain"))
-    api(project(":comment:api:exception"))
-    api(project(":comment:api:readmodel"))
+    api(project(commentDomain))
+    api(project(commentException))
+    api(project(commentReadModel))
 }

@@ -1,8 +1,8 @@
 dependencies {
     val bom = dependencyManagement.importedProperties
 
-    api(project(":comment:api"))
-    api(project(":comment:application"))
+    api(project(":comment:comment-api"))
+    api(project(":comment:comment-application"))
     api(project(":jpa-core"))
 
     // spring

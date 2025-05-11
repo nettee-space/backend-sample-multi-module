@@ -1,3 +1,5 @@
+val commentDomain: String by project
+
 dependencies {
-    api(project(":comment:api:domain"))
+    api(project(commentDomain))
 }
