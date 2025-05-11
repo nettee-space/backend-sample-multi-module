@@ -2,11 +2,12 @@ package nettee.comment.entity;
 
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import nettee.comment.entity.type.CommentEntityStatus;
+import nettee.comment.entity.type.CommentEntityStatusConverter;
 import nettee.jpa.support.LongBaseTimeEntity;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -16,11 +17,14 @@ import org.hibernate.annotations.DynamicUpdate;
 @Entity(name = "comment")
 public class CommentEntity extends LongBaseTimeEntity {
 
-    @Id
-    private Long id;
+    public String content;
 
-    private String content;
+    @Convert(converter = CommentEntityStatusConverter.class)
+    public CommentEntityStatus status;
 
-    @Convert
-    private CommentEntityStatus status;
+    @Builder
+    public CommentEntity(String content, CommentEntityStatus status) {
+        this.content = content;
+        this.status = status;
+    }
 }
