@@ -5,8 +5,6 @@ dependencies {
     api(project(":comment:comment-application"))
     api(project(":jpa-core"))
 
-    // spring
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
     // querydsl
     implementation("com.querydsl:querydsl-jpa:${bom["querydsl.version"]}:jakarta")
