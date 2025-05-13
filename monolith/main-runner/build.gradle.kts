@@ -1,6 +1,7 @@
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 val board: String by project
+val views: String by project
 
 version = "0.0.1-SNAPSHOT"
 
@@ -12,6 +13,7 @@ dependencies {
 
     // services
     implementation(project(board))
+    implementation(project(views))
 
     // webmvc
     implementation("org.springframework.boot:spring-boot-starter-web")
