@@ -1,4 +1,4 @@
-package nettee.common;
+package nettee.common.util;
 
 import java.util.EnumSet;
 import java.util.function.Function;

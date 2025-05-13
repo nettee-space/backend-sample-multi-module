@@ -1,6 +1,6 @@
 package nettee.board.type;
 
-import nettee.common.EnumUtil;
+import nettee.common.util.EnumUtil;
 
 import java.util.EnumSet;
 import java.util.Set;
