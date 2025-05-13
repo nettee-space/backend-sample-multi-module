@@ -1,5 +1,7 @@
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
+val board: String by project
+
 version = "0.0.1-SNAPSHOT"
 
 dependencies {
@@ -7,16 +9,19 @@ dependencies {
     implementation(project(":exception-handler-core"))
     implementation(project(":jpa-core"))
     implementation(project(":cors-webmvc"))
-    // service
-    implementation(project(":board"))
-    implementation(project(":views"))
+
+    // services
+    implementation(project(board))
 
     // webmvc
     implementation("org.springframework.boot:spring-boot-starter-web")
+
     // db
     runtimeOnly("org.postgresql:postgresql:42.7.4")
+
     // flyway
     implementation("org.flywaydb:flyway-database-postgresql")
+
     // test
     testImplementation("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
