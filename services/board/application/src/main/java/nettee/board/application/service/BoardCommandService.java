@@ -1,9 +1,9 @@
-package nettee.board.service;
+package nettee.board.application.service;
 
 import lombok.RequiredArgsConstructor;
 import nettee.board.domain.Board;
-import nettee.board.port.BoardCommandRepositoryPort;
-import nettee.board.usecase.BoardCreateUseCase;
+import nettee.board.application.port.BoardCommandRepositoryPort;
+import nettee.board.application.usecase.BoardCreateUseCase;
 import org.springframework.stereotype.Service;
 
 @Service
