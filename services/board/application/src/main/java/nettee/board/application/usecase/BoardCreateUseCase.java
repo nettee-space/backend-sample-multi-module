@@ -1,4 +1,4 @@
-package nettee.board.usecase;
+package nettee.board.application.usecase;
 
 import nettee.board.domain.Board;
 

@@ -1,4 +1,4 @@
-package nettee.board.port;
+package nettee.board.application.port;
 
 import nettee.board.domain.Board;
 
