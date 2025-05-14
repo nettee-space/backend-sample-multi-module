@@ -1,12 +1,12 @@
-package nettee.board.web;
+package nettee.board.driving.web;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import nettee.board.domain.type.BoardStatus;
 import nettee.board.application.usecase.BoardCreateUseCase;
-import nettee.board.web.dto.BoardCommandDto.BoardCreateCommand;
-import nettee.board.web.dto.BoardCommandDto.BoardCreateResponse;
-import nettee.board.web.mapper.BoardDtoMapper;
+import nettee.board.driving.web.dto.BoardCommandDto.BoardCreateCommand;
+import nettee.board.driving.web.dto.BoardCommandDto.BoardCreateResponse;
+import nettee.board.driving.web.mapper.BoardDtoMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
