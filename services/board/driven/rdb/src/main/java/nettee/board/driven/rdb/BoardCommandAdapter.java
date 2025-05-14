@@ -1,8 +1,8 @@
-package nettee.board;
+package nettee.board.driven.rdb;
 
 import lombok.RequiredArgsConstructor;
 import nettee.board.domain.Board;
-import nettee.board.persistence.mapper.BoardEntityMapper;
+import nettee.board.driven.rdb.mapper.BoardEntityMapper;
 import nettee.board.application.port.BoardCommandRepositoryPort;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
