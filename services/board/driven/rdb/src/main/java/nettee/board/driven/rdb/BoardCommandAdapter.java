@@ -7,7 +7,7 @@ import nettee.board.application.port.BoardCommandRepositoryPort;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import static nettee.board.exception.BoardCommandErrorCode.DEFAULT;
+import static nettee.board.exception.BoardErrorCode.DEFAULT;
 
 @Repository
 @RequiredArgsConstructor

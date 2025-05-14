@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static nettee.board.exception.BoardCommandErrorCode.DEFAULT;
+import static nettee.board.exception.BoardErrorCode.DEFAULT;
 
 public enum BoardEntityStatus {
     REMOVED(
