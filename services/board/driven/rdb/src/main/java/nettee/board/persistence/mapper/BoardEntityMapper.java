@@ -1,6 +1,6 @@
 package nettee.board.persistence.mapper;
 
-import nettee.board.Board;
+import nettee.board.domain.Board;
 import nettee.board.entity.BoardEntity;
 import org.mapstruct.Mapper;
 

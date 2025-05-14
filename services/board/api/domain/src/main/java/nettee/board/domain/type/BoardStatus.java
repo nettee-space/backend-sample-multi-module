@@ -1,4 +1,4 @@
-package nettee.board.type;
+package nettee.board.domain.type;
 
 import nettee.common.util.EnumUtil;
 
