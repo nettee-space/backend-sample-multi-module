@@ -1,6 +1,6 @@
 package nettee.board.entity.type;
 
-import nettee.board.type.BoardStatus;
+import nettee.board.domain.type.BoardStatus;
 
 import java.util.Arrays;
 import java.util.Set;

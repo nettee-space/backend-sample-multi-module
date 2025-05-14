@@ -1,6 +1,6 @@
 package nettee.board.usecase;
 
-import nettee.board.Board;
+import nettee.board.domain.Board;
 
 public interface BoardCreateUseCase {
     Board createBoard(Board board);

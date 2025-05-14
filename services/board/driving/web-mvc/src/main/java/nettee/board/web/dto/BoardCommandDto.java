@@ -4,8 +4,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
-import nettee.board.Board;
-import nettee.board.type.BoardStatus;
+import nettee.board.domain.Board;
+import nettee.board.domain.type.BoardStatus;
 
 public final class BoardCommandDto {
 

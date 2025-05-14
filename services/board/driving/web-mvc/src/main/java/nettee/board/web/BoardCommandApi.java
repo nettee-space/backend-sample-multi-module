@@ -2,7 +2,7 @@ package nettee.board.web;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import nettee.board.type.BoardStatus;
+import nettee.board.domain.type.BoardStatus;
 import nettee.board.usecase.BoardCreateUseCase;
 import nettee.board.web.dto.BoardCommandDto.BoardCreateCommand;
 import nettee.board.web.dto.BoardCommandDto.BoardCreateResponse;
