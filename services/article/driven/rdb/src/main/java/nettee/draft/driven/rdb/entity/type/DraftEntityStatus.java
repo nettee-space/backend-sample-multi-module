@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static nettee.draft.DraftCommandErrorCode.DEFAULT;
+import static nettee.draft.exception.DraftCommandErrorCode.DEFAULT;
 
 public enum DraftEntityStatus {
     DELETED(

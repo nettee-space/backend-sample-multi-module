@@ -1,6 +1,7 @@
-package nettee.draft;
+package nettee.draft.exception;
 
 import nettee.common.CustomException;
+import nettee.draft.exception.DraftQueryErrorCode;
 
 import java.util.Map;
 import java.util.function.Supplier;

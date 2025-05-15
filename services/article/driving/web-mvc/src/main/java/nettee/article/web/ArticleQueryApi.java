@@ -1,8 +1,8 @@
 package nettee.article.web;
 
 import lombok.RequiredArgsConstructor;
-import nettee.article.ArticleQueryModels.ArticleDetail;
-import nettee.article.ArticleQueryModels.ArticleSummary;
+import nettee.article.readmodel.ArticleQueryModels.ArticleDetail;
+import nettee.article.readmodel.ArticleQueryModels.ArticleSummary;
 import nettee.article.domain.type.ArticleStatus;
 import nettee.article.application.usecase.ArticleReadByStatusesUseCase;
 import nettee.article.application.usecase.ArticleReadUseCase;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.Instant;
 import java.util.Set;
 
-import static nettee.article.ArticleQueryErrorCode.ARTICLE_NOT_FOUND;
+import static nettee.article.exception.ArticleQueryErrorCode.ARTICLE_NOT_FOUND;
 
 @RestController
 @RequestMapping("/api/v1/articles")

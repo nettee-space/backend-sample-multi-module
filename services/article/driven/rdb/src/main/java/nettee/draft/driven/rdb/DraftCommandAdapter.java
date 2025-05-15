@@ -1,7 +1,7 @@
 package nettee.draft.driven.rdb;
 
 import lombok.RequiredArgsConstructor;
-import nettee.draft.DraftQueryModels.DraftDetail;
+import nettee.draft.readmodel.DraftQueryModels.DraftDetail;
 import nettee.draft.domain.Draft;
 import nettee.draft.driven.rdb.entity.type.DraftEntityStatus;
 import nettee.draft.driven.rdb.persistence.mapper.DraftEntityMapper;
@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-import static nettee.draft.DraftCommandErrorCode.DEFAULT;
-import static nettee.draft.DraftCommandErrorCode.DRAFT_NOT_FOUND;
+import static nettee.draft.exception.DraftCommandErrorCode.DEFAULT;
+import static nettee.draft.exception.DraftCommandErrorCode.DRAFT_NOT_FOUND;
 
 @Repository
 @RequiredArgsConstructor

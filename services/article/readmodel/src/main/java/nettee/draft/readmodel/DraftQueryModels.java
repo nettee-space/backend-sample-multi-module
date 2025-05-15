@@ -1,4 +1,4 @@
-package nettee.draft;
+package nettee.draft.readmodel;
 
 import lombok.Builder;
 import nettee.draft.domain.type.DraftStatus;

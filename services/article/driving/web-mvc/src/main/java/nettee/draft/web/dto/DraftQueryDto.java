@@ -1,7 +1,7 @@
 package nettee.draft.web.dto;
 
 import lombok.Builder;
-import nettee.draft.DraftQueryModels.DraftDetail;
+import nettee.draft.readmodel.DraftQueryModels.DraftDetail;
 
 public class DraftQueryDto {
     private DraftQueryDto() {

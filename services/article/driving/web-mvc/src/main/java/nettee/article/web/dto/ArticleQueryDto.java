@@ -1,7 +1,7 @@
 package nettee.article.web.dto;
 
 import lombok.Builder;
-import nettee.article.ArticleQueryModels.ArticleDetail;
+import nettee.article.readmodel.ArticleQueryModels.ArticleDetail;
 
 public class ArticleQueryDto {
     private ArticleQueryDto() {

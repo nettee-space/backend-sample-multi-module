@@ -1,6 +1,6 @@
 package nettee.draft.application.port;
 
-import nettee.draft.DraftQueryModels.DraftDetail;
+import nettee.draft.readmodel.DraftQueryModels.DraftDetail;
 import nettee.draft.domain.Draft;
 import nettee.draft.domain.type.DraftStatus;
 import java.util.Optional;

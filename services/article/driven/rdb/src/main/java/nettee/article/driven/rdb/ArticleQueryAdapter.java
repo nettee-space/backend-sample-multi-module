@@ -1,7 +1,7 @@
 package nettee.article.driven.rdb;
 
-import nettee.article.ArticleQueryModels.ArticleDetail;
-import nettee.article.ArticleQueryModels.ArticleSummary;
+import nettee.article.readmodel.ArticleQueryModels.ArticleDetail;
+import nettee.article.readmodel.ArticleQueryModels.ArticleSummary;
 import nettee.article.driven.rdb.entity.ArticleEntity;
 import nettee.article.driven.rdb.entity.type.ArticleEntityStatus;
 import nettee.article.driven.rdb.persistence.mapper.ArticleEntityMapper;

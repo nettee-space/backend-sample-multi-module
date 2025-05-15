@@ -1,7 +1,7 @@
 package nettee.draft.application.port;
 
-import nettee.draft.DraftQueryModels.DraftDetail;
-import nettee.draft.DraftQueryModels.DraftSummary;
+import nettee.draft.readmodel.DraftQueryModels.DraftDetail;
+import nettee.draft.readmodel.DraftQueryModels.DraftSummary;
 import nettee.draft.domain.type.DraftStatus;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;

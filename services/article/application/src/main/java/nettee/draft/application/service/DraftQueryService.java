@@ -1,8 +1,8 @@
 package nettee.draft.application.service;
 
 import lombok.RequiredArgsConstructor;
-import nettee.draft.DraftQueryModels.DraftDetail;
-import nettee.draft.DraftQueryModels.DraftSummary;
+import nettee.draft.readmodel.DraftQueryModels.DraftDetail;
+import nettee.draft.readmodel.DraftQueryModels.DraftSummary;
 import nettee.draft.application.port.DraftQueryPort;
 import nettee.draft.domain.type.DraftStatus;
 import nettee.draft.application.usecase.DraftReadByStatusesUseCase;

@@ -1,7 +1,7 @@
 package nettee.draft.driven.rdb;
 
-import nettee.draft.DraftQueryModels.DraftDetail;
-import nettee.draft.DraftQueryModels.DraftSummary;
+import nettee.draft.readmodel.DraftQueryModels.DraftDetail;
+import nettee.draft.readmodel.DraftQueryModels.DraftSummary;
 import nettee.draft.driven.rdb.entity.DraftEntity;
 import nettee.draft.driven.rdb.entity.type.DraftEntityStatus;
 import nettee.draft.driven.rdb.persistence.mapper.DraftEntityMapper;

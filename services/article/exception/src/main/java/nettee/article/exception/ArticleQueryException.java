@@ -1,5 +1,6 @@
-package nettee.article;
+package nettee.article.exception;
 
+import nettee.article.exception.ArticleQueryErrorCode;
 import nettee.common.CustomException;
 
 import java.util.Map;

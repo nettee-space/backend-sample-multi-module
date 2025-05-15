@@ -2,8 +2,8 @@ package nettee.article.application.service;
 
 import lombok.RequiredArgsConstructor;
 import nettee.article.application.port.ArticleQueryPort;
-import nettee.article.ArticleQueryModels.ArticleDetail;
-import nettee.article.ArticleQueryModels.ArticleSummary;
+import nettee.article.readmodel.ArticleQueryModels.ArticleDetail;
+import nettee.article.readmodel.ArticleQueryModels.ArticleSummary;
 import nettee.article.domain.type.ArticleStatus;
 import nettee.article.application.usecase.ArticleReadByStatusesUseCase;
 import nettee.article.application.usecase.ArticleReadUseCase;

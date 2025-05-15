@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import nettee.article.driven.rdb.entity.type.builder.TypeSafeMarkers.Present;
 import nettee.article.domain.type.ArticleStatus;
 
-import static nettee.article.ArticleCommandErrorCode.DEFAULT;
+import static nettee.article.exception.ArticleCommandErrorCode.DEFAULT;
 
 public enum ArticleEntityStatus {
     DELETED(

@@ -1,7 +1,7 @@
 package nettee.draft.application.usecase;
 
-import nettee.draft.DraftQueryModels.DraftDetail;
-import nettee.draft.DraftQueryModels.DraftSummary;
+import nettee.draft.readmodel.DraftQueryModels.DraftDetail;
+import nettee.draft.readmodel.DraftQueryModels.DraftSummary;
 import org.springframework.data.domain.Page;
 
 import java.util.Optional;

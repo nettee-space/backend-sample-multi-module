@@ -1,7 +1,7 @@
 package nettee.article.application.port;
 
-import nettee.article.ArticleQueryModels.ArticleDetail;
-import nettee.article.ArticleQueryModels.ArticleSummary;
+import nettee.article.readmodel.ArticleQueryModels.ArticleDetail;
+import nettee.article.readmodel.ArticleQueryModels.ArticleSummary;
 import nettee.article.domain.type.ArticleStatus;
 import org.springframework.data.domain.Page;
 

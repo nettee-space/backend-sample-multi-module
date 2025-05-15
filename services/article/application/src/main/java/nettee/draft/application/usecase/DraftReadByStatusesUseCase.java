@@ -1,6 +1,6 @@
 package nettee.draft.application.usecase;
 
-import nettee.draft.DraftQueryModels.DraftSummary;
+import nettee.draft.readmodel.DraftQueryModels.DraftSummary;
 import nettee.draft.domain.type.DraftStatus;
 import org.springframework.data.domain.Page;
 

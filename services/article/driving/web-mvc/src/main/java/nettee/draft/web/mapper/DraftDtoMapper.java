@@ -1,7 +1,7 @@
 package nettee.draft.web.mapper;
 
 import nettee.draft.domain.Draft;
-import nettee.draft.DraftQueryModels.DraftDetail;
+import nettee.draft.readmodel.DraftQueryModels.DraftDetail;
 import nettee.draft.web.dto.DraftCommandDto.DraftCreateCommand;
 import nettee.draft.web.dto.DraftCommandDto.DraftUpdateCommand;
 import nettee.draft.web.dto.DraftCommandDto.DraftUpdateTotalLikesCommand;

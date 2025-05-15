@@ -1,6 +1,6 @@
 package nettee.article.application.usecase;
 
-import nettee.article.ArticleQueryModels.ArticleSummary;
+import nettee.article.readmodel.ArticleQueryModels.ArticleSummary;
 import nettee.article.domain.type.ArticleStatus;
 import org.springframework.data.domain.Page;
 
