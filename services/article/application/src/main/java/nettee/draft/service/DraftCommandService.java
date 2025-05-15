@@ -1,9 +1,9 @@
 package nettee.draft.service;
 
 import lombok.RequiredArgsConstructor;
-import nettee.article.Draft;
+import nettee.draft.Draft;
 import nettee.draft.port.DraftCommandPort;
-import nettee.article.type.DraftStatus;
+import nettee.draft.type.DraftStatus;
 import nettee.draft.usecase.DraftCreateUseCase;
 import nettee.draft.usecase.DraftDeleteUseCase;
 import nettee.draft.usecase.DraftUpdateUseCase;

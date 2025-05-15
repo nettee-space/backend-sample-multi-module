@@ -6,7 +6,7 @@ import nettee.draft.usecase.DraftReadByStatusesUseCase;
 import nettee.draft.usecase.DraftReadUseCase;
 import nettee.draft.web.dto.DraftQueryDto.DraftDetailResponse;
 import nettee.draft.DraftQueryModels;
-import nettee.article.type.DraftStatus;
+import nettee.draft.type.DraftStatus;
 import nettee.draft.web.dto.DraftQueryDto;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;

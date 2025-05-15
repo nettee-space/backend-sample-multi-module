@@ -4,8 +4,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
-import nettee.article.Draft;
-import nettee.article.type.DraftStatus;
+import nettee.draft.Draft;
+import nettee.draft.type.DraftStatus;
 
 public class DraftCommandDto {
     private DraftCommandDto() {

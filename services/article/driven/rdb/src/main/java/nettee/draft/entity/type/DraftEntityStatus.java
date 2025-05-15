@@ -1,7 +1,7 @@
 package nettee.draft.entity.type;
 
 import nettee.draft.entity.type.builder.TypeSafeMarkers.Present;
-import nettee.article.type.DraftStatus;
+import nettee.draft.type.DraftStatus;
 
 
 import java.util.Arrays;

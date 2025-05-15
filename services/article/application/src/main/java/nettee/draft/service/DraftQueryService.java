@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import nettee.draft.DraftQueryModels.DraftDetail;
 import nettee.draft.DraftQueryModels.DraftSummary;
 import nettee.draft.port.DraftQueryPort;
-import nettee.article.type.DraftStatus;
+import nettee.draft.type.DraftStatus;
 import nettee.draft.usecase.DraftReadByStatusesUseCase;
 import nettee.draft.usecase.DraftReadUseCase;
 import org.springframework.data.domain.Page;

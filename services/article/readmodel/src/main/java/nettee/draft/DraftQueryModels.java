@@ -1,7 +1,7 @@
 package nettee.draft;
 
 import lombok.Builder;
-import nettee.article.type.DraftStatus;
+import nettee.draft.type.DraftStatus;
 
 import java.time.Instant;
 public final class DraftQueryModels {
