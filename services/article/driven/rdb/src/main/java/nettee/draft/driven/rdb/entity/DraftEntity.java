@@ -1,4 +1,4 @@
-package nettee.draft.entity;
+package nettee.draft.driven.rdb.entity;
 
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
@@ -6,8 +6,8 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import nettee.draft.entity.type.DraftEntityStatus;
-import nettee.draft.entity.type.DraftEntityStatusConverter;
+import nettee.draft.driven.rdb.entity.type.DraftEntityStatus;
+import nettee.draft.driven.rdb.entity.type.DraftEntityStatusConverter;
 import nettee.jpa.support.LongBaseTimeEntity;
 import org.hibernate.annotations.DynamicUpdate;
 

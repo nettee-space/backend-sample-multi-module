@@ -1,8 +1,10 @@
-package nettee.draft;
+package nettee.draft.driven.rdb;
 
-import nettee.draft.entity.DraftEntity;
-import nettee.draft.entity.type.DraftEntityStatus;
-import nettee.draft.persistence.mapper.DraftEntityMapper;
+import nettee.draft.DraftQueryModels.DraftDetail;
+import nettee.draft.DraftQueryModels.DraftSummary;
+import nettee.draft.driven.rdb.entity.DraftEntity;
+import nettee.draft.driven.rdb.entity.type.DraftEntityStatus;
+import nettee.draft.driven.rdb.persistence.mapper.DraftEntityMapper;
 import nettee.draft.application.port.DraftQueryPort;
 import nettee.draft.domain.type.DraftStatus;
 import org.springframework.data.domain.Page;
@@ -15,7 +17,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
-import static nettee.draft.entity.QDraftEntity.draftEntity;
+
+import static nettee.draft.driven.rdb.entity.QDraftEntity.draftEntity;
 
 @Repository
 public class DraftQueryAdapter extends QuerydslRepositorySupport implements DraftQueryPort {
@@ -29,7 +32,7 @@ public class DraftQueryAdapter extends QuerydslRepositorySupport implements Draf
     }
 
     @Override
-    public Optional<DraftQueryModels.DraftDetail> findById(Long id) {
+    public Optional<DraftDetail> findById(Long id) {
         return draftEntityMapper.toOptionalDraftDetail(
                 getQuerydsl().createQuery()
                         .select(draftEntity)
@@ -40,7 +43,7 @@ public class DraftQueryAdapter extends QuerydslRepositorySupport implements Draf
     }
 
     @Override
-    public Page<DraftQueryModels.DraftSummary> findAll(Pageable pageable) {
+    public Page<DraftSummary> findAll(Pageable pageable) {
         var query = getQuerydsl().createQuery()
                 .select(draftEntity)
                 .from(draftEntity)
@@ -72,7 +75,7 @@ public class DraftQueryAdapter extends QuerydslRepositorySupport implements Draf
     }
 
     @Override
-    public Page<DraftQueryModels.DraftSummary> findByStatuses(Set<DraftStatus> statuses, Pageable pageable) {
+    public Page<DraftSummary> findByStatuses(Set<DraftStatus> statuses, Pageable pageable) {
         var draftEntityStatuses = statusMap.computeIfAbsent(
                 statuses,
                 (ignore) -> statuses.stream()

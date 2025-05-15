@@ -1,8 +1,8 @@
-package nettee.article.entity.type;
+package nettee.article.driven.rdb.entity.type;
 
-import nettee.article.entity.type.builder.TypeSafeMarkers;
-import nettee.article.entity.type.builder.TypeSafeMarkers.Present;
-import nettee.article.entity.type.builder.TypeSafeMarkers.Missing;
+import nettee.article.driven.rdb.entity.type.builder.TypeSafeMarkers;
+import nettee.article.driven.rdb.entity.type.builder.TypeSafeMarkers.Present;
+import nettee.article.driven.rdb.entity.type.builder.TypeSafeMarkers.Missing;
 
 public class ArticleStatusParameters<
         HAS_CAN_READ extends TypeSafeMarkers,

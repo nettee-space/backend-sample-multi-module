@@ -1,4 +1,4 @@
-package nettee.article.entity.type;
+package nettee.article.driven.rdb.entity.type;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;

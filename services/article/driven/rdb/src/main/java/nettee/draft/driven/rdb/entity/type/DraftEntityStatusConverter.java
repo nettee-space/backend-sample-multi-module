@@ -1,4 +1,4 @@
-package nettee.draft.entity.type;
+package nettee.draft.driven.rdb.entity.type;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;

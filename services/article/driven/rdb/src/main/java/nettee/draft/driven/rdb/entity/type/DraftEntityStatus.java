@@ -1,6 +1,6 @@
-package nettee.draft.entity.type;
+package nettee.draft.driven.rdb.entity.type;
 
-import nettee.draft.entity.type.builder.TypeSafeMarkers.Present;
+import nettee.draft.driven.rdb.entity.type.builder.TypeSafeMarkers.Present;
 import nettee.draft.domain.type.DraftStatus;
 
 

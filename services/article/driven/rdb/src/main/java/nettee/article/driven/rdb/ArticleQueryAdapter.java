@@ -1,10 +1,10 @@
-package nettee.article;
+package nettee.article.driven.rdb;
 
 import nettee.article.ArticleQueryModels.ArticleDetail;
 import nettee.article.ArticleQueryModels.ArticleSummary;
-import nettee.article.entity.ArticleEntity;
-import nettee.article.entity.type.ArticleEntityStatus;
-import nettee.article.persistence.mapper.ArticleEntityMapper;
+import nettee.article.driven.rdb.entity.ArticleEntity;
+import nettee.article.driven.rdb.entity.type.ArticleEntityStatus;
+import nettee.article.driven.rdb.persistence.mapper.ArticleEntityMapper;
 import nettee.article.application.port.ArticleQueryPort;
 import nettee.article.domain.type.ArticleStatus;
 import org.springframework.data.domain.Page;
@@ -17,8 +17,9 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
-import static nettee.article.entity.QArticleEntity.articleEntity;
+
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
+import static nettee.article.driven.rdb.entity.QArticleEntity.articleEntity;
 
 @Repository
 public class ArticleQueryAdapter extends QuerydslRepositorySupport implements ArticleQueryPort {

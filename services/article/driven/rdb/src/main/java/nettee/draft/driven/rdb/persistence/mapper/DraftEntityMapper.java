@@ -1,6 +1,6 @@
-package nettee.draft.persistence.mapper;
+package nettee.draft.driven.rdb.persistence.mapper;
 
-import nettee.draft.entity.DraftEntity;
+import nettee.draft.driven.rdb.entity.DraftEntity;
 import nettee.draft.DraftQueryModels.DraftDetail;
 import nettee.draft.DraftQueryModels.DraftSummary;
 import nettee.draft.domain.Draft;

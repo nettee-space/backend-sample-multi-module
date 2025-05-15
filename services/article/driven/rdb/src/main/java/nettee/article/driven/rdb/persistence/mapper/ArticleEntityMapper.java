@@ -1,9 +1,9 @@
-package nettee.article.persistence.mapper;
+package nettee.article.driven.rdb.persistence.mapper;
 
 import nettee.article.domain.Article;
 import nettee.article.ArticleQueryModels.ArticleDetail;
 import nettee.article.ArticleQueryModels.ArticleSummary;
-import nettee.article.entity.ArticleEntity;
+import nettee.article.driven.rdb.entity.ArticleEntity;
 import org.mapstruct.Mapper;
 
 import java.util.Optional;

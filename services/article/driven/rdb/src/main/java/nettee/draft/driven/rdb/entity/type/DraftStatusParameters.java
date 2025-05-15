@@ -1,8 +1,8 @@
-package nettee.draft.entity.type;
+package nettee.draft.driven.rdb.entity.type;
 
-import nettee.draft.entity.type.builder.TypeSafeMarkers;
-import nettee.draft.entity.type.builder.TypeSafeMarkers.Missing;
-import nettee.draft.entity.type.builder.TypeSafeMarkers.Present;
+import nettee.draft.driven.rdb.entity.type.builder.TypeSafeMarkers;
+import nettee.draft.driven.rdb.entity.type.builder.TypeSafeMarkers.Missing;
+import nettee.draft.driven.rdb.entity.type.builder.TypeSafeMarkers.Present;
 
 public class DraftStatusParameters<
         HAS_CAN_READ extends TypeSafeMarkers,
