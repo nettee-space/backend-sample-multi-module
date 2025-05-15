@@ -1,12 +1,16 @@
-val articleApi: String by project
 val articleApplication: String by project
+val articleDomain: String by project
+val articleException: String by project
+val articleReadModel: String by project
 
 plugins {
     id("java-library")
 }
 
 dependencies {
-    api(project(articleApi))
+    api(project(articleDomain))
+    api(project(articleException))
+    api(project(articleReadModel))
     api(project(articleApplication))
 
     // validation

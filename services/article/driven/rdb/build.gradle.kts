@@ -1,4 +1,6 @@
-val articleApi: String by project
+val articleDomain: String by project
+val articleException: String by project
+val articleReadModel: String by project
 val articleApplication: String by project
 
 plugins {
@@ -8,7 +10,9 @@ plugins {
 dependencies {
     val bom = dependencyManagement.importedProperties
 
-    api(project(articleApi))
+    api(project(articleDomain))
+    api(project(articleException))
+    api(project(articleReadModel))
     api(project(articleApplication))
     api(project(":jpa-core"))
 
