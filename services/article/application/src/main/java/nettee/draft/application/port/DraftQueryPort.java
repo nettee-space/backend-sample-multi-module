@@ -1,4 +1,4 @@
-package nettee.draft.port;
+package nettee.draft.application.port;
 
 import nettee.draft.DraftQueryModels.DraftDetail;
 import nettee.draft.DraftQueryModels.DraftSummary;

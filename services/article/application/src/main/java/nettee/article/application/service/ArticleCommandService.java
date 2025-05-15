@@ -1,12 +1,12 @@
-package nettee.article.service;
+package nettee.article.application.service;
 
 import lombok.RequiredArgsConstructor;
 import nettee.article.domain.Article;
-import nettee.article.usecase.ArticleCreateUseCase;
-import nettee.article.usecase.ArticleUpdateUseCase;
-import nettee.article.port.ArticleCommandPort;
+import nettee.article.application.usecase.ArticleCreateUseCase;
+import nettee.article.application.usecase.ArticleUpdateUseCase;
+import nettee.article.application.port.ArticleCommandPort;
 import nettee.article.domain.type.ArticleStatus;
-import nettee.article.usecase.ArticleDeleteUseCase;
+import nettee.article.application.usecase.ArticleDeleteUseCase;
 import org.springframework.stereotype.Service;
 
 @Service

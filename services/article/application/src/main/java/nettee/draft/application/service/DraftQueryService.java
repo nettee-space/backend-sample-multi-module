@@ -1,12 +1,12 @@
-package nettee.draft.service;
+package nettee.draft.application.service;
 
 import lombok.RequiredArgsConstructor;
 import nettee.draft.DraftQueryModels.DraftDetail;
 import nettee.draft.DraftQueryModels.DraftSummary;
-import nettee.draft.port.DraftQueryPort;
+import nettee.draft.application.port.DraftQueryPort;
 import nettee.draft.domain.type.DraftStatus;
-import nettee.draft.usecase.DraftReadByStatusesUseCase;
-import nettee.draft.usecase.DraftReadUseCase;
+import nettee.draft.application.usecase.DraftReadByStatusesUseCase;
+import nettee.draft.application.usecase.DraftReadUseCase;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

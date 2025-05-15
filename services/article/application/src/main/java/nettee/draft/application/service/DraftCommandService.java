@@ -1,12 +1,12 @@
-package nettee.draft.service;
+package nettee.draft.application.service;
 
 import lombok.RequiredArgsConstructor;
+import nettee.draft.application.port.DraftCommandPort;
 import nettee.draft.domain.Draft;
-import nettee.draft.port.DraftCommandPort;
 import nettee.draft.domain.type.DraftStatus;
-import nettee.draft.usecase.DraftCreateUseCase;
-import nettee.draft.usecase.DraftDeleteUseCase;
-import nettee.draft.usecase.DraftUpdateUseCase;
+import nettee.draft.application.usecase.DraftCreateUseCase;
+import nettee.draft.application.usecase.DraftDeleteUseCase;
+import nettee.draft.application.usecase.DraftUpdateUseCase;
 import org.springframework.stereotype.Service;
 
 @Service

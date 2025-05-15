@@ -1,4 +1,4 @@
-package nettee.article.usecase;
+package nettee.article.application.usecase;
 
 import nettee.article.ArticleQueryModels.ArticleSummary;
 import nettee.article.domain.type.ArticleStatus;

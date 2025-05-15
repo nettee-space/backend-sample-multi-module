@@ -3,7 +3,7 @@ package nettee.draft;
 import nettee.draft.entity.DraftEntity;
 import nettee.draft.entity.type.DraftEntityStatus;
 import nettee.draft.persistence.mapper.DraftEntityMapper;
-import nettee.draft.port.DraftQueryPort;
+import nettee.draft.application.port.DraftQueryPort;
 import nettee.draft.domain.type.DraftStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

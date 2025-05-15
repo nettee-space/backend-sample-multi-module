@@ -1,4 +1,4 @@
-package nettee.draft.usecase;
+package nettee.draft.application.usecase;
 
 import nettee.draft.DraftQueryModels.DraftDetail;
 import nettee.draft.DraftQueryModels.DraftSummary;

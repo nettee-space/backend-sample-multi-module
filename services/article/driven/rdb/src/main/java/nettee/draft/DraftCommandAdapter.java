@@ -5,7 +5,7 @@ import nettee.draft.DraftQueryModels.DraftDetail;
 import nettee.draft.domain.Draft;
 import nettee.draft.entity.type.DraftEntityStatus;
 import nettee.draft.persistence.mapper.DraftEntityMapper;
-import nettee.draft.port.DraftCommandPort;
+import nettee.draft.application.port.DraftCommandPort;
 import nettee.draft.domain.type.DraftStatus;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package nettee.article.port;
+package nettee.article.application.port;
 
 import nettee.article.domain.Article;
 import nettee.article.ArticleQueryModels.ArticleDetail;

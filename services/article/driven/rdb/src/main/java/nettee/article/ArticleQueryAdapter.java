@@ -5,7 +5,7 @@ import nettee.article.ArticleQueryModels.ArticleSummary;
 import nettee.article.entity.ArticleEntity;
 import nettee.article.entity.type.ArticleEntityStatus;
 import nettee.article.persistence.mapper.ArticleEntityMapper;
-import nettee.article.port.ArticleQueryPort;
+import nettee.article.application.port.ArticleQueryPort;
 import nettee.article.domain.type.ArticleStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

@@ -1,4 +1,4 @@
-package nettee.article.usecase;
+package nettee.article.application.usecase;
 
 import nettee.article.domain.Article;
 
