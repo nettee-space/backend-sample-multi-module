@@ -1,6 +1,6 @@
 package nettee.draft.web.mapper;
 
-import nettee.draft.Draft;
+import nettee.draft.domain.Draft;
 import nettee.draft.DraftQueryModels.DraftDetail;
 import nettee.draft.web.dto.DraftCommandDto.DraftCreateCommand;
 import nettee.draft.web.dto.DraftCommandDto.DraftUpdateCommand;

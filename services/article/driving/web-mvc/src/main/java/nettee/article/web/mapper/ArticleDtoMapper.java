@@ -1,6 +1,6 @@
 package nettee.article.web.mapper;
 
-import nettee.article.Article;
+import nettee.article.domain.Article;
 import nettee.article.web.dto.ArticleCommandDto.ArticleCreateCommand;
 import nettee.article.web.dto.ArticleCommandDto.ArticleUpdateCommand;
 import nettee.article.web.dto.ArticleCommandDto.ArticleUpdateTotalViewsCommand;

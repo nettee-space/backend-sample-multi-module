@@ -1,7 +1,7 @@
 package nettee.article;
 
 import lombok.Builder;
-import nettee.article.type.ArticleStatus;
+import nettee.article.domain.type.ArticleStatus;
 
 import java.time.Instant;
 public final class ArticleQueryModels {

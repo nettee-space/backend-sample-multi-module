@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 import nettee.article.entity.type.builder.TypeSafeMarkers.Present;
-import nettee.article.type.ArticleStatus;
+import nettee.article.domain.type.ArticleStatus;
 
 import static nettee.article.ArticleCommandErrorCode.DEFAULT;
 

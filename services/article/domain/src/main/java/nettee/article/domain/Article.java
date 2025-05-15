@@ -1,10 +1,10 @@
-package nettee.article;
+package nettee.article.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import nettee.article.type.ArticleStatus;
+import nettee.article.domain.type.ArticleStatus;
 
 import java.time.Instant;
 import java.util.Objects;

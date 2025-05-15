@@ -1,7 +1,7 @@
 package nettee.article.usecase;
 
 import nettee.article.ArticleQueryModels.ArticleSummary;
-import nettee.article.type.ArticleStatus;
+import nettee.article.domain.type.ArticleStatus;
 import org.springframework.data.domain.Page;
 
 import java.time.Instant;

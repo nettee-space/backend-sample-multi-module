@@ -2,7 +2,7 @@ package nettee.draft.port;
 
 import nettee.draft.DraftQueryModels.DraftDetail;
 import nettee.draft.DraftQueryModels.DraftSummary;
-import nettee.draft.type.DraftStatus;
+import nettee.draft.domain.type.DraftStatus;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;
 

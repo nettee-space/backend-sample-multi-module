@@ -2,7 +2,7 @@ package nettee.article.port;
 
 import nettee.article.ArticleQueryModels.ArticleDetail;
 import nettee.article.ArticleQueryModels.ArticleSummary;
-import nettee.article.type.ArticleStatus;
+import nettee.article.domain.type.ArticleStatus;
 import org.springframework.data.domain.Page;
 
 import java.time.Instant;

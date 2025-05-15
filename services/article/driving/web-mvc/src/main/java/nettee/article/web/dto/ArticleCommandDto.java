@@ -4,8 +4,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
-import nettee.article.Article;
-import nettee.article.type.ArticleStatus;
+import nettee.article.domain.Article;
+import nettee.article.domain.type.ArticleStatus;
 
 public class ArticleCommandDto {
     private ArticleCommandDto() {

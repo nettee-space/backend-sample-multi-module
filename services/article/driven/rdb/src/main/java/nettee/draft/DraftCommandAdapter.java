@@ -2,10 +2,11 @@ package nettee.draft;
 
 import lombok.RequiredArgsConstructor;
 import nettee.draft.DraftQueryModels.DraftDetail;
+import nettee.draft.domain.Draft;
 import nettee.draft.entity.type.DraftEntityStatus;
 import nettee.draft.persistence.mapper.DraftEntityMapper;
 import nettee.draft.port.DraftCommandPort;
-import nettee.draft.type.DraftStatus;
+import nettee.draft.domain.type.DraftStatus;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 

@@ -4,7 +4,7 @@ import nettee.draft.entity.DraftEntity;
 import nettee.draft.entity.type.DraftEntityStatus;
 import nettee.draft.persistence.mapper.DraftEntityMapper;
 import nettee.draft.port.DraftQueryPort;
-import nettee.draft.type.DraftStatus;
+import nettee.draft.domain.type.DraftStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;

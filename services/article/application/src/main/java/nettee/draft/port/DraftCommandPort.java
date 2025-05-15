@@ -1,8 +1,8 @@
 package nettee.draft.port;
 
 import nettee.draft.DraftQueryModels.DraftDetail;
-import nettee.draft.Draft;
-import nettee.draft.type.DraftStatus;
+import nettee.draft.domain.Draft;
+import nettee.draft.domain.type.DraftStatus;
 import java.util.Optional;
 
 public interface DraftCommandPort {

@@ -1,10 +1,10 @@
-package nettee.draft;
+package nettee.draft.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import nettee.draft.type.DraftStatus;
+import nettee.draft.domain.type.DraftStatus;
 
 import java.time.Instant;
 import java.util.Objects;

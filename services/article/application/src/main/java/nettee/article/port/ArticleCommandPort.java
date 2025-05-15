@@ -1,8 +1,8 @@
 package nettee.article.port;
 
-import nettee.article.Article;
+import nettee.article.domain.Article;
 import nettee.article.ArticleQueryModels.ArticleDetail;
-import nettee.article.type.ArticleStatus;
+import nettee.article.domain.type.ArticleStatus;
 
 import java.util.Optional;
 

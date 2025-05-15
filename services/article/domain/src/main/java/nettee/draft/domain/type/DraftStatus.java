@@ -1,4 +1,4 @@
-package nettee.draft.type;
+package nettee.draft.domain.type;
 
 import java.util.EnumSet;
 import java.util.Set;

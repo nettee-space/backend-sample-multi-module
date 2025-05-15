@@ -2,10 +2,11 @@ package nettee.article;
 
 import lombok.RequiredArgsConstructor;
 import nettee.article.ArticleQueryModels.ArticleDetail;
+import nettee.article.domain.Article;
 import nettee.article.entity.type.ArticleEntityStatus;
 import nettee.article.persistence.mapper.ArticleEntityMapper;
 import nettee.article.port.ArticleCommandPort;
-import nettee.article.type.ArticleStatus;
+import nettee.article.domain.type.ArticleStatus;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;

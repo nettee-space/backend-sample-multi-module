@@ -3,7 +3,7 @@ package nettee.article.web;
 import lombok.RequiredArgsConstructor;
 import nettee.article.ArticleQueryModels.ArticleDetail;
 import nettee.article.ArticleQueryModels.ArticleSummary;
-import nettee.article.type.ArticleStatus;
+import nettee.article.domain.type.ArticleStatus;
 import nettee.article.usecase.ArticleReadByStatusesUseCase;
 import nettee.article.usecase.ArticleReadUseCase;
 import nettee.article.web.mapper.ArticleDtoMapper;

@@ -1,6 +1,6 @@
 package nettee.article.persistence.mapper;
 
-import nettee.article.Article;
+import nettee.article.domain.Article;
 import nettee.article.ArticleQueryModels.ArticleDetail;
 import nettee.article.ArticleQueryModels.ArticleSummary;
 import nettee.article.entity.ArticleEntity;

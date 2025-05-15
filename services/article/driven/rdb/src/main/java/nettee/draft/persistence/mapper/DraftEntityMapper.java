@@ -3,7 +3,7 @@ package nettee.draft.persistence.mapper;
 import nettee.draft.entity.DraftEntity;
 import nettee.draft.DraftQueryModels.DraftDetail;
 import nettee.draft.DraftQueryModels.DraftSummary;
-import nettee.draft.Draft;
+import nettee.draft.domain.Draft;
 import org.mapstruct.Mapper;
 
 import java.util.Optional;
