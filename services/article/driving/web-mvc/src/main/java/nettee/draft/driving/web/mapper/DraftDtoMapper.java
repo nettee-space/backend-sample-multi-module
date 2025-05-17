@@ -1,13 +1,13 @@
-package nettee.draft.web.mapper;
+package nettee.draft.driving.web.mapper;
 
 import nettee.draft.domain.Draft;
 import nettee.draft.readmodel.DraftQueryModels.DraftDetail;
-import nettee.draft.web.dto.DraftCommandDto.DraftCreateCommand;
-import nettee.draft.web.dto.DraftCommandDto.DraftUpdateCommand;
-import nettee.draft.web.dto.DraftCommandDto.DraftUpdateTotalLikesCommand;
-import nettee.draft.web.dto.DraftCommandDto.DraftUpdateTotalSharesCommand;
-import nettee.draft.web.dto.DraftCommandDto.DraftUpdateTotalViewsCommand;
-import nettee.draft.web.dto.DraftQueryDto.DraftDetailResponse;
+import nettee.draft.driving.web.dto.DraftCommandDto.DraftCreateCommand;
+import nettee.draft.driving.web.dto.DraftCommandDto.DraftUpdateCommand;
+import nettee.draft.driving.web.dto.DraftCommandDto.DraftUpdateTotalLikesCommand;
+import nettee.draft.driving.web.dto.DraftCommandDto.DraftUpdateTotalSharesCommand;
+import nettee.draft.driving.web.dto.DraftCommandDto.DraftUpdateTotalViewsCommand;
+import nettee.draft.driving.web.dto.DraftQueryDto.DraftDetailResponse;
 import org.mapstruct.Mapper;
 
 import java.util.Optional;

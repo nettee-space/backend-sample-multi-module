@@ -1,11 +1,11 @@
-package nettee.article.web.mapper;
+package nettee.article.driving.web.mapper;
 
 import nettee.article.domain.Article;
-import nettee.article.web.dto.ArticleCommandDto.ArticleCreateCommand;
-import nettee.article.web.dto.ArticleCommandDto.ArticleUpdateCommand;
-import nettee.article.web.dto.ArticleCommandDto.ArticleUpdateTotalViewsCommand;
-import nettee.article.web.dto.ArticleCommandDto.ArticleUpdateTotalSharesCommand;
-import nettee.article.web.dto.ArticleCommandDto.ArticleUpdateTotalLikesCommand;
+import nettee.article.driving.web.dto.ArticleCommandDto.ArticleCreateCommand;
+import nettee.article.driving.web.dto.ArticleCommandDto.ArticleUpdateCommand;
+import nettee.article.driving.web.dto.ArticleCommandDto.ArticleUpdateTotalViewsCommand;
+import nettee.article.driving.web.dto.ArticleCommandDto.ArticleUpdateTotalSharesCommand;
+import nettee.article.driving.web.dto.ArticleCommandDto.ArticleUpdateTotalLikesCommand;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

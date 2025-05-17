@@ -1,4 +1,4 @@
-package nettee.draft.web.dto;
+package nettee.draft.driving.web.dto;
 
 import lombok.Builder;
 import nettee.draft.readmodel.DraftQueryModels.DraftDetail;

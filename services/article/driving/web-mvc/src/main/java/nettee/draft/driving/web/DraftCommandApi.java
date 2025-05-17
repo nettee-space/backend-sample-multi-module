@@ -1,14 +1,14 @@
-package nettee.draft.web;
+package nettee.draft.driving.web;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import nettee.draft.web.mapper.DraftDtoMapper;
+import nettee.draft.driving.web.mapper.DraftDtoMapper;
 import nettee.draft.application.usecase.DraftCreateUseCase;
 import nettee.draft.application.usecase.DraftDeleteUseCase;
 import nettee.draft.application.usecase.DraftUpdateUseCase;
-import nettee.draft.web.dto.DraftCommandDto.DraftCommandResponse;
-import nettee.draft.web.dto.DraftCommandDto.DraftCreateCommand;
-import nettee.draft.web.dto.DraftCommandDto.DraftUpdateCommand;
+import nettee.draft.driving.web.dto.DraftCommandDto.DraftCommandResponse;
+import nettee.draft.driving.web.dto.DraftCommandDto.DraftCreateCommand;
+import nettee.draft.driving.web.dto.DraftCommandDto.DraftUpdateCommand;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;

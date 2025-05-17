@@ -1,13 +1,12 @@
-package nettee.draft.web;
+package nettee.draft.driving.web;
 
 import lombok.RequiredArgsConstructor;
+import nettee.draft.driving.web.dto.DraftQueryDto.DraftDetailResponse;
 import nettee.draft.readmodel.DraftQueryModels.DraftSummary;
 import nettee.draft.application.usecase.DraftReadByStatusesUseCase;
 import nettee.draft.application.usecase.DraftReadUseCase;
-import nettee.draft.web.dto.DraftQueryDto.DraftDetailResponse;
 import nettee.draft.readmodel.DraftQueryModels;
 import nettee.draft.domain.type.DraftStatus;
-import nettee.draft.web.dto.DraftQueryDto;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,7 +28,7 @@ public class DraftQueryApi {
     public DraftDetailResponse getDraft(@PathVariable("draftId") long draftId) {
         DraftQueryModels.DraftDetail draftDetail = draftReadUseCase.getDraft(draftId)
                 .orElseThrow(DRAFT_NOT_FOUND::exception);
-        return new DraftQueryDto.DraftDetailResponse(draftDetail);
+        return new DraftDetailResponse(draftDetail);
     }
 
     @GetMapping

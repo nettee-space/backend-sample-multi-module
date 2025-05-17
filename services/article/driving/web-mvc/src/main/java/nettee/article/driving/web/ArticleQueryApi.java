@@ -1,13 +1,13 @@
-package nettee.article.web;
+package nettee.article.driving.web;
 
 import lombok.RequiredArgsConstructor;
+import nettee.article.driving.web.mapper.ArticleDtoMapper;
 import nettee.article.readmodel.ArticleQueryModels.ArticleDetail;
 import nettee.article.readmodel.ArticleQueryModels.ArticleSummary;
 import nettee.article.domain.type.ArticleStatus;
 import nettee.article.application.usecase.ArticleReadByStatusesUseCase;
 import nettee.article.application.usecase.ArticleReadUseCase;
-import nettee.article.web.mapper.ArticleDtoMapper;
-import nettee.article.web.dto.ArticleQueryDto.ArticleDetailResponse;
+import nettee.article.driving.web.dto.ArticleQueryDto.ArticleDetailResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

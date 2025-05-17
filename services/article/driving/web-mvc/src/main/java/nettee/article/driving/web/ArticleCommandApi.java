@@ -1,13 +1,13 @@
-package nettee.article.web;
+package nettee.article.driving.web;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import nettee.article.application.usecase.ArticleCreateUseCase;
 import nettee.article.application.usecase.ArticleDeleteUseCase;
 import nettee.article.application.usecase.ArticleUpdateUseCase;
-import nettee.article.web.dto.ArticleCommandDto;
-import nettee.article.web.dto.ArticleCommandDto.ArticleCommandResponse;
-import nettee.article.web.mapper.ArticleDtoMapper;
+import nettee.article.driving.web.dto.ArticleCommandDto;
+import nettee.article.driving.web.dto.ArticleCommandDto.ArticleCommandResponse;
+import nettee.article.driving.web.mapper.ArticleDtoMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;

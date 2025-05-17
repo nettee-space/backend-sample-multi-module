@@ -1,4 +1,4 @@
-package nettee.article.web.dto;
+package nettee.article.driving.web.dto;
 
 import lombok.Builder;
 import nettee.article.readmodel.ArticleQueryModels.ArticleDetail;

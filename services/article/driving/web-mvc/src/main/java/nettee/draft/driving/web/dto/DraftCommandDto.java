@@ -1,19 +1,19 @@
-package nettee.article.web.dto;
+package nettee.draft.driving.web.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
-import nettee.article.domain.Article;
-import nettee.article.domain.type.ArticleStatus;
+import nettee.draft.domain.Draft;
+import nettee.draft.domain.type.DraftStatus;
 
-public class ArticleCommandDto {
-    private ArticleCommandDto() {
+public class DraftCommandDto {
+    private DraftCommandDto() {
 
     }
 
     @Builder
-    public record ArticleCreateCommand(
+    public record DraftCreateCommand(
             @NotBlank(message = "제목을 입력하십시오.")
             @Size(min = 3, message = "제목은 세 글자 이상 입력하세요.")
             String title,
@@ -21,12 +21,12 @@ public class ArticleCommandDto {
             @Size(min = 3, message = "본문은 세 글자 이상 입력하세요.")
             String content,
             @NotNull(message = "상태를 입력하십시오")
-            ArticleStatus status
+            DraftStatus status
     ) {
     }
 
     @Builder
-    public record ArticleUpdateCommand(
+    public record DraftUpdateCommand(
             @NotBlank(message = "id를 입력하십시오.")
             Long id,
             @NotBlank(message = "제목을 입력하십시오.")
@@ -36,12 +36,12 @@ public class ArticleCommandDto {
             @Size(min = 3, message = "본문은 세 글자 이상 입력하세요.")
             String content,
             @NotNull(message = "상태를 입력하십시오")
-            ArticleStatus status
+            DraftStatus status
     ) {
     }
 
     @Builder
-    public record ArticleUpdateTotalViewsCommand(
+    public record DraftUpdateTotalViewsCommand(
             @NotBlank(message = "id를 입력하십시오.")
             Long id,
             @NotBlank(message = "총 조회수를 입력해주세요.")
@@ -50,7 +50,7 @@ public class ArticleCommandDto {
     }
 
     @Builder
-    public record ArticleUpdateTotalLikesCommand(
+    public record DraftUpdateTotalLikesCommand(
             @NotBlank(message = "id를 입력하십시오.")
             Long id,
             @NotBlank(message = "총 좋아요 수를 입력해주세요.")
@@ -59,7 +59,7 @@ public class ArticleCommandDto {
     }
 
     @Builder
-    public record ArticleUpdateTotalSharesCommand(
+    public record DraftUpdateTotalSharesCommand(
             @NotBlank(message = "id를 입력하십시오.")
             Long id,
             @NotBlank(message = "총 공유수를 입력해주세요.")
@@ -68,8 +68,8 @@ public class ArticleCommandDto {
     }
 
     @Builder
-    public record ArticleCommandResponse(
-            Article article
+    public record DraftCommandResponse(
+            Draft draft
     ) {
 
     }
