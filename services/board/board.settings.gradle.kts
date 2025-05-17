@@ -32,7 +32,7 @@ include(
     boardApplication,
     boardRdbAdapter,
     boardWebMvcAdapter,
-    ":board:board-board-nettee-client",
+    boardRestClient,
 )
 
 project(board).projectDir = boardDirectory("board")
@@ -43,4 +43,4 @@ project(boardReadModel).projectDir = boardDirectory("readmodel")
 project(boardApplication).projectDir = boardDirectory("application")
 project(boardRdbAdapter).projectDir = boardDirectory("rdb")
 project(boardWebMvcAdapter).projectDir = boardDirectory("web-mvc")
-project(":board:board-board-nettee-client").projectDir = boardDirectory("board-nettee-client")
+project(boardRestClient).projectDir = boardDirectory("board-nettee-client")
