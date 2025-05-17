@@ -1,4 +1,4 @@
-package nettee.board.entity;
+package nettee.board.driven.rdb.entity;
 
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
@@ -7,8 +7,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import nettee.jpa.support.LongBaseTimeEntity;
-import nettee.board.entity.type.BoardEntityStatus;
-import nettee.board.entity.type.BoardEntityStatusConverter;
+import nettee.board.driven.rdb.entity.type.BoardEntityStatus;
+import nettee.board.driven.rdb.entity.type.BoardEntityStatusConverter;
 import org.hibernate.annotations.DynamicUpdate;
 
 @Getter
