@@ -6,6 +6,7 @@ spring:
     import:
       - properties/web/main.cors.yml
       - properties/persistence/main.snowflake.yml
+      - properties/client/main.client.yml
       - board.yml
 
 server:
