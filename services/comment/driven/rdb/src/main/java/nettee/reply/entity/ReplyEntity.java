@@ -13,7 +13,6 @@ import nettee.reply.entity.type.ReplyEntityStatus;
 import nettee.reply.entity.type.ReplyEntityStatusConverter;
 import org.hibernate.annotations.DynamicUpdate;
 
-@Getter
 @DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity(name = "reply")
