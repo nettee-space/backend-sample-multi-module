@@ -1,5 +1,6 @@
 package nettee.comment.persistence.mapper;
 
+import java.util.Optional;
 import nettee.comment.Comment;
 import nettee.comment.entity.CommentEntity;
 import org.mapstruct.Mapper;
@@ -11,4 +12,7 @@ public interface CommentEntityMapper {
 
     CommentEntity toEntity(Comment comment);
 
+    default Optional<Comment> toOptionalDomain(CommentEntity commentEntity) {
+        return Optional.ofNullable(toDomain(commentEntity));
+    }
 }

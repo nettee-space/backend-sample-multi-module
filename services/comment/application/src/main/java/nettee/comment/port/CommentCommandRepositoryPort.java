@@ -1,6 +1,7 @@
 package nettee.comment.port;
 
 import nettee.comment.Comment;
+import nettee.comment.type.CommentStatus;
 
 public interface CommentCommandRepositoryPort {
 
@@ -8,5 +9,5 @@ public interface CommentCommandRepositoryPort {
 
     Comment update(Comment comment);
 
-    void delete(Comment comment);
+    void updateStatus(Long id, CommentStatus status);
 }

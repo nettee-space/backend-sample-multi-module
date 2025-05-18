@@ -1,6 +1,7 @@
 package nettee.reply.port;
 
 import nettee.reply.Reply;
+import nettee.reply.type.ReplyStatus;
 
 public interface ReplyCommandRepositoryPort {
 
@@ -8,5 +9,5 @@ public interface ReplyCommandRepositoryPort {
 
     Reply update(Reply reply);
 
-    void delete(Reply reply);
+    void updateStatus(Long id, ReplyStatus status);
 }
