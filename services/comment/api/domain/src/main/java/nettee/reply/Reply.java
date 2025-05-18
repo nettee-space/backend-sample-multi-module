@@ -16,7 +16,7 @@ public class Reply {
 
     private Long id;
 
-    private Long parentId;
+    private Long commentId;
 
     private String content;
 

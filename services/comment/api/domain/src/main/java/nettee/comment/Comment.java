@@ -16,6 +16,8 @@ public class Comment {
 
     private Long id;
 
+    private Long boardId;
+
     private String content;
 
     private CommentStatus status;
