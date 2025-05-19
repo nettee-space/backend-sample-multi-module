@@ -4,8 +4,8 @@ import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import nettee.reply.Reply;
 import nettee.reply.entity.ReplyEntity;
+import nettee.reply.model.ReplyQueryModels.ReplyDetail;
 import nettee.reply.persistence.mapper.ReplyEntityMapper;
 import nettee.reply.port.ReplyQueryRepositoryPort;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
@@ -24,8 +24,8 @@ public class ReplyQueryAdapter extends QuerydslRepositorySupport implements Repl
     }
 
     @Override
-    public Optional<Reply> findById(Long id) {
-        return replyEntityMapper.toOptionalDomain(
+    public Optional<ReplyDetail> findById(Long id) {
+        return replyEntityMapper.toOptionalReplyDetail(
             getQuerydsl().createQuery()
                 .select(replyEntity)
                 .from(replyEntity)
@@ -35,7 +35,7 @@ public class ReplyQueryAdapter extends QuerydslRepositorySupport implements Repl
     }
 
     @Override
-    public List<Reply> findPageByCommentId(Long commentId, int offset, int size) {
+    public List<ReplyDetail> findPageByCommentId(Long commentId, int offset, int size) {
         var entityList = getQuerydsl().createQuery()
             .select(replyEntity)
             .from(replyEntity)
@@ -46,14 +46,14 @@ public class ReplyQueryAdapter extends QuerydslRepositorySupport implements Repl
             .fetch();
 
         var result = entityList.stream()
-            .map(entity -> replyEntityMapper.toDomain(entity))
+            .map(entity -> replyEntityMapper.toReplyDetail(entity))
             .collect(Collectors.toList());
 
         return result;
     }
 
     @Override
-    public List<Reply> findPageByCommentIdAfter(Long commentId, Instant createdAt, int size) {
+    public List<ReplyDetail> findPageByCommentIdAfter(Long commentId, Instant createdAt, int size) {
         var entityList = getQuerydsl().createQuery()
             .select(replyEntity)
             .from(replyEntity)
@@ -66,7 +66,7 @@ public class ReplyQueryAdapter extends QuerydslRepositorySupport implements Repl
             .fetch();
 
         var result = entityList.stream()
-            .map(entity -> replyEntityMapper.toDomain(entity))
+            .map(entity -> replyEntityMapper.toReplyDetail(entity))
             .collect(Collectors.toList());
 
         return result;

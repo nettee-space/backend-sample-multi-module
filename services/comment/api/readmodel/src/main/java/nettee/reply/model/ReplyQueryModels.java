@@ -12,7 +12,7 @@ public final class ReplyQueryModels {
     @Builder
     public record ReplyDetail(
         Long id,
-        Long parentId,
+        Long commentId,
         String content,
         ReplyStatus status,
         Instant createdAt,
@@ -20,14 +20,4 @@ public final class ReplyQueryModels {
     ) {
     }
 
-    @Builder
-    public record ReplySummary(
-        Long id,
-        Long parentId,
-        String title,
-        ReplyStatus status,
-        Instant createdAt,
-        Instant updatedAt
-    ) {
-    }
 }

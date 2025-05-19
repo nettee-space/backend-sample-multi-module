@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import nettee.comment.Comment;
 import nettee.comment.entity.CommentEntity;
+import nettee.comment.model.CommentQueryModels.CommentDetail;
 import nettee.comment.persistence.mapper.CommentEntityMapper;
 import nettee.comment.port.CommentQueryRepositoryPort;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
@@ -24,8 +25,8 @@ public class CommentQueryAdapter extends QuerydslRepositorySupport implements Co
     }
 
     @Override
-    public Optional<Comment> findById(Long id) {
-        return commentEntityMapper.toOptionalDomain(
+    public Optional<CommentDetail> findById(Long id) {
+        return commentEntityMapper.toOptionalCommentDetail(
             getQuerydsl().createQuery()
                 .select(commentEntity)
                 .from(commentEntity)
@@ -35,7 +36,7 @@ public class CommentQueryAdapter extends QuerydslRepositorySupport implements Co
     }
 
     @Override
-    public List<Comment> findPageByBoardId(Long boardId, int offset, int size) {
+    public List<CommentDetail> findPageByBoardId(Long boardId, int offset, int size) {
         var entityList = getQuerydsl().createQuery()
             .select(commentEntity)
             .from(commentEntity)
@@ -46,27 +47,7 @@ public class CommentQueryAdapter extends QuerydslRepositorySupport implements Co
             .fetch();
 
         var result = entityList.stream()
-            .map(entity -> commentEntityMapper.toDomain(entity))
-            .collect(Collectors.toList());
-
-        return result;
-    }
-
-    @Override
-    public List<Comment> findPageByBoardIdAfter(Long boardId, Instant createdAt, int size) {
-        var entityList = getQuerydsl().createQuery()
-            .select(commentEntity)
-            .from(commentEntity)
-            .where(
-                commentEntity.boardId.eq(boardId).and(
-                commentEntity.createdAt.after(createdAt)))
-            .offset(0)
-            .limit(size)
-            .orderBy(commentEntity.createdAt.asc())
-            .fetch();
-
-        var result = entityList.stream()
-            .map(entity -> commentEntityMapper.toDomain(entity))
+            .map(entity -> commentEntityMapper.toCommentDetail(entity))
             .collect(Collectors.toList());
 
         return result;

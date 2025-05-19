@@ -1,9 +1,11 @@
 package nettee.comment.model;
 
+import java.util.List;
 import lombok.Builder;
 
 import java.time.Instant;
 import nettee.comment.type.CommentStatus;
+import nettee.reply.model.ReplyQueryModels.ReplyDetail;
 
 public final class CommentQueryModels {
 
@@ -16,17 +18,9 @@ public final class CommentQueryModels {
         String content,
         CommentStatus status,
         Instant createdAt,
-        Instant updatedAt
+        Instant updatedAt,
+        List<ReplyDetail> replies
     ) {
     }
 
-    @Builder
-    public record CommentSummary(
-        Long id,
-        String title,
-        CommentStatus status,
-        Instant createdAt,
-        Instant updatedAt
-    ) {
-    }
 }

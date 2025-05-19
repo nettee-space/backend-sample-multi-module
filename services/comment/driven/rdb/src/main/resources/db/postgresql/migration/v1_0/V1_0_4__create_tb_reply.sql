@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS reply (
     id          BIGSERIAL,
-    parent_id   BIGSERIAL,
+    comment_id  BIGINT,
     content     VARCHAR(255),
     status      VARCHAR(255),
     created_at  TIMESTAMP       DEFAULT NOW(),
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS reply (
 COMMENT ON TABLE reply IS '답글';
 
 -- 컬럼 코멘트
-COMMENT ON COLUMN reply.parent_id   IS '부모 댓글 ID';
+COMMENT ON COLUMN reply.comment_id   IS '부모 댓글 ID';
 COMMENT ON COLUMN reply.content   IS '내용';
 COMMENT ON COLUMN reply.status      IS '상태';
 COMMENT ON COLUMN reply.created_at  IS '생성시간';
