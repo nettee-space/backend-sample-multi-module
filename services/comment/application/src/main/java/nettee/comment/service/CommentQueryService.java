@@ -1,10 +1,12 @@
 package nettee.comment.service;
 
-import java.time.Instant;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
-import nettee.comment.Comment;
+import nettee.comment.model.CommentQueryModels.CommentDetail;
 import nettee.comment.port.CommentQueryRepositoryPort;
+import nettee.reply.model.ReplyQueryModels.ReplyDetail;
+import nettee.reply.port.ReplyQueryRepositoryPort;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,13 +14,28 @@ import org.springframework.stereotype.Service;
 public class CommentQueryService {
 
     private final CommentQueryRepositoryPort commentQueryRepositoryPort;
+    private final ReplyQueryRepositoryPort replyQueryRepositoryPort;
 
-    public List<Comment> getCommentListByBoardId(Long boardId) {
-        return commentQueryRepositoryPort.findPageByBoardId(boardId, 0, 10);
-    }
+    public List<CommentDetail> getCommentsByBoardId(Long boardId) {
+        var comments = commentQueryRepositoryPort.findPageByBoardId(boardId, 0, 10);
 
-    public List<Comment> getCommentListByBoardIdAfter(Long boardId, Instant createdAt) {
-        return commentQueryRepositoryPort.findPageByBoardIdAfter(boardId, createdAt, 10);
+        // comment별로 reply를 10개씩 가져옴
+        // 현재 N+1 이므로, 최대 11(1+10)개의 쿼리를 발생시킴
+        var result = comments.stream()
+            .map(comment -> {
+                var replies = replyQueryRepositoryPort.findPageByCommentId(comment.id(), 0, 10);
+
+                return CommentDetail.builder()
+                    .id(comment.id())
+                    .content(comment.content())
+                    .status(comment.status())
+                    .createdAt(comment.createdAt())
+                    .updatedAt(comment.updatedAt())
+                    .replies(replies)
+                    .build();
+            }).collect(Collectors.toList());
+
+        return result;
     }
 
 }

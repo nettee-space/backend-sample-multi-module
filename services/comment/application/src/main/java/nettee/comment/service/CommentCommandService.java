@@ -8,9 +8,11 @@ import nettee.comment.usecase.CommentCreateUseCase;
 import nettee.comment.usecase.CommentDeleteUseCase;
 import nettee.comment.usecase.CommentUpdateUseCase;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class CommentCommandService implements CommentCreateUseCase, CommentUpdateUseCase, CommentDeleteUseCase {
 
     private final CommentCommandRepositoryPort commentCommandRepositoryPort;

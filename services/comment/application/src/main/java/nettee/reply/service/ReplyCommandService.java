@@ -1,5 +1,6 @@
 package nettee.reply.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import nettee.reply.Reply;
 import nettee.reply.port.ReplyCommandRepositoryPort;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class ReplyCommandService implements ReplyCreateUseCase, ReplyUpdateUseCase, ReplyDeleteUseCase {
 
     private final ReplyCommandRepositoryPort replyCommandRepositoryPort;
