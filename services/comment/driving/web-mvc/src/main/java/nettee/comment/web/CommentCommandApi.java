@@ -2,9 +2,9 @@ package nettee.comment.web;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import nettee.comment.usecase.CommentCreateUseCase;
-import nettee.comment.usecase.CommentDeleteUseCase;
-import nettee.comment.usecase.CommentUpdateUseCase;
+import nettee.comment.application.usecase.CommentCreateUseCase;
+import nettee.comment.application.usecase.CommentDeleteUseCase;
+import nettee.comment.application.usecase.CommentUpdateUseCase;
 import nettee.comment.web.dto.CommentCommandDto.CommentCommandResponse;
 import nettee.comment.web.dto.CommentCommandDto.CommentCreateCommand;
 import nettee.comment.web.dto.CommentCommandDto.CommentUpdateCommand;

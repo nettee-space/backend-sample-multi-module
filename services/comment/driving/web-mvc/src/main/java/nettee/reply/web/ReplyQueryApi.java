@@ -4,7 +4,7 @@ import java.time.Instant;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import nettee.reply.model.ReplyQueryModels.ReplyDetail;
-import nettee.reply.service.ReplyQueryService;
+import nettee.reply.application.service.ReplyQueryService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

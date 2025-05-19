@@ -4,7 +4,7 @@ import java.util.List;
 import lombok.Builder;
 
 import java.time.Instant;
-import nettee.comment.type.CommentStatus;
+import nettee.comment.domain.type.CommentStatus;
 import nettee.reply.model.ReplyQueryModels.ReplyDetail;
 
 public final class CommentQueryModels {

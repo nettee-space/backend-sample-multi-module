@@ -3,8 +3,8 @@ package nettee.reply.web.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
-import nettee.reply.Reply;
-import nettee.reply.type.ReplyStatus;
+import nettee.reply.domain.Reply;
+import nettee.reply.domain.type.ReplyStatus;
 
 public class ReplyCommandDto {
 

@@ -3,8 +3,8 @@ package nettee.comment.web.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
-import nettee.comment.Comment;
-import nettee.comment.type.CommentStatus;
+import nettee.comment.domain.Comment;
+import nettee.comment.domain.type.CommentStatus;
 
 public class CommentCommandDto {
 

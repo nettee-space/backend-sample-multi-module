@@ -2,7 +2,7 @@ package nettee.reply.model;
 
 import java.time.Instant;
 import lombok.Builder;
-import nettee.reply.type.ReplyStatus;
+import nettee.reply.domain.type.ReplyStatus;
 
 public final class ReplyQueryModels {
 
