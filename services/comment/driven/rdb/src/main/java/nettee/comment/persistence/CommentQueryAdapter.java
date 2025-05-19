@@ -35,13 +35,13 @@ public class CommentQueryAdapter extends QuerydslRepositorySupport implements Co
     }
 
     @Override
-    public List<Comment> find10ByPostId(Long boardId) {
+    public List<Comment> findPageByBoardId(Long boardId, int offset, int size) {
         var entityList = getQuerydsl().createQuery()
             .select(commentEntity)
             .from(commentEntity)
             .where(commentEntity.boardId.eq(boardId))
-            .offset(0)
-            .limit(10)
+            .offset(offset)
+            .limit(size)
             .orderBy(commentEntity.createdAt.asc())
             .fetch();
 
@@ -53,7 +53,7 @@ public class CommentQueryAdapter extends QuerydslRepositorySupport implements Co
     }
 
     @Override
-    public List<Comment> find10ByPostIdAfterCommentId(Long boardId, Instant createdAt) {
+    public List<Comment> findPageByBoardIdAfter(Long boardId, Instant createdAt, int size) {
         var entityList = getQuerydsl().createQuery()
             .select(commentEntity)
             .from(commentEntity)
@@ -61,7 +61,7 @@ public class CommentQueryAdapter extends QuerydslRepositorySupport implements Co
                 commentEntity.boardId.eq(boardId).and(
                 commentEntity.createdAt.after(createdAt)))
             .offset(0)
-            .limit(10)
+            .limit(size)
             .orderBy(commentEntity.createdAt.asc())
             .fetch();
 

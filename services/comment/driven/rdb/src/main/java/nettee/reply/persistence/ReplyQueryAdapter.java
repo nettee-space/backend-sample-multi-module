@@ -35,13 +35,13 @@ public class ReplyQueryAdapter extends QuerydslRepositorySupport implements Repl
     }
 
     @Override
-    public List<Reply> find10ByCommentId(Long commentId) {
+    public List<Reply> findPageByCommentId(Long commentId, int offset, int size) {
         var entityList = getQuerydsl().createQuery()
             .select(replyEntity)
             .from(replyEntity)
             .where(replyEntity.commentId.eq(commentId))
-            .offset(0)
-            .limit(10)
+            .offset(offset)
+            .limit(size)
             .orderBy(replyEntity.createdAt.asc())
             .fetch();
 
@@ -53,7 +53,7 @@ public class ReplyQueryAdapter extends QuerydslRepositorySupport implements Repl
     }
 
     @Override
-    public List<Reply> find10ByCommentIdAfter(Long commentId, Instant createdAt) {
+    public List<Reply> findPageByCommentIdAfter(Long commentId, Instant createdAt, int size) {
         var entityList = getQuerydsl().createQuery()
             .select(replyEntity)
             .from(replyEntity)
@@ -61,7 +61,7 @@ public class ReplyQueryAdapter extends QuerydslRepositorySupport implements Repl
                 replyEntity.commentId.eq(commentId).and(
                 replyEntity.createdAt.after(createdAt)))
             .offset(0)
-            .limit(10)
+            .limit(size)
             .orderBy(replyEntity.createdAt.asc())
             .fetch();
 
