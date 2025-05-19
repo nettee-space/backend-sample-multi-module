@@ -26,6 +26,7 @@ public class CommentQueryService {
 
                 return CommentDetail.builder()
                     .id(comment.id())
+                    .boardId(comment.boardId())
                     .content(comment.content())
                     .status(comment.status())
                     .createdAt(comment.createdAt())

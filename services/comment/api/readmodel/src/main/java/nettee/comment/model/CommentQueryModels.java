@@ -15,6 +15,7 @@ public final class CommentQueryModels {
     @Builder
     public record CommentDetail(
         Long id,
+        Long boardId,
         String content,
         CommentStatus status,
         Instant createdAt,
