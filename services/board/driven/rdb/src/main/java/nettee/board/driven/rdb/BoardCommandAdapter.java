@@ -1,12 +1,13 @@
-package nettee.board;
+package nettee.board.driven.rdb;
 
 import lombok.RequiredArgsConstructor;
-import nettee.board.persistence.mapper.BoardEntityMapper;
-import nettee.board.port.BoardCommandRepositoryPort;
+import nettee.board.domain.Board;
+import nettee.board.driven.rdb.mapper.BoardEntityMapper;
+import nettee.board.application.port.BoardCommandRepositoryPort;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import static nettee.board.BoardCommandErrorCode.DEFAULT;
+import static nettee.board.exception.BoardErrorCode.DEFAULT;
 
 @Repository
 @RequiredArgsConstructor

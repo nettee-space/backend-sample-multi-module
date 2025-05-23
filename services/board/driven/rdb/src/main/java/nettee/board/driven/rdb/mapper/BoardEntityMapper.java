@@ -1,7 +1,7 @@
-package nettee.board.persistence.mapper;
+package nettee.board.driven.rdb.mapper;
 
-import nettee.board.Board;
-import nettee.board.entity.BoardEntity;
+import nettee.board.domain.Board;
+import nettee.board.driven.rdb.entity.BoardEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

@@ -1,10 +1,10 @@
-package nettee.board;
+package nettee.board.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import nettee.board.type.BoardStatus;
+import nettee.board.domain.type.BoardStatus;
 
 import java.time.Instant;
 import java.util.Objects;

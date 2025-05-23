@@ -1,12 +1,12 @@
-package nettee.board.entity.type;
+package nettee.board.driven.rdb.entity.type;
 
-import nettee.board.type.BoardStatus;
+import nettee.board.domain.type.BoardStatus;
 
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static nettee.board.BoardCommandErrorCode.DEFAULT;
+import static nettee.board.exception.BoardErrorCode.DEFAULT;
 
 public enum BoardEntityStatus {
     REMOVED(
