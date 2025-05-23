@@ -1,3 +1,6 @@
+-- 스키마가 없다면 먼저 생성
+CREATE SCHEMA IF NOT EXISTS article;
+
 CREATE TABLE IF NOT EXISTS article.article (
     id          BIGSERIAL,
     blog_id     BIGINT,
