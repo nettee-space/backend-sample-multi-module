@@ -2,6 +2,12 @@ spring:
   application:
     name: main
 
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${BOARD_POSTGRESQL_URL}
+    username: ${BOARD_POSTGRESQL_USERNAME}
+    password: ${BOARD_POSTGRESQL_PASSWORD}
+
   config:
     import:
       - properties/web/main.cors.yml
