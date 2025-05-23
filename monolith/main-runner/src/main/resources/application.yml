@@ -13,7 +13,12 @@ spring:
       - properties/web/main.cors.yml
       - properties/persistence/main.snowflake.yml
       - properties/client/main.client.yml
-      - board.yml
+#      - board.yml # NOTE this is for MSA projects (delete this line after confirmed)
+
+  flyway:
+    baseline-on-migrate: true
+    locations:
+      - db/migration/v1_0
 
 server:
   port: 5000
