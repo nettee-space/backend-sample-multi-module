@@ -21,5 +21,5 @@ spring:
       - db/migration/v1_0
 
 server:
-  port: 5000
-
+  # 5000 포트를 사용하지 않기: macOS '제어 센터'가 5000, 7000 포트를 계속 사용함. (macOS Monterey 이후 AirPlay receiver 활성화 시)
+  port: 8080
