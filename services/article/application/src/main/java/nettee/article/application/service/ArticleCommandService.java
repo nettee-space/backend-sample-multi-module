@@ -1,6 +1,6 @@
 package nettee.article.application.service;
 
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import nettee.article.domain.Article;
 import nettee.article.application.usecase.ArticleCreateUseCase;
