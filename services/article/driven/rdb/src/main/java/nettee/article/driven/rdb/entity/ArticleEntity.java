@@ -44,7 +44,7 @@ public class ArticleEntity extends LongBaseTimeEntity {
         Objects.requireNonNull(content, "Content cannot be null");
         Objects.requireNonNull(status, "status cannot be null");
         Objects.requireNonNull(totalLikes, "totalLikes cannot be null");
-        Objects.requireNonNull(totalLikes, "totalLikes cannot be null");
+        Objects.requireNonNull(totalViews, "totalViews cannot be null");
         Objects.requireNonNull(totalShares, "totalShares cannot be null");
 
         this.title = title;
