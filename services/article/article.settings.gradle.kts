@@ -1,4 +1,5 @@
 val article: String by settings
+val articleApi: String by settings
 val articleDomain: String by settings
 val articleException: String by settings
 val articleReadModel: String by settings
@@ -23,6 +24,7 @@ val articleDirectory = getDirectories("services", "article")
 
 include (
         article,
+        articleApi,
         articleDomain,
         articleException,
         articleReadModel,
@@ -32,6 +34,7 @@ include (
 )
 
 project(article).projectDir = articleDirectory("article")
+project(articleApi).projectDir = articleDirectory("api")
 project(articleDomain).projectDir = articleDirectory("domain")
 project(articleException).projectDir = articleDirectory("exception")
 project(articleReadModel).projectDir = articleDirectory("readmodel")
