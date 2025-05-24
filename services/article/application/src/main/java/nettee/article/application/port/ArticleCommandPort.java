@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface ArticleCommandPort {
     Optional<ArticleDetail> findById(Long id);
-    Article create(Article article);
+    Article save(Article article);
     Article update(Article article);
     void updateStatus(Long id, ArticleStatus articleStatus);
 }

@@ -28,7 +28,7 @@ public class ArticleCommandAdapter implements ArticleCommandPort {
     }
 
     @Override
-    public Article create(Article article) {
+    public Article save(Article article) {
         var articleEntity = articleEntityMapper.toEntity(article);
         try{
             var newArticle = articleJpaRepository.save(articleEntity);
