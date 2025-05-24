@@ -51,7 +51,7 @@ public class ArticleCommandAdapter implements ArticleCommandPort {
                 .totalShares(article.getTotalShares())
                 .update();
 
-        return articleEntityMapper.toDomain(articleJpaRepository.save(existArticle));
+        return articleEntityMapper.toDomain(existArticle);
     }
 
     @Override

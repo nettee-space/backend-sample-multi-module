@@ -1,5 +1,6 @@
 package nettee.article.application.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import nettee.article.domain.Article;
 import nettee.article.application.usecase.ArticleCreateUseCase;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class ArticleCommandService implements ArticleCreateUseCase, ArticleUpdateUseCase, ArticleDeleteUseCase {
     private final ArticleCommandPort articleCommandPort;
     @Override
