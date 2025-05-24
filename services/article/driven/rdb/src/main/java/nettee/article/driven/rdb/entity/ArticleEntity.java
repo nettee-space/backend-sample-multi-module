@@ -13,9 +13,8 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Objects;
 
-@Getter
 @DynamicUpdate
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 @Entity(name = "article")
 public class ArticleEntity extends LongBaseTimeEntity {
     public String title;
