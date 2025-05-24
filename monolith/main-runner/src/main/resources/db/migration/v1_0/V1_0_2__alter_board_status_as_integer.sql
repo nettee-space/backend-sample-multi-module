@@ -1,0 +1,1 @@
+ALTER TABLE board.board ALTER COLUMN status TYPE INTEGER USING status::INTEGER;

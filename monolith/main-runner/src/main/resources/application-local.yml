@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: ${BOARD_POSTGRESQL_URL:jdbc:postgresql://localhost:5433/demo}
+    username: ${BOARD_POSTGRESQL_USERNAME:root}
+    password: ${BOARD_POSTGRESQL_PASSWORD:root}
+
+  flyway:
+    locations:
+      - db/migration/v1_0
+      - db/migration/local
