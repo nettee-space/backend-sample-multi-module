@@ -19,6 +19,7 @@ public class ArticleCommandService implements ArticleCreateUseCase, ArticleUpdat
     public Article createArticle(Article article) {
         return articleCommandPort.save(article);
     }
+
     @Override
     public Article updateArticle(Article article) {
         return articleCommandPort.update(article);

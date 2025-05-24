@@ -9,5 +9,6 @@ import java.util.Optional;
 
 public interface ArticleReadUseCase {
     Optional<ArticleDetail> getArticle(Long id);
+
     Page<ArticleSummary> getAllArticle(Instant lastCreatedAt, int size);
 }

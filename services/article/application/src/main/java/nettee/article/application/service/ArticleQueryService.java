@@ -22,10 +22,12 @@ public class ArticleQueryService implements ArticleReadUseCase, ArticleReadBySta
     public Optional<ArticleDetail> getArticle(Long id) {
         return articleQueryPort.findById(id);
     }
+
     @Override
     public Page<ArticleSummary> getAllArticle(Instant lastCreatedAt, int size) {
         return articleQueryPort.findAllAfter(lastCreatedAt, size);
     }
+
     @Override
     public Page<ArticleSummary> findByStatuses(Set<ArticleStatus> statuses, Instant lastCreatedAt, int size) {
         return articleQueryPort.findByStatusesAfter(statuses, lastCreatedAt, size);
