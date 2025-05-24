@@ -44,11 +44,11 @@ public class ArticleCommandAdapter implements ArticleCommandPort {
         var existArticle = articleJpaRepository.findById(article.getId())
                             .orElseThrow(ARTICLE_NOT_FOUND::exception);
         existArticle.prepareArticleEntityUpdate()
-                .title(existArticle.getTitle())
-                .content(existArticle.getContent())
-                .totalLikes(existArticle.getTotalLikes())
-                .totalViews(existArticle.getTotalViews())
-                .totalShares(existArticle.getTotalShares())
+                .title(article.getTitle())
+                .content(article.getContent())
+                .totalLikes(article.getTotalLikes())
+                .totalViews(article.getTotalViews())
+                .totalShares(article.getTotalShares())
                 .update();
 
         return articleEntityMapper.toDomain(articleJpaRepository.save(existArticle));
