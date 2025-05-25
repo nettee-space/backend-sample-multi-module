@@ -2,6 +2,7 @@ package nettee.board.driven.rdb.entity;
 
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,7 +15,12 @@ import org.hibernate.annotations.DynamicUpdate;
 @Getter
 @DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Entity(name = "board")
+@Entity
+@Table(
+        schema = "board",
+        catalog = "board",
+        name = "board"
+)
 public class BoardEntity extends LongBaseTimeEntity {
     public String title;
     public String content;
