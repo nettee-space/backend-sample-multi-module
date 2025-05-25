@@ -1,7 +1,9 @@
 -- 1. 테이블 생성
 CREATE TABLE IF NOT EXISTS article.post_view_count (
-    post_id    BIGINT PRIMARY KEY,
-    view_count BIGINT NOT NULL DEFAULT 0
+    post_id    BIGINT,
+    view_count BIGINT NOT NULL DEFAULT 0,
+
+    CONSTRAINT pk_post_view_count PRIMARY KEY (post_id)
 );
 
 -- 2. 테이블 설명
