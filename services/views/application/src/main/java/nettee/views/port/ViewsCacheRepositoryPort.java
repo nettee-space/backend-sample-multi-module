@@ -5,5 +5,7 @@ import nettee.views.Views;
 
 // redis
 public interface ViewsCacheRepositoryPort {
-    void increase(Views views);
+    Long increase(Long postId);
+
+    boolean getLock(Views views, java.time.Duration ttl);
 }
