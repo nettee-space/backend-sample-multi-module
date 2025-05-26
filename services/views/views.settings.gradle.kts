@@ -3,6 +3,7 @@ val viewsApi: String by settings
 val viewsDomain: String by settings
 val viewsApplication: String by settings
 val viewsRedisAdapter: String by settings
+val viewsRdbAdapter: String by settings
 val viewsWebMvcAdapter: String by settings
 
 fun getDirectories(vararg names: String): (String) -> File {
@@ -27,6 +28,7 @@ include(
     viewsDomain,
     viewsApplication,
     viewsRedisAdapter,
+    viewsRdbAdapter,
     viewsWebMvcAdapter,
 )
 
@@ -35,4 +37,5 @@ project(viewsApi).projectDir = viewsDirectory("api")
 project(viewsDomain).projectDir = viewsDirectory("domain")
 project(viewsApplication).projectDir = viewsDirectory("application")
 project(viewsRedisAdapter).projectDir = viewsDirectory("redis")
+project(viewsRdbAdapter).projectDir = viewsDirectory("rdb")
 project(viewsWebMvcAdapter).projectDir = viewsDirectory("web")
