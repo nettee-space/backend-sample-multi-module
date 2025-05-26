@@ -9,4 +9,5 @@ dependencies {
 
     // spring
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
+    implementation("commons-codec:commons-codec:1.16.0")
 }
