@@ -15,6 +15,8 @@ dependencies {
     implementation(project(board))
     implementation(project(views))
 
+    implementation(project(":rest-client"))
+
     // webmvc
     implementation("org.springframework.boot:spring-boot-starter-web")
 
