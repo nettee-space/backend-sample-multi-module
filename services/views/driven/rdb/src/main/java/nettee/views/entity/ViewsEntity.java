@@ -10,13 +10,12 @@ import lombok.NoArgsConstructor;
 
 @Table(name = "post_view_count")
 @Entity
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 @AllArgsConstructor
 public class ViewsEntity {
 
     @Id
-    private Long postId;
+    public Long postId;
 
-    private Long viewCount;
+    public Long viewCount;
 }
