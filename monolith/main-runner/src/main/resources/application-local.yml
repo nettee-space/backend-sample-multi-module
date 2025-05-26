@@ -4,6 +4,11 @@ spring:
     username: ${BOARD_POSTGRESQL_USERNAME:root}
     password: ${BOARD_POSTGRESQL_PASSWORD:root}
 
+  data:
+    redis:
+      host: ${REDIS_URL:127.0.0.1}
+      port: 6379
+
   flyway:
     locations:
       - db/migration/v1_0

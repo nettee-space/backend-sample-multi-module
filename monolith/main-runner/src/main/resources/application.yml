@@ -8,6 +8,11 @@ spring:
     username: ${BOARD_POSTGRESQL_USERNAME}
     password: ${BOARD_POSTGRESQL_PASSWORD}
 
+  data:
+    redis:
+      host: ${REDIS_URL}
+      port: 6379
+
   config:
     import:
       - properties/web/main.cors.yml
