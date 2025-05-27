@@ -7,7 +7,7 @@ spring:
   data:
     redis:
       host: ${REDIS_URL:127.0.0.1}
-      port: 6379
+      port: ${REDIS_PORT:6379}
 
   flyway:
     locations:

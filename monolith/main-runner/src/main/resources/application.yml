@@ -11,7 +11,7 @@ spring:
   data:
     redis:
       host: ${REDIS_URL}
-      port: 6379
+      port: ${REDIS_PORT}
 
   config:
     import:
