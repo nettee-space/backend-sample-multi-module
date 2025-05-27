@@ -8,8 +8,10 @@ import org.springframework.data.repository.query.Param;
 
 public interface ViewsCountBackupRepository extends JpaRepository<ViewsEntity, Long> {
 
-    @Query("update ViewsEntity v set v.viewCount = :viewCount " +
-            "where v.postId = :postId and v.viewCount < :viewCount")
+    @Query("""
+            update ViewsEntity v set v.viewCount = :viewCount
+            where v.postId = :postId and v.viewCount < :viewCount
+           """)
     @Modifying
     int updateViewCount(@Param("postId") Long postId, @Param("viewCount") Long viewCount);
 }
