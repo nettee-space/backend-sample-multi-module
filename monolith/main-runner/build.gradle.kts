@@ -9,11 +9,10 @@ dependencies {
     implementation(project(":exception-handler-core"))
     implementation(project(":jpa-core"))
     implementation(project(":cors-webmvc"))
+    implementation(project(":rest-client"))
 
     // services
     implementation(project(board))
-
-    implementation(project(":rest-client"))
 
     // webmvc
     implementation("org.springframework.boot:spring-boot-starter-web")
