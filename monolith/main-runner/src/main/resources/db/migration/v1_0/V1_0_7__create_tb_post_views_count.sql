@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS article.post_view_count (
     post_id    BIGSERIAL,
     view_count BIGINT DEFAULT 0,
 
-    CONSTRAINT pk_post PRIMARY KEY (post_id)
+    CONSTRAINT pk_post_view_count PRIMARY KEY (post_id)
 );
 
 -- 2. 테이블 설명
