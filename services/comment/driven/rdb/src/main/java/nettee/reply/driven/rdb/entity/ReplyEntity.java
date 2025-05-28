@@ -13,7 +13,6 @@ import nettee.reply.driven.rdb.entity.type.ReplyEntityStatusConverter;
 import org.hibernate.annotations.DynamicUpdate;
 
 @DynamicUpdate
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity(name = "reply")
 public class ReplyEntity extends LongBaseTimeEntity {
 

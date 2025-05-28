@@ -13,7 +13,6 @@ import nettee.jpa.support.LongBaseTimeEntity;
 import org.hibernate.annotations.DynamicUpdate;
 
 @DynamicUpdate
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity(name = "comment")
 public class CommentEntity extends LongBaseTimeEntity {
 
