@@ -40,7 +40,7 @@ public enum BoardEntityStatus {
                             GeneralPurposeFeatures.READ,
                             GeneralPurposeFeatures.SUBITEM_READ
                     )
-                    .categoryBits(0b0000_0000_0000_01000)
+                    .categoryBits(0b0000_0000_0000_0100)
                     .instanceBits(0)
     );
 
