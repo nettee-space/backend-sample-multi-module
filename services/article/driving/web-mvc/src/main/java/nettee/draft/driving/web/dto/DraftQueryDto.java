@@ -12,7 +12,7 @@ public class DraftQueryDto {
     @Builder
     public record DraftDetailResponse(
 
-            @JsonProperty("draft") DraftDetail draftDetail
+            DraftDetail draft
     ) {
     }
 }
