@@ -23,6 +23,16 @@ public class Draft {
     private Long blogId;
     private Long articleId;
 
+    public static Draft of(String title, String content) {
+        return Draft.builder()
+                .title(title)
+                .content(content)
+                .status(DraftStatus.PENDING) // 기본 상태 설정
+                .createdAt(Instant.now())
+                .updatedAt(Instant.now())
+                .build();
+    }
+
     @Builder(
             builderClassName = "updateDraftBuilder",
             builderMethodName = "prepareDraftUpdate",

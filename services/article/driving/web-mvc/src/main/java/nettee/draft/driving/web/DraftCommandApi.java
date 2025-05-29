@@ -2,6 +2,7 @@ package nettee.draft.driving.web;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import nettee.draft.domain.Draft;
 import nettee.draft.driving.web.mapper.DraftDtoMapper;
 import nettee.draft.application.usecase.DraftCreateUseCase;
 import nettee.draft.application.usecase.DraftDeleteUseCase;
@@ -33,7 +34,7 @@ public class DraftCommandApi {
     public DraftCommandResponse create(
             @RequestBody @Valid DraftCreateCommand draftCreateCommand
             ) {
-        var draft = mapper.toDomain(draftCreateCommand);
+        var draft = Draft.of(draftCreateCommand.title(), draftCreateCommand.content());
         return DraftCommandResponse.builder()
                 .draft(draftCreateUseCase.createDraft(draft))
                 .build();
