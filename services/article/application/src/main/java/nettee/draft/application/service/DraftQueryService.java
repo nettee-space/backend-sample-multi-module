@@ -21,15 +21,18 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class DraftQueryService implements DraftReadUseCase, DraftReadByStatusesUseCase {
     private final DraftQueryPort draftQueryPort;
+
     @Override
     public Optional<DraftDetail> getDraft(Long id) {
         return draftQueryPort.findById(id);
     }
+
     @Override
     public Page<DraftSummary> getAllDraft(int size) {
         Pageable pageable = PageRequest.of(0, size, Sort.by(Direction.DESC, "createAt"));
         return draftQueryPort.findAll(pageable);
     }
+
     @Override
     public Page<DraftSummary> findByStatuses(Set<DraftStatus> statuses, int size) {
         Pageable pageable = PageRequest.of(0, size, Sort.by(Direction.DESC, "createAt"));
