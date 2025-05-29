@@ -19,9 +19,7 @@ public class ArticleCommandDto {
             String title,
             @NotBlank(message = "본문을 입력하십시오")
             @Size(min = 3, message = "본문은 세 글자 이상 입력하세요.")
-            String content,
-            @NotBlank(message = "상태를 입력하십시오")
-            ArticleStatus status
+            String content
     ) {
     }
 

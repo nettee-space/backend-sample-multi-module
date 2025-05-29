@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import nettee.article.domain.type.ArticleStatus;
+import nettee.draft.domain.Draft;
+import nettee.draft.domain.type.DraftStatus;
 
 import java.time.Instant;
 import java.util.Objects;
@@ -24,6 +26,16 @@ public class Article {
     private Instant createdAt;
     private Instant updatedAt;
     private Long blogId;
+
+    public static Article of(String title, String content) {
+        return Article.builder()
+                .title(title)
+                .content(content)
+                .status(ArticleStatus.PENDING)
+                .createdAt(Instant.now())
+                .updatedAt(Instant.now())
+                .build();
+    }
 
     @Builder(
         builderClassName = "updateArticleBuilder",

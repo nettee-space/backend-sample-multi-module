@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import nettee.article.application.usecase.ArticleCreateUseCase;
 import nettee.article.application.usecase.ArticleDeleteUseCase;
 import nettee.article.application.usecase.ArticleUpdateUseCase;
+import nettee.article.domain.Article;
 import nettee.article.driving.web.dto.ArticleCommandDto;
 import nettee.article.driving.web.dto.ArticleCommandDto.ArticleCommandResponse;
 import nettee.article.driving.web.mapper.ArticleDtoMapper;
@@ -32,7 +33,7 @@ public class ArticleCommandApi {
     public ArticleCommandResponse create(
             @RequestBody @Valid ArticleCommandDto.ArticleCreateCommand articleCreateCommand
             ) {
-        var article = mapper.toDomain(articleCreateCommand);
+        var article = Article.of(articleCreateCommand.title(), articleCreateCommand.content());
         return ArticleCommandResponse.builder()
                 .article(articleCreateUseCase.createArticle(article))
                 .build();
