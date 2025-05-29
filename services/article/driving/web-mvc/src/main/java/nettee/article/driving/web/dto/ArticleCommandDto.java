@@ -42,7 +42,7 @@ public final class ArticleCommandDto {
     public record ArticleUpdateTotalViewsCommand(
             @NotNull(message = "id를 입력하십시오.")
             Long id,
-            @NotBlank(message = "총 조회수를 입력해주세요.")
+            @NotNull(message = "총 조회수를 입력해주세요.")
             Integer totalViews
     ) {
     }
@@ -51,7 +51,7 @@ public final class ArticleCommandDto {
     public record ArticleUpdateTotalLikesCommand(
             @NotNull(message = "id를 입력하십시오.")
             Long id,
-            @NotBlank(message = "총 좋아요 수를 입력해주세요.")
+            @NotNull(message = "총 좋아요 수를 입력해주세요.")
             Integer totalLikes
     ) {
     }
@@ -60,7 +60,7 @@ public final class ArticleCommandDto {
     public record ArticleUpdateTotalSharesCommand(
             @NotNull(message = "id를 입력하십시오.")
             Long id,
-            @NotBlank(message = "총 공유수를 입력해주세요.")
+            @NotNull(message = "총 공유수를 입력해주세요.")
             Integer totalShares
     ) {
     }
