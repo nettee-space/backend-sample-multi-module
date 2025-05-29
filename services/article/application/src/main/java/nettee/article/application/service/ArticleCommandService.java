@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 @Transactional
 public class ArticleCommandService implements ArticleCreateUseCase, ArticleUpdateUseCase, ArticleDeleteUseCase {
     private final ArticleCommandPort articleCommandPort;
+
     @Override
     public Article createArticle(Article article) {
         return articleCommandPort.save(article);
