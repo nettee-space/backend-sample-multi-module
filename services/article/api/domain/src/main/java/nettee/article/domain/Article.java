@@ -31,7 +31,7 @@ public class Article {
         return Article.builder()
                 .title(title)
                 .content(content)
-                .status(ArticleStatus.PENDING)
+                .status(ArticleStatus.ACTIVE)
                 .createdAt(Instant.now())
                 .updatedAt(Instant.now())
                 .build();
