@@ -6,7 +6,8 @@ import nettee.article.application.usecase.ArticleCreateUseCase;
 import nettee.article.application.usecase.ArticleDeleteUseCase;
 import nettee.article.application.usecase.ArticleUpdateUseCase;
 import nettee.article.domain.Article;
-import nettee.article.driving.web.dto.ArticleCommandDto;
+import nettee.article.driving.web.dto.ArticleCommandDto.ArticleCreateCommand;
+import nettee.article.driving.web.dto.ArticleCommandDto.ArticleUpdateCommand;
 import nettee.article.driving.web.dto.ArticleCommandDto.ArticleCommandResponse;
 import nettee.article.driving.web.mapper.ArticleDtoMapper;
 import org.springframework.http.HttpStatus;
@@ -30,9 +31,7 @@ public class ArticleCommandApi {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ArticleCommandResponse create(
-            @RequestBody @Valid ArticleCommandDto.ArticleCreateCommand articleCreateCommand
-            ) {
+    public ArticleCommandResponse create(@RequestBody @Valid ArticleCreateCommand articleCreateCommand) {
         var article = Article.of(articleCreateCommand.title(), articleCreateCommand.content());
         return ArticleCommandResponse.builder()
                 .article(articleCreateUseCase.createArticle(article))
@@ -43,7 +42,7 @@ public class ArticleCommandApi {
     @ResponseStatus(HttpStatus.OK)
     public ArticleCommandResponse updateArticle(
             @PathVariable("id") Long id,
-            @RequestBody @Valid ArticleCommandDto.ArticleUpdateCommand articleUpdateCommand
+            @RequestBody @Valid ArticleUpdateCommand articleUpdateCommand
     ) {
         var article = mapper.toDomain(id, articleUpdateCommand);
 
