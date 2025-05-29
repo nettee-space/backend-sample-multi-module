@@ -1,5 +1,6 @@
 package nettee.draft.driving.web.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
@@ -13,10 +14,10 @@ public class DraftCommandDto {
 
     @Builder
     public record DraftCreateCommand(
-            @NotNull(message = "제목을 입력하십시오.")
+            @NotBlank(message = "제목을 입력하십시오.")
             @Size(min = 3, message = "제목은 세 글자 이상 입력하세요.")
             String title,
-            @NotNull(message = "본문을 입력하십시오")
+            @NotBlank(message = "본문을 입력하십시오")
             @Size(min = 3, message = "본문은 세 글자 이상 입력하세요.")
             String content,
             @NotNull(message = "상태를 입력하십시오")
@@ -28,10 +29,10 @@ public class DraftCommandDto {
     public record DraftUpdateCommand(
             @NotNull(message = "id를 입력하십시오.")
             Long id,
-            @NotNull(message = "제목을 입력하십시오.")
+            @NotBlank(message = "제목을 입력하십시오.")
             @Size(min = 3, message = "제목은 세 글자 이상 입력하세요.")
             String title,
-            @NotNull(message = "본문을 입력하십시오")
+            @NotBlank(message = "본문을 입력하십시오")
             @Size(min = 3, message = "본문은 세 글자 이상 입력하세요.")
             String content,
             @NotNull(message = "상태를 입력하십시오")
@@ -43,7 +44,7 @@ public class DraftCommandDto {
     public record DraftUpdateTotalViewsCommand(
             @NotNull(message = "id를 입력하십시오.")
             Long id,
-            @NotNull(message = "총 조회수를 입력해주세요.")
+            @NotBlank(message = "총 조회수를 입력해주세요.")
             Integer totalViews
     ) {
     }
@@ -52,7 +53,7 @@ public class DraftCommandDto {
     public record DraftUpdateTotalLikesCommand(
             @NotNull(message = "id를 입력하십시오.")
             Long id,
-            @NotNull(message = "총 좋아요 수를 입력해주세요.")
+            @NotBlank(message = "총 좋아요 수를 입력해주세요.")
             Integer totalLikes
     ) {
     }
@@ -61,7 +62,7 @@ public class DraftCommandDto {
     public record DraftUpdateTotalSharesCommand(
             @NotNull(message = "id를 입력하십시오.")
             Long id,
-            @NotNull(message = "총 공유수를 입력해주세요.")
+            @NotBlank(message = "총 공유수를 입력해주세요.")
             Integer totalShares
     ) {
     }
