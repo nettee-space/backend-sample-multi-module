@@ -13,10 +13,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class DraftCommandService implements DraftCreateUseCase, DraftUpdateUseCase, DraftDeleteUseCase {
     private final DraftCommandPort draftCommandPort;
+
     @Override
     public Draft createDraft(Draft draft) {
         return draftCommandPort.save(draft);
     }
+
     @Override
     public Draft updateDraft(Draft draft) {
         return draftCommandPort.update(draft);
