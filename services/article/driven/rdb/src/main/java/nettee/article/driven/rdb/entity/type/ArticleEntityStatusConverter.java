@@ -9,10 +9,7 @@ import nettee.article.exception.ArticleCommandException;
 public class ArticleEntityStatusConverter implements AttributeConverter<ArticleEntityStatus, Integer> {
     @Override
     public Integer convertToDatabaseColumn(ArticleEntityStatus status) {
-        if (status == null) {
-            throw new ArticleCommandException(ArticleCommandErrorCode.DEFAULT);
-        }
-        return status.getCode();
+        return status != null ? status.getCode() : null;
     }
 
     @Override

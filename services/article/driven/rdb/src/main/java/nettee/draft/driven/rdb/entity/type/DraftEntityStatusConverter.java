@@ -9,10 +9,7 @@ import nettee.draft.exception.DraftCommandException;
 public class DraftEntityStatusConverter implements AttributeConverter<DraftEntityStatus, Integer> {
     @Override
     public Integer convertToDatabaseColumn(DraftEntityStatus status) {
-        if (status == null) {
-            throw new DraftCommandException(DraftCommandErrorCode.DEFAULT);
-        }
-        return status.getCode();
+        return status != null ? status.getCode() : null;
     }
 
     @Override
