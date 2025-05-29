@@ -15,6 +15,8 @@ include(
     ":snowflake-id-hibernate",
     ":client-api",
     ":rest-client",
+    ":redis-api",
+    ":redis-standalone",
 )
 
 project(":time-util").projectDir = core["time-util"]!!
@@ -26,3 +28,5 @@ project(":snowflake-id-api").projectDir = core["nettee-snowflake-id-api"]!!
 project(":snowflake-id-hibernate").projectDir = core["nettee-snowflake-id-hibernate"]!!
 project(":client-api").projectDir = core["nettee-client-api"]!!
 project(":rest-client").projectDir = core["nettee-rest-client"]!!
+project(":redis-api").projectDir = core["nettee-redis-api"]!!
+project(":redis-standalone").projectDir = core["nettee-redis-standalone"]!!
