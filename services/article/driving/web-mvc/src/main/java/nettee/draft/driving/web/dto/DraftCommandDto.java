@@ -7,7 +7,7 @@ import lombok.Builder;
 import nettee.draft.domain.Draft;
 import nettee.draft.domain.type.DraftStatus;
 
-public class DraftCommandDto {
+public final class DraftCommandDto {
     private DraftCommandDto() {
 
     }

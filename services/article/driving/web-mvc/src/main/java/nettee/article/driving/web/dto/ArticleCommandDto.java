@@ -7,7 +7,7 @@ import lombok.Builder;
 import nettee.article.domain.Article;
 import nettee.article.domain.type.ArticleStatus;
 
-public class ArticleCommandDto {
+public final class ArticleCommandDto {
     private ArticleCommandDto() {
 
     }
