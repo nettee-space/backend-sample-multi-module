@@ -15,7 +15,7 @@ public class DraftCommandService implements DraftCreateUseCase, DraftUpdateUseCa
     private final DraftCommandPort draftCommandPort;
     @Override
     public Draft createDraft(Draft draft) {
-        return draftCommandPort.create(draft);
+        return draftCommandPort.save(draft);
     }
     @Override
     public Draft updateDraft(Draft draft) {

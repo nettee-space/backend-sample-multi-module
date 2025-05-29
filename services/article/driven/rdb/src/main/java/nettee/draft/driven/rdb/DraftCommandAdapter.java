@@ -29,7 +29,7 @@ public class DraftCommandAdapter implements DraftCommandPort {
     }
 
     @Override
-    public Draft create(Draft draft) {
+    public Draft save(Draft draft) {
         var draftEntity = draftEntityMapper.toEntity(draft);
         try{
             var newDraft = draftJpaRepository.save(draftEntity);
