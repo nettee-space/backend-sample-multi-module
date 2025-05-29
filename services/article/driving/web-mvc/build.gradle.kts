@@ -24,4 +24,7 @@ dependencies {
 
     // spring
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+    // jackson
+    implementation("com.fasterxml.jackson.core:jackson-annotations:2.15.2")
 }

@@ -1,5 +1,6 @@
 package nettee.draft.driving.web.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import nettee.draft.readmodel.DraftQueryModels.DraftDetail;
 
@@ -10,7 +11,8 @@ public class DraftQueryDto {
 
     @Builder
     public record DraftDetailResponse(
-            DraftDetail draftDetail
+
+            @JsonProperty("draft") DraftDetail draftDetail
     ) {
     }
 }
