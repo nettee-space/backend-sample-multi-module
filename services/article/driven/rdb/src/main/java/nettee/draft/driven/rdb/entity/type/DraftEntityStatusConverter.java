@@ -2,15 +2,15 @@ package nettee.draft.driven.rdb.entity.type;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
-import nettee.draft.exception.DraftQueryErrorCode;
-import nettee.draft.exception.DraftQueryException;
+import nettee.draft.exception.DraftCommandErrorCode;
+import nettee.draft.exception.DraftCommandException;
 
 @Converter
 public class DraftEntityStatusConverter implements AttributeConverter<DraftEntityStatus, Integer> {
     @Override
     public Integer convertToDatabaseColumn(DraftEntityStatus status) {
         if (status == null) {
-            throw new DraftQueryException(DraftQueryErrorCode.DEFAULT);
+            throw new DraftCommandException(DraftCommandErrorCode.DEFAULT);
         }
         return status.getCode();
     }
