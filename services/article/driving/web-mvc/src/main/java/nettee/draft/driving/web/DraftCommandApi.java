@@ -31,9 +31,7 @@ public class DraftCommandApi {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public DraftCommandResponse create(
-            @RequestBody @Valid DraftCreateCommand draftCreateCommand
-            ) {
+    public DraftCommandResponse create(@RequestBody @Valid DraftCreateCommand draftCreateCommand) {
         var draft = Draft.of(draftCreateCommand.title(), draftCreateCommand.content());
         return DraftCommandResponse.builder()
                 .draft(draftCreateUseCase.createDraft(draft))
