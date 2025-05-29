@@ -21,7 +21,7 @@ import java.util.Set;
 import static nettee.article.exception.ArticleQueryErrorCode.ARTICLE_NOT_FOUND;
 
 @RestController
-@RequestMapping("/api/v1/articles")
+@RequestMapping("articles")
 @RequiredArgsConstructor
 public class ArticleQueryApi {
     private final ArticleReadUseCase articleReadUseCase;

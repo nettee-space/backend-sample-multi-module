@@ -17,7 +17,7 @@ import java.util.Set;
 import static nettee.draft.exception.DraftQueryErrorCode.DRAFT_NOT_FOUND;
 
 @RestController
-@RequestMapping("/api/v1/drafts")
+@RequestMapping("drafts")
 @RequiredArgsConstructor
 public class DraftQueryApi {
     private final DraftReadUseCase draftReadUseCase;
