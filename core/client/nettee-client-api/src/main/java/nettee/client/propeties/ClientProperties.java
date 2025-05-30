@@ -13,9 +13,17 @@ public record ClientProperties(
         Map<String, String> url
 ) {
     public ClientProperties {
+        if (baseUrl == null || baseUrl.isEmpty()) {
+            baseUrl = "http://localhost:8080";
+            log.warn("baseUrl is null or empty");
+        } else {
+            baseUrl = baseUrl.strip();
+        }
+
         log.debug("baseUrl url: {}", baseUrl);
-        
-        for(Entry<String, String> entry : url.entrySet()) {
+
+        for (Entry<String, String> entry : url.entrySet()) {
+            entry.setValue(entry.getValue().strip());
             log.debug((entry.getKey() + ": " + entry.getValue()));
         }
     }

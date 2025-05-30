@@ -1,4 +1,8 @@
+val boardApi: String by project
+val boardApplication: String by project
+
 dependencies {
-    api(project(":board:board-application"))
+    api(project(boardApi))
+    api(project(boardApplication))
     api(project(":rest-client"))
 }
