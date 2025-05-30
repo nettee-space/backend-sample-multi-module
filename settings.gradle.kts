@@ -8,3 +8,4 @@ apply(from = "monolith/monolith.settings.gradle.kts")
 
 apply(from = "$services/board/board.settings.gradle.kts")
 apply(from = "$services/comment/comment.settings.gradle.kts")
+apply(from = "$services/views/views.settings.gradle.kts")
