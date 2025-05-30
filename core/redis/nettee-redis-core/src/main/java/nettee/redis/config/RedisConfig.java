@@ -13,6 +13,12 @@ public class RedisConfig {
     
     @Bean
     public RedisConnectionFactory redisConnectionFactory(RedisProperties redisProperties) {
-        return new LettuceConnectionFactory(redisProperties.host(), redisProperties.port());
+        if(redisProperties.useClusterMode()) {
+            // cluster connection
+            throw new RuntimeException("미구현");
+        } else {
+            // standalone connection
+            return new LettuceConnectionFactory(redisProperties.host(), redisProperties.ports().getFirst());
+        }
     }
 }
