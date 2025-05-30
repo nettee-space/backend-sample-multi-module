@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${COMMENT_POSTGRESQL_URL}
+    username: ${COMMENT_POSTGRESQL_USERNAME}
+    password: ${COMMENT_POSTGRESQL_PASSWORD}
+
+  flyway:
+    baseline-on-migrate: true
+    locations:
+      - db/postgresql/migration/v1_0

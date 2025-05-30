@@ -14,7 +14,7 @@ include(
     ":snowflake-id-api",
     ":snowflake-id-hibernate",
     ":client-api",
-    ":rest-client",
+    ":rest-client"
 )
 
 project(":time-util").projectDir = core["time-util"]!!
