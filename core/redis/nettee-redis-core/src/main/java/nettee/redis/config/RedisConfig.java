@@ -9,7 +9,7 @@ import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactor
 
 @Configuration
 @EnableConfigurationProperties(RedisProperties.class)
-public class RedisStandaloneConfig {
+public class RedisConfig {
     
     @Bean
     public RedisConnectionFactory redisConnectionFactory(RedisProperties redisProperties) {
