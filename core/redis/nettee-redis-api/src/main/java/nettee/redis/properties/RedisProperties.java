@@ -13,13 +13,15 @@ public record RedisProperties(
         List<Integer> ports
 ) {
     public RedisProperties {
+        if(ports.isEmpty()) {
+            ports.add(6379);
+        }
+        
         if (!useClusterMode) {
             log.info("Redis Connection Mode is Standalone");
 
             if(ports.size() > 1) {
                 throw new RuntimeException("Redis Connection Mode has more than one port");
-            } else if(ports.isEmpty()) {
-                ports.add(6379);
             }
         } else {
             log.info("Redis Connection Mode is Cluster");
