@@ -1,6 +1,7 @@
 package nettee.redis.properties;
 
 import lombok.extern.slf4j.Slf4j;
+import nettee.redis.properties.cache.RedisCacheProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.List;
@@ -8,16 +9,19 @@ import java.util.List;
 @Slf4j
 @ConfigurationProperties("app.redis")
 public record RedisProperties(
-        boolean useClusterMode,
+        Boolean useClusterMode,
         String host,
-        List<Integer> ports
+        List<Integer> ports,
+        RedisCacheProperties cache
 ) {
     public RedisProperties {
-        if(ports.isEmpty()) {
-            ports.add(6379);
+        if(ports == null || ports.isEmpty()) {
+            ports = List.of(6379);
         }
         
-        if (!useClusterMode) {
+        if (useClusterMode == null || !useClusterMode) {
+            useClusterMode = false;
+            
             log.info("Redis Connection Mode is Standalone");
 
             if(ports.size() > 1) {
@@ -27,7 +31,7 @@ public record RedisProperties(
             log.info("Redis Connection Mode is Cluster");
         }
 
-        if (host == null) {
+        if (host == null || host.isBlank()) {
             host = "127.0.0.1";
             log.warn("redis host is null");
         }
