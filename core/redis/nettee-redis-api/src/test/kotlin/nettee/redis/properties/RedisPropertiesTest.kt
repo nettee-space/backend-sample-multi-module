@@ -16,7 +16,7 @@ class RedisPropertiesTest(
     private val redisProperties: RedisProperties
 ) : FreeSpec({
 
-    "[초기화 검증] Redis 프로퍼티 검증" - {
+    "[초기화 검증] Redis 설정 값을 반환" - {
         "application.yml 모든 변수를 설정했을 때" - {
             "useClusterMode는 정상 반환" {
                 redisProperties.useClusterMode shouldBe true
@@ -59,10 +59,17 @@ class RedisPropertiesTest(
             "ports 기본값 [6379] 반환" {
                 nullRedisProperties.ports shouldBe listOf(6379)
             }
+
+            "cache 기본값 cache 반환" {
+                val app = nullRedisProperties.cache.domains["app"]!!
+                app.ttl() shouldBe 60
+                app.disableNull() shouldBe true
+                app.prefix() shouldBe "app::"
+            }
         }
     }
 
-    "[예외 검증] useClusterMode 예외 검증" - {
+    "[예외 검증] useClusterMode 예외 반환" - {
         "useClusterMode가 false(standalone 모드) 일때" - {
             "여러 port를 지정하면 에러 반환" {
                 shouldThrow<RuntimeException> {

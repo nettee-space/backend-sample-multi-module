@@ -11,14 +11,15 @@ public record RedisCacheProperties(
         Map<String, DomainCacheProperties> domains
 ) {
     public RedisCacheProperties {
-        if(domains.isEmpty()) {
+        if(domains == null || domains.isEmpty()) {
             log.warn("redis cache domains is empty");
+        } else {
+            domains = domains.entrySet().stream()
+                    .collect(Collectors.toMap(
+                            domain -> domain.getKey().strip(),
+                            Map.Entry::getValue
+                    ));
         }
-        
-        domains = domains.entrySet().stream()
-                .collect(Collectors.toMap(
-                        domain -> domain.getKey().strip(),
-                        Map.Entry::getValue
-                ));
+
     }
 }
