@@ -2,13 +2,31 @@ spring:
   application:
     name: main
 
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${BOARD_POSTGRESQL_URL}
+    username: ${BOARD_POSTGRESQL_USERNAME}
+    password: ${BOARD_POSTGRESQL_PASSWORD}
+
+  data:
+    redis:
+      host: ${REDIS_URL}
+      port: ${REDIS_PORT}
+
   config:
     import:
       - properties/web/main.cors.yml
       - properties/persistence/main.snowflake.yml
       - board.yml
       - article.yml
+      - properties/client/main.client.yml
+#      - board.yml # NOTE this is for MSA projects (delete this line after confirmed)
+
+  flyway:
+    baseline-on-migrate: true
+    locations:
+      - db/migration/v1_0
 
 server:
-  port: 5000
-
+  # 5000 포트를 사용하지 않기: macOS '제어 센터'가 5000, 7000 포트를 계속 사용함. (macOS Monterey 이후 AirPlay receiver 활성화 시)
+  port: 8080

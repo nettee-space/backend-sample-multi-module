@@ -6,6 +6,7 @@ val boardReadModel: String by settings
 val boardApplication: String by settings
 val boardRdbAdapter: String by settings
 val boardWebMvcAdapter: String by settings
+val boardRestClient: String by settings
 
 fun getDirectories(vararg names: String): (String) -> File {
     var dir = rootDir
@@ -32,6 +33,7 @@ include(
     boardApplication,
     boardRdbAdapter,
     boardWebMvcAdapter,
+//    boardRestClient,
 )
 
 project(board).projectDir = boardDirectory("board")
@@ -42,3 +44,4 @@ project(boardReadModel).projectDir = boardDirectory("readmodel")
 project(boardApplication).projectDir = boardDirectory("application")
 project(boardRdbAdapter).projectDir = boardDirectory("rdb")
 project(boardWebMvcAdapter).projectDir = boardDirectory("web-mvc")
+//project(boardRestClient).projectDir = boardDirectory("board-nettee-client") // don't import yet, cuz including errors
