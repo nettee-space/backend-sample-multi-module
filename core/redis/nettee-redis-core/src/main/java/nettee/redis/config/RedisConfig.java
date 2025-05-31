@@ -2,6 +2,7 @@ package nettee.redis.config;
 
 import nettee.redis.properties.RedisProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
@@ -20,6 +21,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Configuration
+@EnableCaching
 @EnableConfigurationProperties(RedisProperties.class)
 public class RedisConfig {
     
