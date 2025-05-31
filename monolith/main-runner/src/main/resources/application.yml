@@ -17,6 +17,8 @@ spring:
     import:
       - properties/web/main.cors.yml
       - properties/persistence/main.snowflake.yml
+      - board.yml
+      - article.yml
       - properties/client/main.client.yml
 #      - board.yml # NOTE this is for MSA projects (delete this line after confirmed)
 
