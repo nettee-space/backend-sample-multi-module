@@ -4,7 +4,6 @@ val core = rootDir.resolve("core")
     .filter(File::isDirectory)
     .associateBy(File::getName)
 
-
 include(
     ":time-util",
     ":jpa-core",
