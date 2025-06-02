@@ -12,33 +12,29 @@ import java.util.Map;
 @ConfigurationProperties("app.redis")
 public record RedisProperties(
         Boolean useClusterMode,
-        String host,
-        List<Integer> ports,
+        List<String> nodes,
         RedisCacheProperties cache
 ) {
     public RedisProperties {
-        if (ports == null || ports.isEmpty()) {
-            ports = List.of(6379);
+        if (nodes == null || nodes.isEmpty()) {
+            nodes = List.of("localhost:6379");
+
+            log.warn("redis nodes is null");
         }
-        
+
+        nodes = nodes.stream().map(String::strip).toList();
+
         if (useClusterMode == null || !useClusterMode) {
             useClusterMode = false;
             
             log.info("Redis Connection Mode is Standalone");
             
-            if (ports.size() > 1) {
-                throw new RuntimeException("Redis Connection Mode has more than one port");
+            if (nodes.size() > 1) {
+                throw new RuntimeException("More than one Redis node is configured in standalone mode");
             }
         } else {
             log.info("Redis Connection Mode is Cluster");
         }
-        
-        if (host == null || host.isBlank()) {
-            host = "127.0.0.1";
-            log.warn("redis host is null");
-        }
-        
-        host = host.strip();
         
         if (cache == null) {
             cache = new RedisCacheProperties(
