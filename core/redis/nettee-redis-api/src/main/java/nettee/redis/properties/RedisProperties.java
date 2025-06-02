@@ -42,7 +42,7 @@ public record RedisProperties(
         
         if (cache == null) {
             cache = new RedisCacheProperties(
-                    Map.of("app", new DomainCacheProperties(60L, true, "app::"))
+                    Map.of("app", new DomainCacheProperties(null, null, null))
             );
             
             log.warn("Redis cache is null");

@@ -64,7 +64,7 @@ class RedisPropertiesTest(
                 val app = nullRedisProperties.cache.domains["app"]!!
                 app.ttl() shouldBe 60
                 app.disableNull() shouldBe true
-                app.prefix() shouldBe "app::"
+                app.prefix() shouldBe ""
             }
         }
     }
