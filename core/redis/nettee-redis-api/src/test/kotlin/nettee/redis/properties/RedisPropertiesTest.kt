@@ -22,12 +22,8 @@ class RedisPropertiesTest(
                 redisProperties.useClusterMode shouldBe true
             }
 
-            "host 정상 반환" {
-                redisProperties.host shouldBe "127.0.0.1"
-            }
-
-            "ports 정상 반환" {
-                redisProperties.ports shouldBe listOf(7000, 7001, 7002)
+            "nodes 정상 반환" {
+                redisProperties.nodes.size shouldBe 3
             }
 
             "cache.domains.article 정상 반환" {
@@ -46,18 +42,14 @@ class RedisPropertiesTest(
         }
 
         "application.yml 일부 변수를 누락했을 때" - {
-            val nullRedisProperties = RedisProperties(null, null, null, null)
+            val nullRedisProperties = RedisProperties(null, null, null)
 
             "useClusterMode는 기본값 false 반환" {
                 nullRedisProperties.useClusterMode shouldBe false
             }
 
-            "host는 기본값 127.0.0.1(localhost) 반환" {
-                nullRedisProperties.host shouldBe "127.0.0.1"
-            }
-
-            "ports 기본값 [6379] 반환" {
-                nullRedisProperties.ports shouldBe listOf(6379)
+            "nodes 기본값 localhost:6379 반환" {
+                nullRedisProperties.nodes[0] shouldBe "localhost:6379"
             }
 
             "cache 기본값 cache 반환" {
@@ -71,9 +63,9 @@ class RedisPropertiesTest(
 
     "[예외 검증] useClusterMode 예외 반환" - {
         "useClusterMode가 false(standalone 모드) 일때" - {
-            "여러 port를 지정하면 에러 반환" {
+            "node가 다건이면 에러 반환" {
                 shouldThrow<RuntimeException> {
-                    RedisProperties(false, null, listOf(7000, 7001, 7002), null)
+                    RedisProperties(false, listOf("localhost:7001", "localhost:7002"), null)
                 }
             }
         }
@@ -89,8 +81,7 @@ class RedisPropertiesTest(
             val redisYmlJson = """
             {
               "useClusterMode": true,
-              "host": "127.0.0.1",
-              "ports": [7000, 7001, 7002],
+              "nodes": ["localhost:7000", "localhost:7001", "localhost:7002"],
               "cache": {
                 "domains": {
                   "article": {
