@@ -16,7 +16,6 @@ import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSeriali
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
-import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -29,15 +28,12 @@ public class RedisConfig {
     public RedisConnectionFactory redisConnectionFactory(RedisProperties redisProperties) {
         if (redisProperties.useClusterMode()) {
             // cluster connection
-            List<String> clusterNodes =
-                    redisProperties.ports().stream()
-                            .map(port -> "%s:%d".formatted(redisProperties.host(), port))
-                            .toList();
-            
-            return new LettuceConnectionFactory(new RedisClusterConfiguration(clusterNodes));
+            return new LettuceConnectionFactory(new RedisClusterConfiguration(redisProperties.nodes()));
         } else {
             // standalone connection
-            return new LettuceConnectionFactory(redisProperties.host(), redisProperties.ports().getFirst());
+            var node = redisProperties.nodes().getFirst().split(":");
+
+            return new LettuceConnectionFactory(node[0], Integer.parseInt(node[1]));
         }
     }
     
