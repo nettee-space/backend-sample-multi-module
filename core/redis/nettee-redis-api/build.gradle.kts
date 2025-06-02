@@ -1,5 +1,5 @@
 dependencies{
-    api("org.springframework.boot:spring-boot-autoconfigure:3.4.3")
+    api("org.springframework.boot:spring-boot-autoconfigure")
 
     // test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
