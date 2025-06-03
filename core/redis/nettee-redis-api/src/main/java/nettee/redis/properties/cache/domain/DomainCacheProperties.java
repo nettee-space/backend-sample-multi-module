@@ -6,12 +6,10 @@ public record DomainCacheProperties(
         String prefix
 ) {
     public DomainCacheProperties {
-        // Default 1 minute
-        if (ttl == null) {
-            ttl = 60L;
-        }else if(ttl < 0) {
-            throw new RuntimeException("TTL is set to 'no expiration'. The entry will not expire.");
+        if(ttl != null && ttl < 0L) {
+            throw new IllegalArgumentException("TTL must be zero or a positive number. Negative TTL is not allowed.");
         }
+        
         // Default NO Cache NULL Value
         if (disableNull == null) {
             disableNull = true;
@@ -20,7 +18,7 @@ public record DomainCacheProperties(
         if (prefix == null) {
             prefix = "";
         }
-
+        
         prefix = prefix.strip();
     }
 }

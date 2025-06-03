@@ -27,8 +27,11 @@ public class RedisCacheConfig {
                         Map.Entry::getKey,
                         entry -> {
                             var domainCacheProperties = entry.getValue();
-                            RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
-                                    .entryTtl(Duration.ofSeconds(domainCacheProperties.ttl()));
+                            var config = RedisCacheConfiguration.defaultCacheConfig();
+                            
+                            if(domainCacheProperties.ttl() != null){
+                                config = config.entryTtl(Duration.ofSeconds(domainCacheProperties.ttl()));
+                            }
                             
                             if (domainCacheProperties.disableNull()) {
                                 config = config.disableCachingNullValues();
