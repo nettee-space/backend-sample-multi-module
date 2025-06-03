@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 @EnableCaching
 @EnableConfigurationProperties(RedisProperties.class)
 public class RedisCacheConfig {
+    
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory, RedisProperties redisProperties) {
         // 도메인 별 캐시 적용
