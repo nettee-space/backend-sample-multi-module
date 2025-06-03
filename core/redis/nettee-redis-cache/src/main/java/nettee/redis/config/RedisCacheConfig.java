@@ -7,13 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
-import org.springframework.data.redis.connection.RedisClusterConfiguration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
 import java.util.Map;
@@ -22,40 +16,7 @@ import java.util.stream.Collectors;
 @Configuration
 @EnableCaching
 @EnableConfigurationProperties(RedisProperties.class)
-public class RedisConfig {
-    
-    @Bean
-    public RedisConnectionFactory redisConnectionFactory(RedisProperties redisProperties) {
-        if (redisProperties.useClusterMode()) {
-            // cluster connection
-            return new LettuceConnectionFactory(new RedisClusterConfiguration(redisProperties.nodes()));
-        } else {
-            // standalone connection
-            var node = redisProperties.nodes().getFirst().split(":");
-
-            return new LettuceConnectionFactory(node[0], Integer.parseInt(node[1]));
-        }
-    }
-    
-    @Bean
-    RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
-        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
-        
-        redisTemplate.setConnectionFactory(connectionFactory);
-        redisTemplate.setKeySerializer(new StringRedisSerializer());
-        redisTemplate.setHashKeySerializer(new GenericJackson2JsonRedisSerializer());
-        
-        return redisTemplate;
-    }
-    
-    @Bean
-    StringRedisTemplate stringRedisTemplate(RedisConnectionFactory connectionFactory) {
-        StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
-        stringRedisTemplate.setConnectionFactory(connectionFactory);
-        
-        return stringRedisTemplate;
-    }
-    
+public class RedisCacheConfig {
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory, RedisProperties redisProperties) {
         // 도메인 별 캐시 적용
