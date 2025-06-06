@@ -1,12 +1,15 @@
 package nettee.comment.domain;
 
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import nettee.comment.domain.type.CommentStatus;
+import nettee.reply.domain.Reply;
 
 @Getter
 @Builder
@@ -25,6 +28,9 @@ public class Comment {
     private Instant createdAt;
 
     private Instant updatedAt;
+
+    @Builder.Default
+    private List<Reply> replies = new ArrayList<>();
 
     @Builder(
         builderClassName = "updateCommentBuilder",
