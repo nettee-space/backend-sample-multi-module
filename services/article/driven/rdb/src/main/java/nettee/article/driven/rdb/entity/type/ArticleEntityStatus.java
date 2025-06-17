@@ -3,31 +3,43 @@ package nettee.article.driven.rdb.entity.type;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
-import nettee.article.driven.rdb.entity.type.builder.TypeSafeMarkers.Present;
 import nettee.article.domain.type.ArticleStatus;
+import nettee.common.marker.TypeSafeMarker.Present;
+import nettee.common.status.StatusCodeUtil;
+import nettee.common.status.StatusParameters;
+import nettee.common.status.StatusParameters.GeneralPurposeFeatures;
 
 import static nettee.article.exception.ArticleCommandErrorCode.DEFAULT;
 
 public enum ArticleEntityStatus {
     DELETED(
-        ArticleStatusParameters.builder()
-                .canRead(false)
-                .classifyingBits(0b0000_0000_0000_0000)
+            StatusParameters.generate()
+                    .generalPurposeFeatures(
+                            GeneralPurposeFeatures.READ,
+                            GeneralPurposeFeatures.SUBITEM_READ
+                    )
+                    .categoryBits(0b0000_0000_0000_0000)
+                    .instanceBits(0)
     ),
     PENDING(
-        ArticleStatusParameters.builder()
-                .canRead(false)
-                .classifyingBits(0b0000_0000_0000_0001)
+            StatusParameters.generate()
+                    .categoryBits(0b0000_0000_0000_0001)
+                    .instanceBits(0)
     ),
     ACTIVE(
-        ArticleStatusParameters.builder()
-                .canRead(true)
-                .classifyingBits(0b0000_0000_0000_0010)
+            StatusParameters.generate()
+                    .generalPurposeFeatures(GeneralPurposeFeatures.ALL)
+                    .categoryBits(0b0000_0000_0000_0010)
+                    .instanceBits(0)
     ),
     SUSPENDED(
-        ArticleStatusParameters.builder()
-                .canRead(true)
-                .classifyingBits(0b0000_0000_0000_0100)
+            StatusParameters.generate()
+                    .generalPurposeFeatures(
+                            GeneralPurposeFeatures.READ,
+                            GeneralPurposeFeatures.SUBITEM_READ
+                    )
+                    .categoryBits(0b0000_0000_0000_0100)
+                    .instanceBits(0)
     );
 
     private static final int TLB_PADDING_SIZE = 31;
@@ -43,19 +55,13 @@ public enum ArticleEntityStatus {
                 : "ArticleEntityStatus의 모든 code 필드가 고유해야 합니다.";
     }
 
-    ArticleEntityStatus(ArticleStatusParameters<Present, Present> articleStatusParameters) {
+    ArticleEntityStatus(StatusParameters<Present, Present> articleStatusParameters) {
         this(
-                articleStatusParameters.canRead,
-                articleStatusParameters.classifyingBits,
-                articleStatusParameters.detailBits
+                StatusCodeUtil.getAsInt(articleStatusParameters)
         );
     }
 
-    ArticleEntityStatus(boolean canRead, int classifyingBits, int detalBits) {
-        this.code = (canRead ? 1 << TLB_PADDING_SIZE : 0)
-                | (classifyingBits << CLASSIFYING_PADDING_SIZE)
-                | detalBits;
-    }
+    ArticleEntityStatus(int code) { this.code = code; }
 
     public int getCode() { return code; }
 
