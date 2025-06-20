@@ -4,7 +4,6 @@ val core = rootDir.resolve("core")
     .filter(File::isDirectory)
     .associateBy(File::getName)
 
-
 include(
     ":time-util",
     ":jpa-core",
@@ -14,7 +13,10 @@ include(
     ":snowflake-id-api",
     ":snowflake-id-hibernate",
     ":client-api",
-    ":rest-client"
+    ":rest-client",
+    ":redis-api",
+    ":redis-template",
+    ":redis-cache",
 )
 
 project(":time-util").projectDir = core["time-util"]!!
@@ -26,3 +28,6 @@ project(":snowflake-id-api").projectDir = core["nettee-snowflake-id-api"]!!
 project(":snowflake-id-hibernate").projectDir = core["nettee-snowflake-id-hibernate"]!!
 project(":client-api").projectDir = core["nettee-client-api"]!!
 project(":rest-client").projectDir = core["nettee-rest-client"]!!
+project(":redis-api").projectDir = core["nettee-redis-api"]!!
+project(":redis-template").projectDir = core["nettee-redis-template"]!!
+project(":redis-cache").projectDir = core["nettee-redis-cache"]!!
