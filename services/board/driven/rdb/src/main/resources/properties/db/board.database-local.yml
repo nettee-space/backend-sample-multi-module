@@ -1,5 +1,11 @@
 spring:
   datasource:
+    driver-class-name: org.postgresql.Driver
     url: ${BOARD_POSTGRESQL_URL:jdbc:postgresql://localhost:5433/demo}
     username: ${BOARD_POSTGRESQL_USERNAME:root}
     password: ${BOARD_POSTGRESQL_PASSWORD:root}
+
+  flyway:
+    baseline-on-migrate: true
+    locations:
+      - db/postgresql/migration/v1_0
