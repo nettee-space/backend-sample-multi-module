@@ -20,7 +20,7 @@ public class Snowflake {
     public Snowflake(SnowflakeProperties properties) {
         this(properties.datacenterId(), properties.workerId(), properties.epoch(), new SystemMilliseconds());
     }
-    
+
     public Snowflake(long datacenterId, long workerId, long epoch, MillisecondsSupplier millisecondsSupplier) {
         SnowflakeConstructingValidator.validateDatacenterId(datacenterId);
         SnowflakeConstructingValidator.validateWorkerId(workerId);
@@ -60,7 +60,7 @@ public class Snowflake {
         long timestamp = timeGen();
         while (timestamp <= lastTimestamp) {
             assert !Thread.currentThread().isInterrupted() : "Thread interrupted during Test tilNextMillis";
-            
+
             timestamp = timeGen();
         }
         return timestamp;

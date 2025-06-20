@@ -14,13 +14,13 @@ public record SnowflakeProperties(
         Long epoch
 ) {
     private static final Logger log = LoggerFactory.getLogger(SnowflakeProperties.class);
-    
+
     public SnowflakeProperties {
         if (datacenterId == null) {
             datacenterId = 0L;
             log.warn(PREFIX + ".datacenter-id must not be null.");
         }
-        
+
         if (workerId == null) {
             workerId = 0L;
             log.warn(PREFIX + ".worker-id must not be null.");
