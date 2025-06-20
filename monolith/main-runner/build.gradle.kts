@@ -1,9 +1,6 @@
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 val board: String by project
-val article: String by project
-val comment: String by project
-val views: String by project
 
 version = "0.0.1-SNAPSHOT"
 
@@ -15,9 +12,7 @@ dependencies {
 
     // services
     implementation(project(board))
-    implementation(project(article))
-    implementation(project(views))
-    implementation(project(comment))
+
     implementation(project(":rest-client"))
 
     // webmvc
