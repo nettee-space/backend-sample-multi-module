@@ -4,15 +4,17 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import java.util.Objects;
-import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import nettee.jpa.support.LongBaseTimeEntity;
 import nettee.reply.driven.rdb.entity.type.ReplyEntityStatus;
 import nettee.reply.driven.rdb.entity.type.ReplyEntityStatusConverter;
 import org.hibernate.annotations.DynamicUpdate;
 
 @DynamicUpdate
+@NoArgsConstructor
+@SuperBuilder
 @Entity(name = "reply")
 public class ReplyEntity extends LongBaseTimeEntity {
 

@@ -7,8 +7,12 @@ import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 
 import java.io.Serializable;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Getter
+@SuperBuilder
+@NoArgsConstructor
 @MappedSuperclass
 public abstract class LongBaseEntity implements Serializable {
     @Id

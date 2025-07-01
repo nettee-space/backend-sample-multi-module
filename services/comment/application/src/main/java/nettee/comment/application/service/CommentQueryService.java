@@ -38,4 +38,7 @@ public class CommentQueryService {
         return result;
     }
 
+    public List<CommentDetail> getJsonByBoardId(Long boardId) {
+        return commentQueryRepositoryPort.findPageByBoardId(boardId, 0, 10);
+    }
 }

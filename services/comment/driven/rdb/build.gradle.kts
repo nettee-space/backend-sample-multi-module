@@ -5,6 +5,9 @@ dependencies {
     api(project(":comment:comment-application"))
     api(project(":jpa-core"))
 
+    // for using json column
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.0")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 
     // querydsl
     implementation("com.querydsl:querydsl-jpa:${bom["querydsl.version"]}:jakarta")
